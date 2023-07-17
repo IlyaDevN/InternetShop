@@ -1,5 +1,5 @@
 {
-  "name": "horse-club",
+  "name": "internet-shop",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -29,9 +29,5 @@
     "sass": "1.61.0",
     "webpack": "5.78.0",
     "webpack-stream": "7.0.0"
-  },
-  "dependencies": {
-    "swiper": "10.0.4",
-    "throttle-debounce": "5.0.0"
   }
 }
