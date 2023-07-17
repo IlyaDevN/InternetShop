@@ -40,10 +40,30 @@
 		<div class="categories__item {{item.name}}">
 			<a class="{{item.name}}__link categories__link" href="#">
 				{# <div class="{{item.name}}__img-container categories__img-container"> #}
-					<img class="{{item.name}}__img categories__img" src="img/pages/main/categories/320/{{item.name}}_x320.jpg" alt="">
+					<picture>
+						<source srcset="img/pages/main/categories/1440/{{item.name}}_x1440.jpg" type="image/jpeg"
+							media="(min-width:1440px)">
+						<source srcset="img/pages/main/categories/1000/{{item.name}}_x1000.jpg" type="image/jpeg"
+							media="(min-width:1000px)">
+						<source srcset="img/pages/main/categories/768/{{item.name}}_x768.jpg" type="image/jpeg"
+							media="(min-width:768px)">
+						<source srcset="img/pages/main/categories/480/{{item.name}}_x480.jpg" type="image/jpeg"
+							media="(min-width:480px)">
+						<img class="{{item.name}}__img categories__img" src="img/pages/main/categories/320/{{item.name}}_x320.jpg" alt="">
+					</picture>
 				{# </div> #}
 				<div class="{{item.name}}__name-img-container categories__name-img-container">
-					{% include item.img_src %}
+					<picture>
+						<source srcset="img/pages/main/categories/1440/{{item.name}}_name_x1440.svg" type="image/jpeg"
+							media="(min-width:1440px)">
+						<source srcset="img/pages/main/categories/1000/{{item.name}}_name_x1000.svg" type="image/jpeg"
+							media="(min-width:1000px)">
+						<source srcset="img/pages/main/categories/768/{{item.name}}_name_x768.svg" type="image/jpeg"
+							media="(min-width:768px)">
+						<source srcset="img/pages/main/categories/480/{{item.name}}_name_x480.svg" type="image/jpeg"
+							media="(min-width:480px)">
+						<img class="{{item.name}}__name-img categories__name-img" src="img/pages/main/categories/320/{{item.name}}_name_x320.svg" alt="">
+					</picture>
 					<p class="{{item.name}}__name categories__name">{{item.text}}</p>
 				</div>
 			</a>

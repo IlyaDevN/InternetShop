@@ -9,18 +9,16 @@
 
 		@include helpers.mobile() {
 			margin-top: 50px;
+			grid-gap: 8px;
+			margin-top: 58px;
 		}
 
 		@include helpers.tablet() {
-			margin-top: 103px;
+			margin-top: 113px;
 		}
 
 		@include helpers.laptop() {
-			margin-top: 107px;
-		}
-
-		@include helpers.desktop() {
-			margin-top: 103px;
+			margin-top: 118px;
 		}
 
 	}
@@ -54,6 +52,10 @@
 		font-family: "Sunday Best [rus by aLiNcE]", arial;
 		font-size: 12px;
 		color: helpers.$color-white;
+
+		@include helpers.tablet() {
+			font-size: 16px;
+		}
 	}
 }
 
@@ -62,6 +64,26 @@
 	grid-column: 1/3;
 	width: 177px;
 	height: 232px;
+
+	@include helpers.mobile() {
+		width: 272px;
+		height: 366px;
+	}
+
+	@include helpers.tablet() {
+		grid-row: 1/2;
+		grid-column: 1/3;
+		width: 365px;
+		height: 223px;
+	}
+
+	@include helpers.laptop() {
+		
+	}
+
+	@include helpers.desktop() {
+		
+	}
 
 	&__link {
 
@@ -80,10 +102,30 @@
 		height: 34px;
 		top: 149px;
 		left: 7px;
+
+		@include helpers.mobile() {
+			top: 311px;
+			left: 21px;
+		}
+	
+		@include helpers.tablet() {
+			width: 170px;
+			height: 44px;
+			top: 165px;
+			left: 13px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 
 	&__name-img {
-
+		
 	}
 
 	&__name {
@@ -92,6 +134,13 @@
 		width: 69px;
 		line-height: 2.37;
 		text-align: right;
+
+		@include helpers.tablet() {
+			width: 88px;
+			line-height: 1.94;
+			top: 3px;
+			left: 42px;
+		}
 	}
 }
 
@@ -100,6 +149,26 @@
 	grid-column: 3/4;
 	width: 109px;
 	height: 114px;
+
+	@include helpers.mobile() {
+		width: 170px;
+		height: 179px;
+	}
+
+	@include helpers.tablet() {
+		grid-row: 1/2;
+		grid-column: 3/4;
+		width: 178px;
+		height: 192px;
+	}
+
+	@include helpers.laptop() {
+		
+	}
+
+	@include helpers.desktop() {
+		
+	}
 
 	&__link {
 
@@ -114,10 +183,28 @@
 	}
 
 	&__name-img-container {
-		width: 94px;
-		height: 34px;
+		width: 129px;
+		height: 44px;
 		top: 62px;
 		left: 6px;
+
+		@include helpers.mobile() {
+			top: 94px;
+			left: 22px;
+		}
+	
+		@include helpers.tablet() {
+			width: 129px;
+			height: 44px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 
 	&__name-img {
@@ -126,8 +213,8 @@
 
 	&__name {
 		top: 5px;
-		left: 15px;
-		line-height: 1.73;
+		left: 23px;
+		line-height: 1.94;
 		
 	}
 }
@@ -137,6 +224,26 @@
 	grid-column: 3/4;
 	width: 109px;
 	height: 114px;
+
+	@include helpers.mobile() {
+		width: 170px;
+		height: 179px;
+	}
+
+	@include helpers.tablet() {
+		grid-row: 2/3;
+		grid-column: 1/2;
+		width: 178px;
+		height: 192px;
+	}
+
+	@include helpers.laptop() {
+		
+	}
+
+	@include helpers.desktop() {
+		
+	}
 
 	&__link {
 
@@ -156,6 +263,27 @@
 		top: 51px;
 		left: 51px;
 		transform: rotate(-44deg);
+
+		@include helpers.mobile() {
+			top: 128px;
+			left: 98px;
+		}
+	
+		@include helpers.tablet() {
+			width: 90px;
+			height: 44px;
+			top: 117px;
+			left: 88px;
+			transform: rotate(-53.43deg);
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 
 	&__name-img {
@@ -166,6 +294,19 @@
 		top: 6px;
 		left: 14px;
 		line-height: 1.9;
+
+		@include helpers.tablet() {
+			top: 6px;
+			left: 22px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 }
 
@@ -174,6 +315,26 @@
 	grid-column: 1/2;
 	width: 109px;
 	height: 114px;
+
+	@include helpers.mobile() {
+		width: 170px;
+		height: 179px;
+	}
+
+	@include helpers.tablet() {
+		grid-row: 2/3;
+		grid-column: 2/3;
+		width: 178px;
+		height: 192px;
+	}
+
+	@include helpers.laptop() {
+		
+	}
+
+	@include helpers.desktop() {
+		
+	}
 
 	&__link {
 
@@ -192,7 +353,27 @@
 		height: 35px;
 		top: 50px;
 		left: 23px;
-		transform: rotate(2deg);
+		transform: rotate(2.3deg);
+
+		@include helpers.mobile() {
+			top: 132px;
+			left: 78px;
+		}
+	
+		@include helpers.tablet() {
+			width: 110px;
+			height: 44px;
+			top: 123px;
+			left: 6px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 
 	&__name-img {
@@ -203,6 +384,19 @@
 		top: 4px;
 		left: 21px;
 		line-height: 1.9;
+
+		@include helpers.tablet() {
+			top: 3px;
+			left: 31px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 }
 
@@ -211,6 +405,27 @@
 	grid-column: 1/2;
 	width: 109px;
 	height: 114px;
+
+	@include helpers.mobile() {
+		width: 170px;
+		height: 179px;
+	}
+
+	@include helpers.tablet() {
+		grid-row: 2/3;
+		grid-column: 3/5;
+		width: 365px;
+		height: 223px;
+		margin-top: -31px;
+	}
+
+	@include helpers.laptop() {
+		
+	}
+
+	@include helpers.desktop() {
+		
+	}
 
 	&__link {
 
@@ -230,6 +445,27 @@
 		top: 46px;
 		left: 6px;
 		transform: rotate(2.5deg);
+
+		@include helpers.mobile() {
+			top: 122px;
+			left: 12px;
+		}
+	
+		@include helpers.tablet() {
+			width: 110px;
+			height: 44px;
+			top: 148px;
+			left: 18px;
+			transform: rotate(37deg);
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 
 	&__name-img {
@@ -240,6 +476,20 @@
 		top: 5px;
 		left: 21px;
 		line-height: 1.72;
+
+		@include helpers.tablet() {
+			top: 3px;
+			left: 33px;
+			line-height: 1.94;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 }
 
@@ -248,6 +498,26 @@
 	grid-column: 2/5;
 	width: 177px;
 	height: 232px;
+
+	@include helpers.mobile() {
+		width: 272px;
+		height: 366px;
+	}
+
+	@include helpers.tablet() {
+		grid-row: 1/2;
+		grid-column: 4/5;
+		width: 178px;
+		height: 192px;
+	}
+
+	@include helpers.laptop() {
+		
+	}
+
+	@include helpers.desktop() {
+		
+	}
 
 	&__link {
 
@@ -267,6 +537,26 @@
 		top: 151px;
 		left: 16px;
 		transform: rotate(2.2deg);
+
+		@include helpers.mobile() {
+			top: 310px;
+			left: 22px;
+		}
+	
+		@include helpers.tablet() {
+			width: 141px;
+			height: 44px;
+			top: 143px;
+			left: 30px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 
 	&__name-img {
@@ -277,5 +567,18 @@
 		top: 4px;
 		left: 16px;
 		line-height: 1.92;
+	
+		@include helpers.tablet() {
+			top: 3px;
+			left: 25px;
+		}
+	
+		@include helpers.laptop() {
+			
+		}
+	
+		@include helpers.desktop() {
+			
+		}
 	}
 }
