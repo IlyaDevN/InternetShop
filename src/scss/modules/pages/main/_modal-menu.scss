@@ -61,7 +61,13 @@
 				display: none;
 			}
 
-			&__close-button-svg {
+			&:active {
+				.close-button-svg-path {
+					stroke: helpers.$color-red;
+				}
+			}
+
+			&-svg {
 				width: 100%;
 				height: 100%;
 			}
@@ -105,14 +111,6 @@
 				align-items: center;
 				justify-content: space-between;
 			}
-
-			@include helpers.laptop() {
-				
-			}
-
-			@include helpers.desktop() {
-				
-			}
 		}
 
 		&__item {
@@ -134,10 +132,16 @@
 				font-size: 1rem;
 			}
 
-			&:hover {
+			&:active {
+				color: helpers.$color-red;
+
 				@include helpers.tablet() {
 					font-style: italic;
 					color: helpers.$color-pink;
+				}
+
+				.arrow-right-icon-svg-path {
+					fill: helpers.$color-red;
 				}
 			}
 
