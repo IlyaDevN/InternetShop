@@ -8,7 +8,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		@include helpers.zIndex(layer_top);
+		@include helpers.zIndex(layer_middle);
 		background-color: helpers.$color-white;
 
 		@include helpers.mobile() {
@@ -16,20 +16,16 @@
 		}
 
 		@include helpers.tablet() {
-			padding: 6px 0 15px;
+			padding: 6px 0 51px;
 		}
 
 		@include helpers.laptop() {
-			padding: 10px 0 15px;
+			padding: 10px 0 51px;
 		}
 
 		.header__first-line {
 			display: flex;
 			align-items: center;
-
-			@include helpers.tablet() {
-				margin-bottom: 21px;
-			}
 
 			.header__logo-icon {
 				margin-right: auto;
@@ -292,69 +288,31 @@
 				}
 			}
 		}
+	}
+}
 
-		.menu {
-			display: none;
+.pink-line-top {
+	position: fixed;
+	left: 0;
+	top: 34px;
+	width: 100%;
+	height: 1px;
+	background-color: helpers.$color-pink;
+	@include helpers.zIndex(layer_middle);
 
-			@include helpers.tablet() {
-				display: block;
-			}
-
-			&__list {
-				@include helpers.tablet() {
-					display: flex;
-					align-items: center;
-					justify-content: space-between;
-	
-				}
-
-				.menu__item {
-					@include helpers.tablet() {
-						font-family: "Montserrat", sans-serif;
-						font-size: 0.875rem;
-						font-weight: 600;
-						text-transform: uppercase;
-						color: helpers.$color-black;
-					}
-
-					@include helpers.laptop() {
-						font-size: 1rem;
-					}
-
-					&:hover {
-						@include helpers.tablet() {
-							font-style: italic;
-							color: helpers.$color-pink;
-						}
-						
-					}
-				}
-			}
-		}
+	@include helpers.mobile() {
+		top: 49px;
 	}
 
-	&__pink-line {
-		position: absolute;
-		left: 0;
-		top: 34px;
-		width: 100%;
-		height: 1px;
-		background-color: helpers.$color-pink;
+	@include helpers.tablet() {
+		top: 102px;
+	}
 
-		@include helpers.mobile() {
-			top: 49px;
-		}
+	@include helpers.laptop() {
+		top: 106px;
+	}
 
-		@include helpers.tablet() {
-			top: 102px;
-		}
-
-		@include helpers.laptop() {
-			top: 106px;
-		}
-
-		@include helpers.desktop() {
-			top: 102px;
-		}
+	@include helpers.desktop() {
+		top: 102px;
 	}
 }

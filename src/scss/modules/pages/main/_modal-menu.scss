@@ -1,0 +1,155 @@
+@use "../../../common/forwarded" as helpers;
+
+.modal__menu {
+	width: 100%;
+	height: calc(100% - 58px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include helpers.zIndex(layer_overlay);
+	background-color: helpers.$color-pink;
+	display: flex;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.5s,
+		visibility 0.5s;
+
+	@include helpers.tablet() {
+		display: block;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 76px;
+		margin: 0 auto;
+		width: 738px;
+		height: auto;
+		visibility: visible;
+		opacity: 1;
+		background-color: initial;
+	}
+
+	@include helpers.laptop() {
+		width: 900px;
+	}
+
+	@include helpers.desktop() {
+		width: 1140px;
+	}
+
+	&.opened {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.menu {
+
+		&__close-button {
+			position: absolute;
+			width: 24px;
+			height: 24px;
+			top: 20px;
+			right: 16px;
+
+			@include helpers.mobile() {
+				width: 36px;
+				height: 36px;
+				top: 40px;
+			}
+
+			@include helpers.tablet() {
+				display: none;
+			}
+
+			&__close-button-svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__container {
+			margin-top: 143px;
+
+			@include helpers.tablet() {
+				margin: 0;
+			}
+		}
+
+		&__name {
+			line-height: 1.94;
+			color: helpers.$color-white;
+			font-family: "Sunday Best [rus by aLiNcE]", arial;
+			font-weight: 400;
+			margin-bottom: 40px;
+
+			@include helpers.mobile() {
+				font-size: 20px;
+			}
+
+			@include helpers.tablet() {
+				display: none;
+			}
+		}
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+
+			@include helpers.mobile() {
+				gap: 24px;
+			}
+
+			@include helpers.tablet() {
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			@include helpers.laptop() {
+				
+			}
+
+			@include helpers.desktop() {
+				
+			}
+		}
+
+		&__item {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: helpers.$color-white;
+
+			@include helpers.mobile() {
+				font-size: 18px;
+			}
+
+			@include helpers.tablet() {
+				font-size: 0.875rem;
+				color: helpers.$color-black;
+			}
+
+			@include helpers.laptop() {
+				font-size: 1rem;
+			}
+
+			&:hover {
+				@include helpers.tablet() {
+					font-style: italic;
+					color: helpers.$color-pink;
+				}
+			}
+
+			.arrow-right-icon-svg {
+				width: 11px;
+				height: 12px;
+				margin-left: 10px;
+
+				@include helpers.tablet() {
+					display: none;
+				}
+			}
+		}
+	}
+}
