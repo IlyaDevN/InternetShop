@@ -8,16 +8,10 @@
 	left: 0;
 	@include helpers.zIndex(layer_overlay);
 	background-color: helpers.$color-pink;
-	display: flex;
-	justify-content: center;
-	visibility: hidden;
-	opacity: 0;
-	transition: opacity 0.5s,
-		visibility 0.5s;
+	transform: translateX(-100%);
+	transition: transform 0.5s;
 
 	@include helpers.tablet() {
-		display: block;
-		position: fixed;
 		left: 0;
 		right: 0;
 		top: 76px;
@@ -27,19 +21,24 @@
 		visibility: visible;
 		opacity: 1;
 		background-color: initial;
+		transform: translateX(0);
+		transition: none;
 	}
 
 	@include helpers.laptop() {
-		width: 900px;
+		width: 908px;
 	}
 
 	@include helpers.desktop() {
 		width: 1140px;
 	}
 
-	&.opened {
-		visibility: visible;
-		opacity: 1;
+	&.active {
+		transform: translateX(0);
+
+		.menu__container {
+			transform: translateX(0);
+		}
 	}
 
 	.menu {
@@ -74,26 +73,154 @@
 		}
 
 		&__container {
-			margin-top: 143px;
+			position: absolute;
+			display: table;
+			top: 143px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			transform: translateX(-100vw);
+			transition: transform 0.5s;
 
 			@include helpers.tablet() {
-				margin: 0;
+				top: 0;
+				display: block;
+				transform: translateX(0);
+				transition: none;
+			}
+
+			.menu__name-container {
+				display: flex;
+				align-items: center;
+				position: relative;
+				margin-bottom: 40px;
+
+				@include helpers.mobile() {
+					font-size: 1.25rem;
+				}
+
+				@include helpers.tablet() {
+					display: none;
+				}
+
+				.menu__name_button {
+					line-height: 1.94;
+					font-family: "Sunday Best [rus by aLiNcE]", arial;
+					font-weight: 400;
+					color: helpers.$color-white;
+
+					@include helpers.mobile() {
+						font-size: 1.25rem;
+					}
+
+					@include helpers.tablet() {
+						display: none;
+					}
+
+					&.active {
+						color: helpers.$color-red;
+
+						& + .menu__name_slash {
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+				}
+
+				.menu__name_slash {
+					color: helpers.$color-white;
+					font-family: "Montserrat", sans-serif;
+					font-size: 1.5rem;
+					font-weight: 400;
+					margin-left: 6px;
+					visibility: hidden;
+					opacity: 0;
+					transition: visibility 0.5s,
+						opacity 0.5s;
+
+					@include helpers.mobile() {
+						margin: 0 16px;
+					}
+				}
+
+				.menu__name_subname {
+					position: absolute;
+					left: 60px;
+					color: helpers.$color-white;
+					font-family: "Montserrat", sans-serif;
+					font-weight: 600;
+					text-transform: uppercase;
+					visibility: hidden;
+					opacity: 0;
+					transition: visibility 0.5s,
+						opacity 0.5s;
+
+					@include helpers.mobile() {
+						font-size: 1.125rem;
+						left: 102px;
+					}
+
+					&.active {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
 			}
 		}
 
-		&__name {
-			line-height: 1.94;
-			color: helpers.$color-white;
-			font-family: "Sunday Best [rus by aLiNcE]", arial;
-			font-weight: 400;
-			margin-bottom: 40px;
+		&__list-container-main {
+			transform: translateX(0);
+			transition: transform 0.5s;
+
+			&.inactive {
+				transform: translateX(-100vw);
+
+				@include helpers.tablet {
+					transform: translateX(0);
+				}
+			}
+		}
+
+		&__list-container {
+			position: absolute;
+			top: 66px;
+			left: 0;
+			transform: translateX(-100vw);
+			transition: transform 0.5s;
 
 			@include helpers.mobile() {
-				font-size: 20px;
+				top: 79px;
 			}
 
 			@include helpers.tablet() {
-				display: none;
+				right: 0;
+				margin: 0 auto;
+				padding: 10px 0;
+				top: 27px;
+				border-bottom: 1px solid helpers.$color-grey;
+				transform: translateX(0);
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 1s,
+					visibility 1s;
+			}
+
+			@include helpers.laptop() {
+				top: 31px;
+			}
+
+			@include helpers.desktop() {
+				top: 27px;
+				padding: 15px 0;
+			}
+
+			&.active {
+				transform: translateX(0);
+
+				@include helpers.tablet() {
+					opacity: 1;
+					visibility: visible;
+				}
 			}
 		}
 
@@ -109,18 +236,35 @@
 			@include helpers.tablet() {
 				flex-direction: row;
 				align-items: center;
-				justify-content: space-between;
+				justify-content: center;
+			}
+
+			@include helpers.laptop() {
+				gap: 36px;
+			}
+
+			@include helpers.desktop() {
+				gap: 71px;
+			}
+
+			&_main {
+				@include helpers.tablet() {
+					justify-content: space-between;
+					gap: unset;
+				}
 			}
 		}
 
 		&__item {
 			font-family: "Montserrat", sans-serif;
 			font-weight: 600;
+			line-height: 1;
+			font-size: 1rem;
 			text-transform: uppercase;
 			color: helpers.$color-white;
 
 			@include helpers.mobile() {
-				font-size: 18px;
+				font-size: 1.125rem;
 			}
 
 			@include helpers.tablet() {
@@ -145,6 +289,20 @@
 				}
 			}
 
+			&:hover {
+				@include helpers.tablet() {
+					font-style: italic;
+					color: helpers.$color-pink;
+				}
+			}
+
+			&.active {
+				@include helpers.tablet() {
+					font-style: italic;
+					color: helpers.$color-pink;
+				}
+			}
+
 			.arrow-right-icon-svg {
 				width: 11px;
 				height: 12px;
@@ -152,6 +310,32 @@
 
 				@include helpers.tablet() {
 					display: none;
+				}
+			}
+		}
+
+		&__sub-item {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: helpers.$color-white;
+
+			@include helpers.tablet() {
+				font-size: 0.875rem;
+				font-weight: 400;
+				text-transform: none;
+				color: helpers.$color-black;
+			}
+
+			@include helpers.desktop() {
+				font-size: 1rem;
+			}
+
+			&:hover {
+				@include helpers.tablet() {
+					font-style: italic;
+					font-weight: 500;
+					color: helpers.$color-pink;
 				}
 			}
 		}

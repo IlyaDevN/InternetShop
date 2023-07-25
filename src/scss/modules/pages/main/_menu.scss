@@ -21,7 +21,6 @@
 
 	&__item {
 		display: block;
-
 	}
 
 	&__icon-svg {
@@ -47,7 +46,7 @@
 
 .menu__open {
 
-	&-button.opened {
+	&-button.active {
 		.button-svg-path {
 			fill: helpers.$color-pink;
 		}

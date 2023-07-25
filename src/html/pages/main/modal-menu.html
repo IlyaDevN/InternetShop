@@ -3,24 +3,72 @@
 		{% include "html/icons_svg/menu/menu-close-button-icon.html" %}
 	</button>
 	<div class="menu__container">
-		<p class="menu__name">меню</p>
-		<ul class="menu__list">
-			<li><a class="menu__item" href="#">новинки</a></li>
-			<li><a class="menu__item" href="#">платья</a></li>
-			<li><a class="menu__item" href="#">верх
-				{% include "html/icons_svg/menu/arrow-right-icon.html" %}
-			</a></li>
-			<li><a class="menu__item" href="#">низ
-				{% include "html/icons_svg/menu/arrow-right-icon.html" %}
-			</a></li>
-			<li><a class="menu__item" href="#">куртки
-				{% include "html/icons_svg/menu/arrow-right-icon.html" %}
-			</a></li>
-			<li><a class="menu__item" href="#">мелочи
-				{% include "html/icons_svg/menu/arrow-right-icon.html" %}
-			</a></li>
-			<li><a class="menu__item" href="#">костюмы</a></li>
-			<li><a class="menu__item" href="#">#boorivagirls</a></li>
-		</ul>
+		<div class="menu__name-container">
+			<button class="menu__name_button">меню</button>
+			<p class="menu__name_slash">/</p>
+			<p class="menu__name_subname" id="menu__clothes-top-subname">верх</p>
+			<p class="menu__name_subname" id="menu__clothes-bottom-subname">низ</p>
+			<p class="menu__name_subname" id="menu__clothes-jaket-subname">куртки</p>
+			<p class="menu__name_subname" id="menu__clothes-little-things-subname">мелочи</p>
+		</div>
+		<div class="menu__list-container-main">
+			<ul class="menu__list menu__list_main">
+				<li><a class="menu__item" href="#">новинки</a></li>
+				<li><a class="menu__item" href="#">платья</a></li>
+				<li><button class="menu__item" data-link="menu__clothes-top">верх
+					{% include "html/icons_svg/menu/arrow-right-icon.html" %}
+				</button></li>
+				<li><button class="menu__item" data-link="menu__clothes-bottom">низ
+					{% include "html/icons_svg/menu/arrow-right-icon.html" %}
+				</button></li>
+				<li><button class="menu__item" data-link="menu__clothes-jaket">куртки
+					{% include "html/icons_svg/menu/arrow-right-icon.html" %}
+				</button></li>
+				<li><button class="menu__item" data-link="menu__clothes-little-things">мелочи
+					{% include "html/icons_svg/menu/arrow-right-icon.html" %}
+				</button></li>
+				<li><a class="menu__item" href="#">костюмы</a></li>
+				<li><a class="menu__item" href="#">#boorivagirls</a></li>
+			</ul>
+		</div>
+		<div class="menu__list-container" id="menu__clothes-top">
+			<ul class="menu__list">
+				<li><a class="menu__sub-item" href="#">Комбинезоны</a></li>
+				<li><a class="menu__sub-item" href="#">Пиджаки</a></li>
+				<li><a class="menu__sub-item" href="#">Рубашки</a></li>
+				<li><a class="menu__sub-item" href="#">Свитшоты</a></li>
+				<li><a class="menu__sub-item" href="#">Худи</a></li>
+				<li><a class="menu__sub-item" href="#">Топы</a></li>
+				<li><a class="menu__sub-item" href="#">Футболки</a></li>
+			</ul>
+		</div>
+		<div class="menu__list-container" id="menu__clothes-bottom">
+			<ul class="menu__list">
+				<li><a class="menu__sub-item" href="#">Все товары</a></li>
+				<li><a class="menu__sub-item" href="#">Брюки</a></li>
+				<li><a class="menu__sub-item" href="#">Велосипедки</a></li>
+				<li><a class="menu__sub-item" href="#">Джинсы</a></li>
+				<li><a class="menu__sub-item" href="#">Штаны</a></li>
+				<li><a class="menu__sub-item" href="#">Шорты</a></li>
+				<li><a class="menu__sub-item" href="#">Юбки</a></li>
+			</ul>
+		</div>
+		<div class="menu__list-container" id="menu__clothes-jaket">
+			<ul class="menu__list">
+				<li><a class="menu__sub-item" href="#">Все товары</a></li>
+				<li><a class="menu__sub-item" href="#">Весна-осень</a></li>
+				<li><a class="menu__sub-item" href="#">Зима</a></li>
+				<li><a class="menu__sub-item" href="#">Лето</a></li>
+				<li><a class="menu__sub-item" href="#">Осень-зима</a></li>
+			</ul>
+		</div>
+		<div class="menu__list-container" id="menu__clothes-little-things">
+			<ul class="menu__list">
+				<li><a class="menu__sub-item" href="#">Все товары</a></li>
+				<li><a class="menu__sub-item" href="#">Ремни</a></li>
+				<li><a class="menu__sub-item" href="#">Шарфы</a></li>
+				<li><a class="menu__sub-item" href="#">Украшения</a></li>
+			</ul>
+		</div>
 	</div>
 </div>
