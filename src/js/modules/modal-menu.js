@@ -27,6 +27,7 @@ menuNameButton.addEventListener("click", menuNameButtonHandler);
 function openModal() {
 	modal.classList.add("active");
 	openButton.classList.add("active");
+	disableScroll();
 }
 
 function closeModal() {
@@ -46,6 +47,7 @@ function closeModal() {
 	if (activeSubMenu) {
 		activeSubMenu.classList.remove("active");
 	}
+	enableScroll();
 }
 
 function menuItemHandler(menuItem) {
@@ -94,4 +96,12 @@ function menuNameButtonHandler() {
 		activeSubMenu.classList.remove("active");
 		menuNameButton.classList.remove("active");
 	}
+}
+
+function disableScroll() {
+	document.body.classList.add("stop-scroll");
+}
+
+function enableScroll() {
+	document.body.classList.remove("stop-scroll");
 }

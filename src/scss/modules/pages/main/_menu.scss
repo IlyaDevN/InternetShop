@@ -10,6 +10,7 @@
 	bottom: 0;
 	height: 58px;
 	background-color: helpers.$color-white;
+	@include helpers.zIndex(layer_middle);
 
 	@include helpers.mobile() {
 		justify-content: space-around;
