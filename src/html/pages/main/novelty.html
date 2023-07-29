@@ -1,0 +1,63 @@
+{% set novelty_items = [
+	
+	{
+		"img_name": "photo_1",
+		"description_name": "Cвитшот вставка клетка",
+		"description_price": "1 099 ₴"
+	},
+	{
+		"img_name": "photo_2",
+		"description_name": "Платье прозрачное в цветочек чееное",
+		"description_price": "1 299 ₴"
+	},
+	{
+		"img_name": "photo_3",
+		"description_name": "Платье-футболка рыбы в аквариуме",
+		"description_price": "899 ₴"
+	},
+	{
+		"img_name": "photo_4",
+		"description_name": "Бомбер Gone Crazy хаки",
+		"description_price": "2 499 ₴"
+	}
+
+] %}
+
+<section class="novelty">
+	<div class="novelty__container _container">
+		<div class="novelty__title">
+			<p class="novelty__title_name">новинки</p>
+			<p class="novelty__title_subname">новинки</p>
+			<div class="title-line-icon">
+				{% include "html/icons_svg/novelty/title-line-icon.html" %}
+			</div>
+		</div>
+		<div class="novelty-items__container">
+			{% for item in novelty_items %}
+			<a class="novelty-item" href="#">
+				<div class="novelty-item__photo">
+					<picture>
+						<source srcset="img/pages/main/novelty/1440/{{item.img_name}}_x1440.jpg" type="image/jpeg" media="(min-width:1440px)">
+						<source srcset="img/pages/main/novelty/1000/{{item.img_name}}_x1000.jpg" type="image/jpeg" media="(min-width:1000px)">
+						<source srcset="img/pages/main/novelty/768/{{item.img_name}}_x768.jpg" type="image/jpeg" media="(min-width:768px)">
+						<source srcset="img/pages/main/novelty/480/{{item.img_name}}_x480.jpg" type="image/jpeg" media="(min-width:480px)">
+						<img class="novelty-item__photo-img" src="img/pages/main/novelty/320/{{item.img_name}}_x320.jpg" alt="">
+					</picture>
+				</div>
+				<div class="novelty-item__heart-icon">
+					{% include "html/icons_svg/novelty/heart-icon.html" %}
+				</div>
+				<div class="novelty-item__line"></div>
+				<div class="novelty-item__description">
+					<p class="novelty-item__description_name">{{item.description_name}}</p>
+					<p class="novelty-item__description_price">{{item.description_price}}</p>
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+		<a class="watch-everything-icon" href="#">
+			{% include "html/icons_svg/novelty/watch-everything-icon.html" %}
+			<p class="watch-everything-icon-text">Смотреть все</p>
+		</a>
+	</div>
+</section>
