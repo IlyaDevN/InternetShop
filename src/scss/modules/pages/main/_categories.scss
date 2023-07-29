@@ -6,7 +6,7 @@
 		display: grid;
 		grid-gap: 4px;
 		margin-top: 39px;
-		margin-bottom: 4px;
+		margin-bottom: 39px;
 
 		@include helpers.mobile() {
 			margin-top: 50px;
@@ -69,6 +69,10 @@
 
 	&__name {
 		position: absolute;
+		top: 25%;
+		left: 0;
+		right: 0;
+		text-align: center;
 		font-family: "Sunday Best [rus by aLiNcE]", arial;
 		font-size: 12px;
 		color: helpers.$color-white;
@@ -144,22 +148,8 @@
 	}
 
 	&__name {
-		top: 9px;
-		left: 26px;
-
-		@include helpers.tablet() {
-			top: 11px;
-			left: 43px;
-		}
-
 		@include helpers.laptop() {
-			left: 50px;
-			top: 13px;
 			transform: rotate(-2.15deg);
-		}
-	
-		@include helpers.desktop() {
-			left: 48px;
 		}
 	}
 }
@@ -221,25 +211,6 @@
 			height: 60px;
 			top: 172px;
 			left: 15px;
-		}
-	}
-
-	&__name {
-		top: 9px;
-		left: 15px;
-		
-		@include helpers.tablet() {
-			top: 13px;
-			left: 26px;
-		}
-	
-		@include helpers.laptop() {
-			top: 16px;
-			left: 34px;
-		}
-	
-		@include helpers.desktop() {
-			left: 35px;
 		}
 	}
 }
@@ -304,25 +275,6 @@
 			height: 55px;
 			top: 189px;
 			left: 161px;
-		}
-	}
-
-	&__name {
-		top: 10px;
-		left: 14px;
-
-		@include helpers.tablet() {
-			left: 22px;
-		}
-	
-		@include helpers.laptop() {
-			top: 15px;
-			left: 28px;
-		}
-	
-		@include helpers.desktop() {
-			top: 14px;
-			left: 28px;
 		}
 	}
 }
@@ -390,23 +342,7 @@
 	}
 
 	&__name {
-		top: 10px;
-		left: 21px;
 		transform: rotate(-2.3deg);
-
-		@include helpers.tablet() {
-			left: 31px;
-		}
-	
-		@include helpers.laptop() {
-			top: 14px;
-			left: 38px;
-		}
-	
-		@include helpers.desktop() {
-			top: 14px;
-			left: 38px;
-		}
 	}
 }
 
@@ -475,19 +411,10 @@
 	}
 
 	&__name {
-		top: 9px;
-		left: 21px;
 		transform: rotate(-2.5deg);
 
 		@include helpers.tablet() {
-			top: 10px;
-			left: 33px;
 			transform: rotate(0);
-		}
-	
-		@include helpers.laptop() {
-			top: 13px;
-			left: 39px;
 		}
 	}
 }
@@ -556,18 +483,8 @@
 	}
 
 	&__name {
-		top: 10px;
-		left: 16px;
-	
 		@include helpers.tablet() {
-			top: 11px;
-			left: 25px;
 			transform: rotate(-2.2deg);
-		}
-	
-		@include helpers.laptop() {
-			top: 12px;
-			left: 37px;
 		}
 	}
 }
