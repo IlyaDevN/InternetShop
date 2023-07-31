@@ -1,15 +1,14 @@
 @use "../../../common/forwarded" as helpers;
 
 .header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: helpers.$color-white;
+	@include helpers.zIndex(layer_middle);
 
 	&__container {
 		padding: 10px 0 8px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		@include helpers.zIndex(layer_middle);
-		background-color: helpers.$color-white;
 
 		@include helpers.mobile() {
 			padding: 12px 0 14px;
@@ -313,6 +312,6 @@
 	}
 
 	@include helpers.desktop() {
-		top: 102px;
+		top: 100px;
 	}
 }
