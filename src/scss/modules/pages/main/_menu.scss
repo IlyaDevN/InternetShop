@@ -1,23 +1,26 @@
 @use "../../../common/forwarded" as helpers;
 
 .menu {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	position: fixed;
-	left: 0;
-	right: 0;
+	width: 100%;
 	bottom: 0;
-	height: 58px;
+	
 	background-color: helpers.$color-white;
 	@include helpers.zIndex(layer_middle);
 
-	@include helpers.mobile() {
-		justify-content: space-around;
-	}
-
 	@include helpers.tablet() {
 		display: none;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 58px;
+	
+		@include helpers.mobile() {
+			justify-content: space-around;
+		}
 	}
 
 	&__item {
