@@ -1,0 +1,27 @@
+@use "../../../common/forwarded" as helpers;
+
+.poster {
+
+	&__container {
+		width: 100%;
+		margin-bottom: 40px;
+
+		@include helpers.mobile() {
+			margin-bottom: 50px;
+		}
+
+		@include helpers.laptop() {
+			margin-bottom: 60px;
+		}
+
+		@include helpers.desktop() {
+			margin-bottom: 56px;
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
