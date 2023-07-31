@@ -19,7 +19,7 @@ export const path = {
 		js: `${srcFolder}/js/index.js`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
 		fonts: `${srcFolder}/fonts/**/*.*`,
-		manifest: `${srcFolder}/img/favIcon/site.webmanifest`,
+		manifest: `${srcFolder}/img/favIcon/*.*`,
 	},
 	watch: {
 		js: `${srcFolder}/js/**/*.js`,
