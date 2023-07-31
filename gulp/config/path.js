@@ -11,7 +11,7 @@ export const path = {
 		js: `${buildFolder}/js/`,
 		images: `${buildFolder}/img/`,
 		fonts: `${buildFolder}/fonts/`,
-		manifest:`${buildFolder}/`,
+		manifest:`${buildFolder}/img/favIcon/`,
 	},
 	src: {
 		html: `${srcFolder}/*.html`,
@@ -19,7 +19,7 @@ export const path = {
 		js: `${srcFolder}/js/index.js`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
 		fonts: `${srcFolder}/fonts/**/*.*`,
-		manifest: `${srcFolder}/*.webmanifest`,
+		manifest: `${srcFolder}/img/favIcon/site.webmanifest`,
 	},
 	watch: {
 		js: `${srcFolder}/js/**/*.js`,
