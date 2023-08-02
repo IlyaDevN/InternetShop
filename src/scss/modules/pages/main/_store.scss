@@ -1,0 +1,502 @@
+@use "./../../../common/forwarded" as helpers;
+@import "./../../node_modules/leaflet/dist/leaflet";
+
+.store {
+
+	&__container {
+		position: relative;
+		height: 468px;
+		margin-bottom: 40px;
+
+		@include helpers.mobile() {
+			height: 573px;
+			margin-bottom: 50px;
+		}
+
+		@include helpers.tablet() {
+			height: 594px;
+			margin-bottom: 50px;
+		}
+
+		@include helpers.laptop() {
+			height: 760px;
+			margin-bottom: 60px;
+		}
+
+		@include helpers.desktop() {
+			height: 769px;
+		}
+	}
+
+	&__photo {
+		width: 166px;
+		height: 305px;
+		margin-left: auto;
+
+		@include helpers.mobile() {
+			width: 295px;
+			height: 417px;
+		}
+
+		@include helpers.tablet() {
+			width: 362px;
+			height: 486px;
+			margin: 0 auto;
+		}
+
+		@include helpers.laptop() {
+			width: 457px;
+			height: 643px;
+			margin-left: 229px;
+		}
+
+		@include helpers.desktop() {
+			width: 560px;
+			height: 643px;
+			margin-left: 291px;
+		}
+
+		.store__photo-img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__title {
+		color: helpers.$color-black;
+		font-family: "Sunday Best [rus by aLiNcE]", arial;
+		font-size: 1.625rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		position: absolute;
+		top: 41px;
+		left: 0;
+		line-height: 1.93;
+
+		@include helpers.mobile() {
+			font-size: 2.25rem;
+			top: 46px;
+			line-height: 1.92;
+		}
+
+		@include helpers.tablet() {
+			font-size: 3.375rem;
+			top: 105px;
+			line-height: 1.91;
+		}
+
+		@include helpers.laptop() {
+			top: 150px;
+		}
+
+		@include helpers.laptop() {
+			top: 109px;
+			left: 95px;
+		}
+	}
+
+	&__contacts {
+		font-family: "Montserrat", sans-serif;
+		font-weight: 400;
+		font-size: 0.75rem;
+		line-height: 16px;
+		width: 117px;
+		position: absolute;
+		left: 0;
+		top: 229px;
+
+		@include helpers.mobile() {
+			top: 234px;
+		}
+
+		@include helpers.tablet() {
+			font-size: 1rem;
+			line-height: 20px;
+			width: 156px;
+			top: 386px;
+		}
+
+		@include helpers.laptop() {
+			width: 220px;
+			top: 590px;
+		}
+
+		@include helpers.desktop() {
+			width: 220px;
+			top: 583px;
+			left: 54px;
+		}
+
+		& p:nth-child(2) {
+			margin-bottom: 16px;
+		}
+
+		& p {
+			@include helpers.laptop() {
+				display: inline-block;
+			}
+		}
+	}
+
+	&__description {
+		color: #1F1F1F;
+		font-family: "Montserrat", sans-serif;
+		font-size: 0.75rem;
+		font-weight: 400;
+		line-height: 16px;
+		width: 192px;
+		position: absolute;
+		left: 0;
+		top: 329px;
+
+		@include helpers.mobile() {
+			width: 220px;
+			top: 437px;
+			left: unset;
+			right: 0;
+		}
+
+		@include helpers.tablet() {
+			font-size: 1rem;
+			line-height: 20px;
+			width: 168px;
+			top: 220px;
+		}
+
+		@include helpers.laptop() {
+			width: 200px;
+			top: 341px;
+		}
+
+		@include helpers.desktop() {
+			width: 230px;
+			top: 363px;
+			right: unset;
+			left: 866px;
+		}
+	}
+
+	&__map {
+		width: 110px;
+		height: 100px;
+		border-radius: 16px;
+		box-shadow: -1px 2px 2px 0px helpers.$color-shadow-grey;
+		position: absolute;
+		right: 0;
+		top: 272px;
+
+		@include helpers.mobile() {
+			width: 220px;
+			height: 180px;
+			border-radius: 24px;
+			top: 334px;
+			right: unset;
+			left: 0;
+		}
+
+		@include helpers.tablet() {
+			width: 280px;
+			height: 174px;
+			top: 420px;
+			left: unset;
+			right: 0;
+		}
+
+		@include helpers.laptop() {
+			width: 273px;
+			height: 246px;
+			top: 514px;
+		}
+
+		@include helpers.desktop() {
+			top: 523px;
+			right: unset;
+			left: 768px;
+		}
+	}
+
+	&__route {
+		width: 188px;
+		height: 44px;
+		position: absolute;
+		top: 424px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+
+		@include helpers.mobile() {
+			top: 529px;
+		}
+
+		@include helpers.tablet() {
+			top: 513px;
+			left: 188px;
+			right: unset;
+		}
+
+		@include helpers.laptop() {
+			top: 690px;
+			left: 336px;
+		}
+
+		@include helpers.desktop() {
+			left: 455px;
+		}
+
+		&_text {
+			font-family: "Sunday Best [rus by aLiNcE]", arial;
+			font-size: 0.75rem;
+			font-weight: 400;
+			color: helpers.$color-white;
+			text-transform: uppercase;
+			position: absolute;
+			top: 32%;
+			left: 0;
+			right: 0;
+			text-align: center;
+		}
+	}
+
+	&__vector-1 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 35px;
+			height: 16px;
+			position: absolute;
+			top: 0;
+			left: 576px;
+		}
+
+		@include helpers.laptop() {
+			display: block;
+			width: 42px;
+			height: 18px;
+			left: 685px;
+		}
+
+		@include helpers.desktop() {
+			display: none;
+		}
+	}
+
+	&__vector-2 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 35px;
+			height: 16px;
+			position: absolute;
+			top: 30px;
+			left: 494px;
+			transform: rotate(287deg);
+		}
+
+		@include helpers.laptop() {
+			display: block;
+			width: 42px;
+			height: 18px;
+			left: 605px;
+		}
+
+		@include helpers.desktop() {
+			top: 10px;
+			left: 815px;
+		}
+	}
+
+	&__vector-3 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 14px;
+			height: 23px;
+			position: absolute;
+			top: 63px;
+			left: 582px;
+		}
+
+		@include helpers.laptop() {
+			width: 16px;
+			height: 26px;
+			top: 90px;
+			left: 733px;
+		}
+
+		@include helpers.desktop() {
+			top: 81px;
+			left: 860px;
+		}
+	}
+
+	&__vector-4 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 99px;
+			height: 23px;
+			position: absolute;
+			top: 114px;
+			left: 514px;
+		}
+
+		@include helpers.laptop() {
+			width: 115px;
+			height: 27px;
+			top: 165px;
+			left: 671px;
+		}
+
+		@include helpers.desktop() {
+			top: 164px;
+			left: 815px;
+		}
+	}
+
+	&__vector-5 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 28px;
+			height: 14px;
+			position: absolute;
+			top: 462px;
+			left: 175px;
+		}
+
+		@include helpers.laptop() {
+			width: 33px;
+			height: 16px;
+			top: 604px;
+			left: 248px;
+		}
+
+		@include helpers.desktop() {
+			left: 314px;
+		}
+	}
+
+	&__vector-6 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 20px;
+			height: 22px;
+			position: absolute;
+			top: 504px;
+			left: 133px;
+		}
+
+		@include helpers.laptop() {
+			width: 25px;
+			height: 23px;
+			top: 662px;
+			left: 247px;
+		}
+
+		@include helpers.desktop() {
+			top: 650px;
+			left: 330px;
+		}
+	}
+
+	&__vector-7 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 20px;
+			height: 22px;
+			position: absolute;
+			top: 511px;
+			left: 142px;
+		}
+
+		@include helpers.laptop() {
+			width: 25px;
+			height: 23px;
+			top: 671px;
+			left: 258px;
+		}
+
+		@include helpers.desktop() {
+			top: 658px;
+			left: 342px;
+		}
+	}
+
+	&__vector-8 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 52px;
+			height: 59px;
+			position: absolute;
+			top: 37px;
+			left: 675px;
+		}
+
+		@include helpers.laptop() {
+			width: 60px;
+			height: 69px;
+			top: 21px;
+			left: 799px;
+		}
+
+		@include helpers.desktop() {
+			top: 17px;
+			left: 910px;
+		}
+	}
+
+	&__vector-9 {
+		display: none;
+
+		@include helpers.tablet() {
+			display: block;
+			width: 43px;
+			height: 49px;
+			position: absolute;
+			top: 528px;
+			left: 64px;
+		}
+
+		@include helpers.laptop() {
+			width: 51px;
+			height: 55px;
+			top: 681px;
+			left: 160px;
+		}
+
+		@include helpers.desktop() {
+			top: 694px;
+			left: 245px;
+		}
+	}
+
+	&__vector-10 {
+		display: none;
+
+		@include helpers.laptop() {
+			display: block;
+			width: 33px;
+			height: 16px;
+			position: absolute;
+			top: 129px;
+			left: 829px;
+		}
+
+		@include helpers.desktop() {
+			top: 120px;
+			left: 970px;
+		}
+	}
+}
