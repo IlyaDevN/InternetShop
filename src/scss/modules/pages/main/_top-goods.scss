@@ -1,0 +1,202 @@
+@use "./../../../common/forwarded" as helpers;
+
+$textWidth: 170px;
+$textGap: 44px;
+
+@include helpers.tablet() {
+	$textWidth: 262px;
+	$textGap: 87px;
+}
+
+.top-goods {
+
+	.running-line {
+		height: 60px;
+		padding: 10px 0;
+		background-color: helpers.$color-pink;
+		width: 100%;
+		margin-bottom: 10px;
+	
+		@include helpers.tablet() {
+			height: 80px;
+		}
+	
+		@include helpers.laptop() {
+			margin-bottom: 15px;
+		}
+	
+		&__container {
+			height: 40px;
+			border-top: 2px solid helpers.$color-red;
+			border-bottom: 2px solid helpers.$color-red;
+			display: flex;
+			align-items: center;
+			width: calc($textWidth*10 + $textGap*10);
+			animation: line 7s linear infinite;
+	
+			@include helpers.tablet() {
+				$textWidth: 262px;
+				$textGap: 87px;
+				width: calc($textWidth*10 + $textGap*10);
+				height: 60px;
+				animation: line 8s linear infinite;
+			}
+	
+			@keyframes line {
+				0% {
+					transform: translateX(0);
+				}
+				100% {
+					transform: translateX(-50%);
+				}
+			}
+		}
+	
+		&__text-container {
+			width: calc($textWidth*5 + $textGap*5);
+			display: flex;
+			justify-content: space-around;
+	
+			@include helpers.tablet() {
+				$textWidth: 262px;
+				$textGap: 87px;
+				width: calc($textWidth*5 + $textGap*5);
+			}
+		}
+	
+		&__text {
+			font-family: "Montserrat", sans-serif;
+			font-size: 1rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			min-width: 170px;
+	
+			@include helpers.tablet() {
+				font-size: 1.563rem;
+				min-width: 262px;
+			}
+		}
+	}
+
+	&__container {
+		position: relative;
+		margin-bottom: 40px;
+
+		@include helpers.mobile() {
+			margin-bottom: 50px;
+		}
+
+		@include helpers.laptop() {
+			margin-bottom: 60px;
+		}
+		
+		.couple-good-container {
+			width: 100%;
+			display: flex;
+			margin-bottom: 4px;
+	
+			@include helpers.tablet() {
+				width: 290px;
+			}
+
+			@include helpers.laptop() {
+				flex-direction: column;
+				gap: 8px;
+				width: 214px;
+				margin-bottom: 0;
+			}
+	
+			@include helpers.desktop() {
+				width: 264px;
+				gap: 0;
+			}
+		}
+
+		.top-goods__poster {
+			width: 290px;
+			height: 374px;
+			margin-bottom: 4px;
+
+			@include helpers.mobile() {
+				width: 450px;
+				height: 578px;
+			}
+	
+			@include helpers.tablet() {
+				width: 438px;
+				height: 564px;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+	
+			@include helpers.laptop() {
+				width: 327px;
+				height: 422px;
+				left: 229px;
+				right: unset;
+			}
+	
+			@include helpers.desktop() {
+				width: 466px;
+				height: 600px;
+				left: 289px;
+			}
+
+
+			&_img {
+				@extend %image_inner;
+			}
+		}
+
+		.top-goods__watch-everything {
+			display: block;
+			width: 159px;
+			height: 44px;
+			margin: 15px auto 0;
+			position: relative;
+		
+			@include helpers.tablet() {
+				width: 180px;
+				height: 50px;
+				margin: 27px auto 0;
+			}
+
+			@include helpers.laptop() {
+				margin: 0;
+				position: absolute;
+				top: 449px;
+				left: 307px;
+			}
+
+			@include helpers.desktop() {
+				position: relative;
+				top: unset;
+				left: unset;
+				margin: 27px auto 0;
+			}
+		
+			&-text {
+				font-family: "Sunday Best [rus by aLiNcE]", arial;
+				font-size: 0.75rem;
+				font-weight: 400;
+				text-transform: uppercase;
+				color: helpers.$color-white;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				top: 32%;
+		
+				@include helpers.tablet() {
+					font-size: 0.85rem;
+				}
+			}
+		}
+		
+	}
+}
+
+
+

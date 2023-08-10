@@ -1,0 +1,26 @@
+<!-- container sizes: 
+320:  290x402
+480:  450x568
+768:  289x354
+1000: 328x530
+1440: 370x600 -->
+
+<a class="product-card-290x402" href="#">
+	<div class="product-card-290x402__photo">
+		<picture>
+			<source srcset="{{item.img_src_1440}}" type="image/jpeg" media="(min-width:1440px)">
+			<source srcset="{{item.img_src_1000}}" type="image/jpeg" media="(min-width:1000px)">
+			<source srcset="{{item.img_src_768}}" type="image/jpeg" media="(min-width:768px)">
+			<source srcset="{{item.img_src_480}}" type="image/jpeg" media="(min-width:480px)">
+			<img class="product-card-290x402__photo-img" src="{{item.img_src_320}}" alt="">
+		</picture>
+	</div>
+	<div class="product-card-290x402__heart-icon">
+		{% include "html/icons_svg/novelty/heart-icon.html" %}
+	</div>
+	<div class="product-card-290x402__line"></div>
+	<div class="product-card-290x402__description">
+		<p class="product-card-290x402__description_name">{{item.description_name}}</p>
+		<p class="product-card-290x402__description_price">{{item.description_price}}</p>
+	</div>
+</a>
