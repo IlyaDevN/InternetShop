@@ -1,26 +1,40 @@
 {% set novelty_items = [
-	
-	{
-		"img_name": "photo_1",
+	{	
+		"img_src_320": "img/pages/main/novelty/320/photo_1_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_1_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_1_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_1_x1000.jpg",
+		"img_src_1440": "img/pages/main/novelty/1440/photo_1_x1440.jpg",
 		"description_name": "Cвитшот вставка клетка",
 		"description_price": "1 099 ₴"
 	},
-	{
-		"img_name": "photo_2",
+	{	
+		"img_src_320": "img/pages/main/novelty/320/photo_2_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_2_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_2_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_2_x1000.jpg",
+		"img_src_1440": "img/pages/main/novelty/1440/photo_2_x1440.jpg",
 		"description_name": "Платье прозрачное в цветочек чееное",
 		"description_price": "1 299 ₴"
 	},
 	{
-		"img_name": "photo_3",
+		"img_src_320": "img/pages/main/novelty/320/photo_3_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_3_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_3_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_3_x1000.jpg",
+		"img_src_1440": "img/pages/main/novelty/1440/photo_3_x1440.jpg",
 		"description_name": "Платье-футболка рыбы в аквариуме",
 		"description_price": "899 ₴"
 	},
-	{
-		"img_name": "photo_4",
+	{	
+		"img_src_320": "img/pages/main/novelty/320/photo_4_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_4_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_4_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_4_x1000.jpg",
+		"img_src_1440": "img/pages/main/novelty/1440/photo_4_x1440.jpg",
 		"description_name": "Бомбер Gone Crazy хаки",
 		"description_price": "2 499 ₴"
 	}
-
 ] %}
 
 <section class="novelty">
@@ -34,25 +48,7 @@
 		</div>
 		<div class="novelty-items__container">
 			{% for item in novelty_items %}
-			<a class="novelty-item" href="#">
-				<div class="novelty-item__photo">
-					<picture>
-						<source srcset="img/pages/main/novelty/1440/{{item.img_name}}_x1440.jpg" type="image/jpeg" media="(min-width:1440px)">
-						<source srcset="img/pages/main/novelty/1000/{{item.img_name}}_x1000.jpg" type="image/jpeg" media="(min-width:1000px)">
-						<source srcset="img/pages/main/novelty/768/{{item.img_name}}_x768.jpg" type="image/jpeg" media="(min-width:768px)">
-						<source srcset="img/pages/main/novelty/480/{{item.img_name}}_x480.jpg" type="image/jpeg" media="(min-width:480px)">
-						<img class="novelty-item__photo-img" src="img/pages/main/novelty/320/{{item.img_name}}_x320.jpg" alt="">
-					</picture>
-				</div>
-				<div class="novelty-item__heart-icon">
-					{% include "html/icons_svg/novelty/heart-icon.html" %}
-				</div>
-				<div class="novelty-item__line"></div>
-				<div class="novelty-item__description">
-					<p class="novelty-item__description_name">{{item.description_name}}</p>
-					<p class="novelty-item__description_price">{{item.description_price}}</p>
-				</div>
-			</a>
+				{% include "html/components/product-cards/product-card-145x200-1.html" %}
 			{% endfor %}
 		</div>
 		<a class="watch-everything-icon" href="#">
