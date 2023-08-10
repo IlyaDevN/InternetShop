@@ -37,15 +37,15 @@
 	}
 ] %}
 
+{% set title = {
+	"name": "новинки",
+	"subname": "новинки",
+	"extra_class": "big__title_novelty"
+} %}
+
 <section class="novelty">
 	<div class="novelty__container _container">
-		<div class="novelty__title">
-			<p class="novelty__title_name">новинки</p>
-			<p class="novelty__title_subname">новинки</p>
-			<div class="title-line-icon">
-				{% include "html/icons_svg/novelty/title-line-icon.html" %}
-			</div>
-		</div>
+		{% include "html/components/elements/big-title.html" %}
 		<div class="novelty-items__container">
 			{% for item in novelty_items %}
 				{% include "html/components/product-cards/product-card-145x200-1.html" %}

@@ -1,0 +1,65 @@
+@use "../../common/forwarded" as helpers;
+
+.big__title {
+	position: relative;
+
+	&_name {
+		color: helpers.$color-pink;
+		font-family: "Sunday Best [rus by aLiNcE]";
+		font-size: 1.625rem;
+		font-weight: 400;
+		line-height: 1.92;
+
+		@include helpers.mobile() {
+			font-size: 2.25rem;
+		}
+
+		@include helpers.tablet() {
+			font-size: 3.375rem;
+		}
+	}
+
+	&_subname {
+		color: helpers.$color-black;
+		font-family: "Montserrat", sans-serif;
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.22;
+		text-transform: uppercase;
+		position: absolute;
+		top: 31px;
+		left: 0;
+
+		@include helpers.mobile() {
+			font-size: 1rem;
+			top: 47px;
+		}
+
+		@include helpers.tablet() {
+			font-size: 1.563rem;
+			top: 70px;
+		}
+	}
+
+	&_line-icon {
+		width: 24px;
+		height: 6px;
+		position: absolute;
+		top: 37px;
+		left: 82px;
+	
+		@include helpers.mobile() {
+			width: 37px;
+			height: 9px;
+			top: 52px;
+			left: 97px;
+		}
+	
+		@include helpers.tablet() {
+			width: 65px;
+			height: 15px;
+			top: 78px;
+			left: 154px;
+		}
+	}
+}
