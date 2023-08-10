@@ -185,6 +185,7 @@
 		position: absolute;
 		right: 0;
 		top: 272px;
+		@include helpers.zIndex(layer_min);
 
 		@include helpers.mobile() {
 			width: 220px;
