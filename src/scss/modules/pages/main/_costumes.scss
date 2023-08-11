@@ -1,0 +1,308 @@
+@use "../../../common/forwarded" as helpers;
+
+.costumes {
+
+	.big__title_costumes {
+		margin-bottom: 10px;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 15px;
+
+		@include helpers.tablet() {
+			grid-template-columns: repeat(3, 1fr);
+			margin-bottom: 27px;
+		}
+
+		@include helpers.laptop() {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__card {
+		position: relative;
+
+		@include helpers.tablet() {
+			&:nth-child(4) {
+				display: none;
+			}
+		}
+
+		@include helpers.laptop() {
+			&:nth-child(4) {
+				display: block;
+			}
+		}
+	}
+
+	&__photo {
+		width: 100%;
+
+		&_img {
+			@extend %image_inner;
+		}
+	}
+
+	&__price-top {
+		width: 48px;
+		height: 26px;
+		position: absolute;
+
+		@include helpers.tablet() {
+			width: 77px;
+			height: 48px;
+		}
+
+		@include helpers.desktop() {
+			width: 105px;
+			height: 67px;
+		}
+
+		&-1 {
+			top: 24%;
+			left: 9%;
+
+			@include helpers.mobile() {
+				top: 25%;
+				left: 17%;
+			}
+			
+			@include helpers.tablet() {
+				top: 21%;
+				left: 10%;
+			}
+
+			@include helpers.laptop() {
+				top: 18%;
+				left: 7%;
+			}
+
+			@include helpers.desktop() {
+				top: 19%;
+				left: 8%;
+			}
+		}
+
+		&-2 {
+			top: 14%;
+			left: 61%;
+
+			@include helpers.mobile() {
+				top: 18%;
+				left: 66%;
+			}
+
+			@include helpers.tablet() {
+				top: 13%;
+				left: 62%;
+			}
+
+			@include helpers.laptop() {
+				top: 11%;
+				left: 61%;
+			}
+
+			@include helpers.desktop() {
+				top: 12%;
+				left: 62%;
+			}
+		}
+
+		&-3 {
+			top: 32%;
+			left: 66%;
+
+			@include helpers.mobile() {
+				top: 34%;
+				left: 69%;
+			}
+
+			@include helpers.tablet() {
+				top: 31%;
+				left: 2%;
+				
+				._svg{
+					transform: scale(-1, 1);
+				}
+			}
+
+			@include helpers.laptop() {
+				top: 28%;
+				left: 6%;
+			}
+
+			@include helpers.desktop() {
+				top: 25%;
+				left: 10%;
+			}
+		}
+
+		&-4 {
+			top: 30%;
+			left: 13%;
+
+			@include helpers.mobile() {
+				top: 27%;
+				left: 15%;
+			}
+
+			@include helpers.laptop() {
+				top: 22%;
+				left: 65%;
+
+				._svg{
+					transform: scale(-1, 1);
+				}
+			}
+
+			@include helpers.desktop() {
+				top: 33%;
+				left: 11%;
+			}
+		}
+	}
+
+	&__price-bottom {
+		width: 48px;
+		height: 26px;
+		position: absolute;
+
+		@include helpers.tablet() {
+			width: 77px;
+			height: 48px;
+		}
+
+		@include helpers.desktop() {
+			width: 105px;
+			height: 67px;
+		}
+
+		&-1 {
+			top: 64%;
+			left: 56%;
+
+			@include helpers.mobile() {
+				top: 62%;
+				left: 59%;
+			}
+
+			@include helpers.tablet() {
+				top: 72%;
+				left: 57%;
+			}
+
+			@include helpers.laptop() {
+				top: 68%;
+				left: 56%;
+			}
+
+			@include helpers.desktop() {
+				top: 62%;
+				left: 64%;
+			}
+		}
+
+		&-2 {
+			top: 58%;
+			left: 11%;
+
+			@include helpers.mobile() {
+				top: 57%;
+				left: 13%;
+			}
+
+			@include helpers.tablet() {
+				top: 56%;
+				left: 7%;
+			}
+
+			@include helpers.laptop() {
+				top: 57%;
+				left: 10%;
+			}
+
+			@include helpers.desktop() {
+				top: 49%;
+				left: 7%;
+			}
+		}
+
+		&-3 {
+			top: 63%;
+			left: 9%;
+
+			@include helpers.mobile() {
+				top: 56%;
+				left: 8%;
+			}
+
+			@include helpers.tablet() {
+				top: 68%;
+				left: 64%;
+
+				._svg{
+					transform: scale(-1, 1);
+				}
+			}
+
+			@include helpers.laptop() {
+				top: 67%;
+				left: 64%;
+			}
+
+			@include helpers.desktop() {
+				top: 57%;
+				left: 67%;
+			}
+		}
+
+		&-4 {
+			top: 70%;
+			left: 60%;
+
+			@include helpers.mobile() {
+				top: 83%;
+				left: 65%;
+			}
+
+			@include helpers.laptop() {
+				top: 78%;
+				left: 19%;
+
+				._svg{
+					transform: scale(-1, 1);
+				}
+			}
+
+			@include helpers.desktop() {
+				top: 74%;
+				left: 18%;
+			}
+
+		}
+	}
+
+	&__price-name {
+		position: absolute;
+		font-family: "Montserrat", sans-serif;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: helpers.$color-black;
+		left: 0;
+		right: 0;
+		text-align: center;
+		top: 16%;
+
+		@include helpers.tablet() {
+			font-size: 1rem;
+			top: 24%;
+		}
+
+		@include helpers.desktop() {
+			font-size: 1.563rem;
+			top: 23%;
+		}
+	}
+}
