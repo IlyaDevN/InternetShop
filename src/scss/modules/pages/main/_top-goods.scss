@@ -128,6 +128,7 @@ $textGap: 44px;
 				position: absolute;
 				top: 0;
 				right: 0;
+				margin-bottom: 0;
 			}
 	
 			@include helpers.laptop() {
@@ -143,22 +144,15 @@ $textGap: 44px;
 				left: 289px;
 			}
 
-
 			&_img {
 				@extend %image_inner;
 			}
 		}
 
-		.top-goods__watch-everything {
-			display: block;
-			width: 159px;
-			height: 44px;
+		.watch-everything-icon {
 			margin: 15px auto 0;
-			position: relative;
 		
 			@include helpers.tablet() {
-				width: 180px;
-				height: 50px;
 				margin: 27px auto 0;
 			}
 
@@ -175,26 +169,11 @@ $textGap: 44px;
 				left: unset;
 				margin: 27px auto 0;
 			}
-		
-			&-text {
-				font-family: "Sunday Best [rus by aLiNcE]", arial;
-				font-size: 0.75rem;
-				font-weight: 400;
-				text-transform: uppercase;
-				color: helpers.$color-white;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				text-align: center;
-				top: 32%;
-		
-				@include helpers.tablet() {
-					font-size: 0.85rem;
-				}
-			}
 		}
-		
+	}
+
+	.watch-everything-path {
+		fill: helpers.$color-red;
 	}
 }
 
