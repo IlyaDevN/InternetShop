@@ -1,0 +1,43 @@
+{% set insta_photos = [
+	{
+		"number": "1"
+	},
+	{
+		"number": "2"
+	},
+	{
+		"number": "3"
+	},
+	{
+		"number": "4"
+	},
+	{
+		"number": "5"
+	}
+] %}
+
+<section class="instagram">
+	<div class="instagram__container _container">
+		<p class="instagram__title">instagram</p>
+		<p class="instagram__comment">Мы в экстазе, когда ты нас отмечаешь) Отмечай плз чаще</p>
+		{% for item in insta_photos %}
+		<div class="instagram__photo-{{item.number}}">
+			<picture>
+				<source srcset="img/pages/main/instagram/1440/photo_{{item.number}}_x1440.jpg" type="image/jpeg"
+					media="(min-width:1440px)">
+				<source srcset="img/pages/main/instagram/1000/photo_{{item.number}}_x1000.jpg" type="image/jpeg"
+					media="(min-width:1000px)">
+				<source srcset="img/pages/main/instagram/768/photo_{{item.number}}_x768.jpg" type="image/jpeg"
+					media="(min-width:768px)">
+				<source srcset="img/pages/main/instagram/480/photo_{{item.number}}_x480.jpg" type="image/jpeg"
+					media="(min-width:480px)">
+				<img class="instagram__photo-{{item.number}}_img _img" src="img/pages/main/instagram/320/photo_{{item.number}}_x320.jpg" loading="lazy" alt="Фото из инстаграм">
+			</picture>
+		</div>
+		{% endfor %}
+		<div class="instagram__hashtag">
+			<a class="instagram__hashtag_link" href="#">#boorivagirls</a>
+			<p class="instagram__hashtag_comment">Ставь тэг чтобы быть в нашей тусовке.</p>
+		</div>
+	</div>
+</section>
