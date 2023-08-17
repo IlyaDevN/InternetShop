@@ -1,0 +1,90 @@
+@use "../../../common/forwarded" as helpers;
+
+.footer {
+	background-color: helpers.$color-pink;
+
+	&__container {
+		padding: 40px 11px;
+		margin-bottom: 60px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "info contacts" "write-ivanka write-ivanka";
+	}
+
+	&__title {
+		font-family: "Sunday Best [rus by aLiNcE]";
+		font-size: 0.625rem;
+		font-weight: 400;
+		line-height: 1.2;
+		color: helpers.$color-red;
+		display: inline-block;
+	}
+
+	&__text {
+		font-family: "Montserrat", sans-serif;
+		font-size: 0.625rem;
+		font-weight: 400;
+		line-height: 1.2;
+		color: helpers.$color-white;
+		display: block;
+		margin-bottom: 10px;
+		white-space: pre-line;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__info {
+		grid-area: info;
+
+		&_title {
+			letter-spacing: 1px;
+			margin-bottom: 15px;
+		}
+
+		&_social-links {
+			letter-spacing: -1rem;
+		}
+
+		&_social-link {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+
+			&:first-child {
+				margin-right: 13px;
+			}
+		}
+	}
+	
+	&__contacts {
+		grid-area: contacts;
+		padding-left: 35px;
+
+		&_title {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__write-ivanka {
+		grid-area: write-ivanka;
+		margin-top: 25px;
+
+		&_avatar {
+			width: 58px;
+			height: 58px;
+			float: left;
+			margin-right: 20px;
+		}
+
+		&_text {
+			margin-bottom: 12px;
+		}
+
+		&_title {
+			border-bottom: 1px solid helpers.$color-red;
+			line-height: 2;
+		}
+	}
+}
