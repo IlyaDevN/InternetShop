@@ -9,6 +9,12 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-areas: "info contacts" "write-ivanka write-ivanka";
+
+		@include helpers.mobile() {
+			padding: 40px 0;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas: "info contacts write-ivanka";
+		}
 	}
 
 	&__title {
@@ -52,8 +58,17 @@
 			width: 12px;
 			height: 12px;
 
+			@include helpers.mobile() {
+				width: 18px;
+				height: 18px;
+			}
+
 			&:first-child {
 				margin-right: 13px;
+
+				@include helpers.mobile() {
+					margin-right: 18px;
+				}
 			}
 		}
 	}
@@ -62,8 +77,18 @@
 		grid-area: contacts;
 		padding-left: 35px;
 
+		@include helpers.mobile() {
+			padding-left: 0;
+		}
+
 		&_title {
 			margin-bottom: 15px;
+		}
+
+		&_item {
+			@include helpers.mobile() {
+				margin-bottom: 12px;
+			}
 		}
 	}
 
@@ -71,11 +96,22 @@
 		grid-area: write-ivanka;
 		margin-top: 25px;
 
+		@include helpers.mobile() {
+			margin-top: 0;
+		}
+
 		&_avatar {
 			width: 58px;
 			height: 58px;
 			float: left;
 			margin-right: 20px;
+
+			@include helpers.mobile() {
+				width: 32px;
+				height: 32px;
+				float: unset;
+				margin: 0 0 12px;
+			}
 		}
 
 		&_text {
