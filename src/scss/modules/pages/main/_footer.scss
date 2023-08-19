@@ -15,6 +15,11 @@
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-areas: "info contacts write-ivanka";
 		}
+
+		@include helpers.tablet() {
+			grid-template-columns: 1fr 1fr minmax(228px, 1fr);
+			padding: 50px 60px;
+		}
 	}
 
 	&__title {
@@ -24,6 +29,10 @@
 		line-height: 1.2;
 		color: helpers.$color-red;
 		display: inline-block;
+
+		@include helpers.tablet() {
+			font-size: 0.75rem;
+		}
 	}
 
 	&__text {
@@ -36,6 +45,10 @@
 		margin-bottom: 10px;
 		white-space: pre-line;
 
+		@include helpers.tablet() {
+			font-size: 0.75rem;
+		}
+
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -47,6 +60,10 @@
 		&_title {
 			letter-spacing: 1px;
 			margin-bottom: 15px;
+
+			@include helpers.tablet() {
+				margin-bottom: 18px;
+			}
 		}
 
 		&_social-links {
@@ -83,6 +100,10 @@
 
 		&_title {
 			margin-bottom: 15px;
+
+			@include helpers.tablet() {
+				margin-bottom: 18px;
+			}
 		}
 
 		&_item {
@@ -112,6 +133,13 @@
 				float: unset;
 				margin: 0 0 12px;
 			}
+
+			@include helpers.tablet() {
+				width: 51px;
+				height: 51px;
+				float: left;
+				margin: 0 23px 0 0;
+			}
 		}
 
 		&_text {
@@ -121,6 +149,11 @@
 		&_title {
 			border-bottom: 1px solid helpers.$color-red;
 			line-height: 2;
+
+			@include helpers.tablet() {
+				margin-left: 74px;
+				white-space: pre-line;
+			}
 		}
 	}
 }
