@@ -19,6 +19,7 @@
 		@include helpers.tablet() {
 			grid-template-columns: 1fr 1fr minmax(228px, 1fr);
 			padding: 50px 60px;
+			margin-bottom: 0;
 		}
 
 		@include helpers.laptop() {
