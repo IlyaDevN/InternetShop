@@ -1,22 +1,36 @@
 <footer class="footer">
 	<div class="footer__container _container">
+		<a class="footer__logo" href="#">{% include "html/icons_svg/common/logo-icon.html" %}</a>
 		<div class="footer__info">
 			<span class="footer__info_title footer__title">Инфо</span>
+			<a class="footer__info_item footer__info_item-contacts footer__text" href="#">Контакты</a>
 			<a class="footer__info_item footer__text" href="#">Обмен и возврат</a>
 			<a class="footer__info_item footer__text" href="#">Система лояльности</a>
 			<a class="footer__info_item footer__text" href="#">Доставка и оплата</a>
 			<div class="footer__info_social-links">
-				<a class="footer__info_social-link" href="">{% include "html/icons_svg/footer/instagram-icon.html" %}</a>
-				<a class="footer__info_social-link" href="">{% include "html/icons_svg/footer/facebook-icon.html" %}</a>
+				<a class="footer__info_social-link footer__social-link" href="">{% include "html/icons_svg/footer/instagram-icon.html" %}</a>
+				<a class="footer__info_social-link footer__social-link" href="">{% include "html/icons_svg/footer/facebook-icon.html" %}</a>
 			</div>
 		</div>
 		<div class="footer__contacts">
-			<a class="footer__contacts_title footer__title" href="#">Контакты</a>
+			<a class="footer__contacts_title footer__contacts_title-to768 footer__title" href="#">Контакты</a>
+			<span class="footer__contacts_title footer__contacts_title-from1000 footer__title">Наш адрес</span>
 			<p class="footer__contacts_item footer__text">г.Киев,
 				ул. Нижний Вал, 37</p>
 			<p class="footer__contacts_item footer__text">Ежедневно:
 				с 11:00 до 21:00</p>
-			<a class="footer__contacts_item footer__text" href="tel:+38 000 000 00 00">+38 000 000 00 00</a>
+			<a class="footer__contacts_item footer__contacts_item-tel footer__text" href="tel:+38 000 000 00 00">+38 000 000 00 00</a>
+		</div>
+		<div class="footer__social-networks">
+			<span class="footer__social-networks_title footer__title">Соц.сети</span>
+			<div class="footer__social-networks_social-links">
+				<a class="footer__social-networks_social-link footer__social-link" href="">
+					{% include "html/icons_svg/footer/instagram-icon.html" %}
+				</a>
+				<a class="footer__social-networks_social-link footer__social-link" href="">
+					{% include "html/icons_svg/footer/facebook-icon.html" %}
+				</a>
+			</div>
 		</div>
 		<div class="footer__write-ivanka">
 			<div class="footer__write-ivanka_avatar">
@@ -28,8 +42,11 @@
 					<img class="_img" src="img/pages/main/footer/320/avatar_x320.png" loading="lazy" alt="Аватар Иванки">
 				</picture>
 			</div>
-			<p class="footer__write-ivanka_text footer__text">Нам важно знать,
-				что ты думаешь про нас! Просто напиши мне!</p>
+			<div class="footer__write-ivanka_text footer__text">
+				<span>Нам важно знать,
+					что ты думаешь про нас!</span>
+				<span>Просто напиши мне!</span>
+			</div>
 			<a class="footer__write-ivanka_title footer__title" href="#">Написать Иванке</a>
 		</div>
 	</div>
