@@ -1,5 +1,9 @@
 {% extends "html/layouts/default.html" %}
 
+{% block css %}
+	<link rel="stylesheet" href="css/index.min.css">
+{% endblock %}
+
 {% block content %}
 	{% include "html/pages/main/categories.html" %}
 	{% include "html/pages/main/menu.html" %}
@@ -11,4 +15,8 @@
 	{% include "html/pages/main/transport.html" %}
 	{% include "html/pages/main/instagram.html" %}
 	{% include "html/pages/main/modal-menu.html" %}
+{% endblock %}
+
+{% block js %}
+	<script type="module" src="js/index.min.js"></script>
 {% endblock %}
