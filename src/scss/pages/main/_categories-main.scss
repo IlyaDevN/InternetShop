@@ -1,6 +1,6 @@
 @use "../../common/forwarded" as helpers;
 
-.categories {
+.categories-main {
 
 	&__container {
 		display: grid;
@@ -53,18 +53,8 @@
 		height: 100%;
 	}
 
-	&__img {
-		width: 100%;
-		height: 100%;
-	}
-
 	&__name-img-container {
 		position: absolute;
-	}
-
-	&__name-img {
-		width: 100%;
-		height: 100%;
 	}
 
 	&__name {

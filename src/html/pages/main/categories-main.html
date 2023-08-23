@@ -2,46 +2,40 @@
 	{
 		"name": "t-shirt",
 		"text": "футболки",
-		"img_src": "html/icons_svg/categories/t-shirt_name_background.html",
 		"img_alt": "Футболки"
 	},
 	{
 		"name": "dress",
 		"text": "платья",
-		"img_src": "html/icons_svg/categories/dress_name_background.html",
 		"img_alt": "Платье"
 	},
 	{
 		"name": "clothes-bottom",
 		"text": "низ",
-		"img_src": "html/icons_svg/categories/clothes-bottom_name_background.html",
 		"img_alt": "Обувь"
 	},
 	{
 		"name": "clothes-top",
 		"text": "верх",
-		"img_src": "html/icons_svg/categories/clothes-top_name_background.html",
 		"img_alt": "Верхняя одежда"
 	},
 	{
 		"name": "hoody",
 		"text": "худи",
-		"img_src": "html/icons_svg/categories/hoody_name_background.html",
 		"img_alt": "Худи"
 	},
 	{
 		"name": "costume",
 		"text": "костюмы",
-		"img_src": "html/icons_svg/categories/costume_name_background.html",
 		"img_alt": "Костюмы"
 	}
 ] %}
 
-<section class="categories">
-	<div class="categories__container _container">
+<section class="categories-main">
+	<div class="categories-main__container _container">
 		{% for item in categories %}
-		<div class="categories__item {{item.name}}">
-			<a class="categories__link" href="#">
+		<div class="categories-main__item {{item.name}}">
+			<a class="categories-main__link" href="#">
 				<picture>
 					<source srcset="img/pages/main/categories/1440/{{item.name}}_x1440.jpg" type="image/jpeg"
 						media="(min-width:1440px)">
@@ -51,9 +45,9 @@
 						media="(min-width:768px)">
 					<source srcset="img/pages/main/categories/480/{{item.name}}_x480.jpg" type="image/jpeg"
 						media="(min-width:480px)">
-					<img class="categories__img" src="img/pages/main/categories/320/{{item.name}}_x320.jpg" alt="{{item.img_alt}}">
+					<img class="_img" src="img/pages/main/categories/320/{{item.name}}_x320.jpg" alt="{{item.img_alt}}">
 				</picture>
-				<div class="{{item.name}}__name-img-container categories__name-img-container">
+				<div class="{{item.name}}__name-img-container categories-main__name-img-container">
 					<picture>
 						<source srcset="img/pages/main/categories/1440/{{item.name}}_name_x1440.svg" type="image/jpeg"
 							media="(min-width:1440px)">
@@ -63,9 +57,9 @@
 							media="(min-width:768px)">
 						<source srcset="img/pages/main/categories/480/{{item.name}}_name_x480.svg" type="image/jpeg"
 							media="(min-width:480px)">
-						<img class="categories__name-img" src="img/pages/main/categories/320/{{item.name}}_name_x320.svg" alt="Розовый фон для надписи">
+						<img class="_svg" src="img/pages/main/categories/320/{{item.name}}_name_x320.svg" alt="Розовый фон для надписи">
 					</picture>
-					<p class="{{item.name}}__name categories__name">{{item.text}}</p>
+					<p class="{{item.name}}__name categories-main__name">{{item.text}}</p>
 				</div>
 			</a>
 		</div>
