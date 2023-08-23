@@ -13,7 +13,7 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="img/favIcon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" href="css/index.min.css">
+	{% block css %}{% endblock %}
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="">
@@ -26,7 +26,7 @@
 		{% include "html/pages/main/footer.html" %}
 	</div>
 	
-	<script type="module" src="js/index.min.js"></script>
+	{% block js %}{% endblock %}
 </body>
 
 </html>
