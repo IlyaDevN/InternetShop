@@ -1,4 +1,5 @@
-import webpack from "webpack-stream"
+import webpack from "webpack-stream";
+import {glob} from "glob";
 
 export function js() {
 	return app.gulp.src(app.path.src.js, { sourcemaps: app.isDev })
@@ -10,8 +11,9 @@ export function js() {
 		))
 		.pipe(webpack({
 			mode: app.isBuild ? "production" : "development",
+			entry: getEntries(),
 			output: {
-				filename: "index.min.js",
+				filename: "[name].min.js",
 			}
 		}))
 		.pipe(app.gulp.dest(app.path.build.js))
@@ -20,4 +22,18 @@ export function js() {
 				app.isDev,
 				app.plugins.browsersync.stream())
 		);
+}
+
+function getEntries() {
+	const entryArray = glob.sync(app.path.src.js);
+	let entries = {};
+	entryArray.forEach(function (path) {
+		console.log(path);
+		let pathParts = path.split("\\");
+		console.log(pathParts);
+		let fileName = pathParts[pathParts.length - 1].slice(0, -3);
+		console.log(fileName);
+		entries[fileName] = "./" + path;
+	});
+	return entries;
 }
