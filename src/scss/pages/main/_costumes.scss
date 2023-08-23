@@ -39,10 +39,6 @@
 
 	&__photo {
 		width: 100%;
-
-		&_img {
-			@extend %image_inner;
-		}
 	}
 
 	&__price-top {
