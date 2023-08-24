@@ -25,7 +25,7 @@ export function js() {
 }
 
 function getEntries() {
-	const entryArray = glob.sync(app.path.src.js);
+	const entryArray = glob.sync(app.path.src.js, {windowsPathsNoEscape: false});
 	console.log(entryArray);
 	let entries = {};
 	entryArray.forEach(function (path) {
