@@ -28,11 +28,8 @@ function getEntries() {
 	const entryArray = glob.sync(app.path.src.js);
 	let entries = {};
 	entryArray.forEach(function (path) {
-		console.log(path);
 		let pathParts = path.split("\\");
-		console.log(pathParts);
 		let fileName = pathParts[pathParts.length - 1].slice(0, -3);
-		console.log(fileName);
 		entries[fileName] = "./" + path;
 	});
 	return entries;

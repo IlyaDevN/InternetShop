@@ -6,7 +6,7 @@ const closeButton = modal.querySelector(".menu__close-button");
 const menuNameButton = document.querySelector(".menu__name_button");
 const menuListContainerMain = modal.querySelector(".menu__list-container-main");
 const menuItems = modal.querySelectorAll(".menu__item, .menu__sub-item");
-const categories = document.querySelector(".categories__container");
+const categories = document.querySelector(".categories-main__container");
 
 let activeSubNameMenu = null;
 let activeSubMenu = null;
