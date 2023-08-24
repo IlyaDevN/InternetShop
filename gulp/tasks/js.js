@@ -25,11 +25,11 @@ export function js() {
 }
 
 function getEntries() {
-	const entryArray = glob.sync(app.path.src.js, {windowsPathsNoEscape: false});
+	const entryArray = glob.sync(app.path.src.js, {posix: true});
 	console.log(entryArray);
 	let entries = {};
 	entryArray.forEach(function (path) {
-		let pathParts = path.split("\\");
+		let pathParts = path.split("/");
 		console.log(pathParts);
 		let fileName = pathParts[pathParts.length - 1].slice(0, -3);
 		console.log(fileName);
