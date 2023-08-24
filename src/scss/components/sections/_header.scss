@@ -8,17 +8,23 @@
 	@include helpers.zIndex(layer_middle);
 
 	&__container {
-		padding: 10px 0 8px;
+		padding: 10px 15px 8px;
 
 		@include helpers.mobile() {
-			padding: 12px 0 14px;
+			padding: 12px 15px 14px;
 		}
 
 		@include helpers.tablet() {
-			padding: 6px 0 51px;
+			padding: 6px 15px 51px;
 		}
 
 		@include helpers.laptop() {
+			padding: 10px 15px 51px;
+		}
+
+		@include helpers.desktop() {
+			width: 1140px;
+			margin: 0 auto;
 			padding: 10px 0 51px;
 		}
 
@@ -36,16 +42,12 @@
 
 				@include helpers.tablet() {
 					height: 28px;
-					margin-right: 126px;
-				}
-
-				@include helpers.laptop() {
-					margin-right: 180px;
+					margin: 0 auto;
 				}
 
 				@include helpers.desktop() {
 					height: 40px;
-					margin-right: 215px;
+					margin: 0 215px 0 auto;
 				}
 		
 				.logo-icon_svg {
@@ -77,7 +79,7 @@
 				}
 
 				@include helpers.tablet {
-					margin-right: auto;
+					margin-right: 0;
 					order: -1;
 				}
 

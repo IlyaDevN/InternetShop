@@ -16,17 +16,12 @@
 		right: 0;
 		top: 76px;
 		margin: 0 auto;
-		width: 738px;
 		height: auto;
 		visibility: visible;
 		opacity: 1;
 		background-color: initial;
 		transform: translateX(0);
 		transition: none;
-	}
-
-	@include helpers.laptop() {
-		width: 908px;
 	}
 
 	@include helpers.desktop() {
@@ -166,6 +161,14 @@
 			transform: translateX(0);
 			transition: transform 0.5s;
 
+			@include helpers.tablet {
+				padding: 0 15px;
+			}
+
+			@include helpers.desktop {
+				padding: 0;
+			}
+
 			&.inactive {
 				transform: translateX(-100vw);
 
@@ -187,6 +190,7 @@
 			}
 
 			@include helpers.tablet() {
+				width: calc(100% - 30px);
 				right: 0;
 				margin: 0 auto;
 				padding: 10px 0;
@@ -204,6 +208,7 @@
 			}
 
 			@include helpers.desktop() {
+				width: 100%;
 				top: 27px;
 				padding: 15px 0;
 			}
