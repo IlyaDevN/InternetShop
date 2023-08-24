@@ -5,13 +5,14 @@
 	&__container {
 		display: grid;
 		grid-gap: 4px;
-		margin-top: 39px;
-		margin-bottom: 39px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		padding: 0 15px;
+		margin: 39px auto;
 
 		@include helpers.mobile() {
-			margin-top: 50px;
 			grid-gap: 8px;
-			margin-top: 58px;
+			margin: 58px auto;
 		}
 
 		@include helpers.tablet() {
@@ -79,14 +80,8 @@
 
 .t-shirt {
 	grid-row: 1/3;
-	grid-column: 1/3;
-	width: 177px;
-	height: 232px;
-
-	@include helpers.mobile() {
-		width: 272px;
-		height: 366px;
-	}
+	grid-column: 1/4;
+	width: 100%;
 
 	@include helpers.tablet() {
 		grid-row: 1/2;
@@ -107,13 +102,12 @@
 
 	&__name-img-container {
 		width: 122px;
-		height: 34px;
-		top: 149px;
-		left: 7px;
+		top: 62%;
+		left: 5%;
 
 		@include helpers.mobile() {
-			top: 311px;
-			left: 21px;
+			top: 82%;
+			left: 8%;
 		}
 	
 		@include helpers.tablet() {
@@ -146,14 +140,8 @@
 
 .dress {
 	grid-row: 1/2;
-	grid-column: 3/4;
-	width: 109px;
-	height: 114px;
-
-	@include helpers.mobile() {
-		width: 170px;
-		height: 179px;
-	}
+	grid-column: 4/6;
+	width: 100%;
 
 	@include helpers.tablet() {
 		grid-row: 1/2;
@@ -175,13 +163,13 @@
 	&__name-img-container {
 		width: 94px;
 		height: 34px;
-		top: 64px;
-		left: 7px;
+		top: 60%;
+		left: 7%;
 		transform: rotate(1.8deg);
 
 		@include helpers.mobile() {
-			top: 96px;
-			left: 24px;
+			top: 52%;
+			left: 14%;
 		}
 	
 		@include helpers.tablet() {
@@ -207,14 +195,8 @@
 
 .clothes-bottom {
 	grid-row: 2/3;
-	grid-column: 3/4;
-	width: 109px;
-	height: 114px;
-
-	@include helpers.mobile() {
-		width: 170px;
-		height: 179px;
-	}
+	grid-column: 4/6;
+	width: 100%;
 
 	@include helpers.tablet() {
 		grid-row: 2/3;
@@ -236,13 +218,13 @@
 	&__name-img-container {
 		width: 63px;
 		height: 35px;
-		top: 51px;
-		left: 51px;
+		top: 48%;
+		left: 50%;
 		transform: rotate(-44deg);
 
 		@include helpers.mobile() {
-			top: 128px;
-			left: 98px;
+			top: 69%;
+			left: 56%;
 		}
 	
 		@include helpers.tablet() {
@@ -271,14 +253,8 @@
 
 .clothes-top {
 	grid-row: 3/4;
-	grid-column: 1/2;
-	width: 109px;
-	height: 114px;
-
-	@include helpers.mobile() {
-		width: 170px;
-		height: 179px;
-	}
+	grid-column: 1/3;
+	width: 100%;
 
 	@include helpers.tablet() {
 		grid-row: 2/3;
@@ -300,13 +276,13 @@
 	&__name-img-container {
 		width: 83px;
 		height: 35px;
-		top: 50px;
-		left: 23px;
+		top: 47%;
+		left: 20%;
 		transform: rotate(2.3deg);
 
 		@include helpers.mobile() {
-			top: 132px;
-			left: 78px;
+			top: 71%;
+			left: 45%;
 		}
 	
 		@include helpers.tablet() {
@@ -338,14 +314,8 @@
 
 .hoody {
 	grid-row: 4/5;
-	grid-column: 1/2;
-	width: 109px;
-	height: 114px;
-
-	@include helpers.mobile() {
-		width: 170px;
-		height: 179px;
-	}
+	grid-column: 1/3;
+	width: 100%;
 
 	@include helpers.tablet() {
 		grid-row: 2/3;
@@ -370,13 +340,13 @@
 	&__name-img-container {
 		width: 82px;
 		height: 34px;
-		top: 46px;
-		left: 6px;
+		top: 39%;
+		left: 5%;
 		transform: rotate(2.5deg);
 
 		@include helpers.mobile() {
-			top: 122px;
-			left: 12px;
+			top: 66%;
+			left: 7%;
 		}
 	
 		@include helpers.tablet() {
@@ -411,14 +381,8 @@
 
 .costume {
 	grid-row: 3/5;
-	grid-column: 2/5;
-	width: 177px;
-	height: 232px;
-
-	@include helpers.mobile() {
-		width: 272px;
-		height: 366px;
-	}
+	grid-column: 3/6;
+	width: 100%;
 
 	@include helpers.tablet() {
 		grid-row: 1/2;
@@ -440,13 +404,13 @@
 	&__name-img-container {
 		width: 101px;
 		height: 35px;
-		top: 151px;
-		left: 16px;
+		top: 62%;
+		left: 9%;
 		transform: rotate(2.2deg);
 
 		@include helpers.mobile() {
-			top: 310px;
-			left: 22px;
+			top: 82%;
+			left: 8%;
 		}
 	
 		@include helpers.tablet() {
