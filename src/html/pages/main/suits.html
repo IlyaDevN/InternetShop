@@ -1,0 +1,70 @@
+{% set title = {
+	"name": "костюмы",
+	"subname": "костюмы",
+	"extra_class": "big__title_suit"
+} %}
+
+{% set items = [
+	{
+		"number": "1",
+		"price_top_src": "html/icons_svg/suits/right-price-icon.html",
+		"price_top_name": "1 899 ₴",
+		"price_bottom_src": "html/icons_svg/suits/left-price-icon.html",
+		"price_bottom_name": "899 ₴"
+	},
+	{
+		"number": "2",
+		"price_top_src": "html/icons_svg/suits/left-price-icon.html",
+		"price_top_name": "1 899 ₴",
+		"price_bottom_src": "html/icons_svg/suits/right-price-icon.html",
+		"price_bottom_name": "899 ₴"
+	},
+	{
+		"number": "3",
+		"price_top_src": "html/icons_svg/suits/left-price-icon.html",
+		"price_top_name": "1 899 ₴",
+		"price_bottom_src": "html/icons_svg/suits/right-price-icon.html",
+		"price_bottom_name": "899 ₴"
+	},
+	{
+		"number": "4",
+		"price_top_src": "html/icons_svg/suits/right-price-icon.html",
+		"price_top_name": "1 899 ₴",
+		"price_bottom_src": "html/icons_svg/suits/left-price-icon.html",
+		"price_bottom_name": "899 ₴"
+	}
+] %}
+
+<section class="suits">
+	<div class="suits__container _container">
+		{% include "html/components/elements/big-title.html" %}
+	</div>
+	<div class="suits__content">
+		{% for item in items %}
+		<a class="suits__card" href="">
+			<div class="suits__photo">
+				<picture>
+					<source srcset="img/pages/main/suits/1440/photo_{{item.number}}_x1440.jpg" type="image/jpeg"
+						media="(min-width:1440px)">
+					<source srcset="img/pages/main/suits/1000/photo_{{item.number}}_x1000.jpg" type="image/jpeg"
+						media="(min-width:1000px)">
+					<source srcset="img/pages/main/suits/768/photo_{{item.number}}_x768.jpg" type="image/jpeg"
+						media="(min-width:768px)">
+					<source srcset="img/pages/main/suits/480/photo_{{item.number}}_x480.jpg" type="image/jpeg"
+						media="(min-width:480px)">
+					<img class="_img" src="img/pages/main/suits/320/photo_{{item.number}}_x320.jpg" loading="lazy" alt="Модель костюма">
+				</picture>
+				<div class="suits__price-top suits__price-top-{{item.number}}">
+					{% include item.price_top_src %}
+					<p class="suits__price-name">{{item.price_top_name}}</p>
+				</div>
+				<div class="suits__price-bottom suits__price-bottom-{{item.number}}">
+					{% include item.price_bottom_src %}
+					<p class="suits__price-name">{{item.price_bottom_name}}</p>
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+	</div>
+	{% include "html/components/elements/watch-everything.html" %}
+</section>
