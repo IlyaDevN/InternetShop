@@ -36,27 +36,16 @@
 
 .novelty-items__container {
 	display: grid;
-	// grid-template-columns: repeat(2, 145px);
 	grid-template-columns: repeat(2, 1fr);
 	margin-bottom: 15px;
 
-	@include helpers.mobile() {
-		// grid-template-columns: repeat(2, 225px);
-	}
-
 	@include helpers.tablet() {
-		// grid-template-columns: repeat(3, 246px);
 		grid-template-columns: repeat(3, 1fr);
 		margin-bottom: 27px;
 	}
 
 	@include helpers.laptop() {
-		// grid-template-columns: repeat(4, 227px);
 		grid-template-columns: repeat(4, 1fr);
-	}
-
-	@include helpers.desktop() {
-		// grid-template-columns: repeat(4, 285px);
 	}
 
 	.product-card-145x200-1 {
