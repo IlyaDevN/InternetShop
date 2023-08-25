@@ -3,9 +3,12 @@
 .instagram {
 
 	&__container {
+		min-width: 297px;
 		display: grid;
+		grid-template-columns: repeat(15, 1fr);
 		gap: 4px;
 		margin-bottom: 50px;
+		padding: 0 15px;
 
 		@include helpers.tablet() {
 			gap: 6px;
@@ -25,9 +28,8 @@
 		line-height: 1.92;
 		text-transform: uppercase;
 		color: helpers.$color-black;
-		grid-row: 1/2;
-		grid-column: 1/3;
-		margin-bottom: 10px;
+		grid-row: 1/5;
+		grid-column: 1/10;
 
 		@include helpers.mobile() {
 			grid-column: 1/2;
@@ -58,9 +60,8 @@
 		font-weight: 400;
 		line-height: 1.2;
 		color: helpers.$color-black;
-		width: 134px;
-		grid-row: 2/3;
-		grid-column: 1/2;
+		grid-row: 5/9;
+		grid-column: 1/8;
 
 		@include helpers.mobile() {
 			width: 193px;
@@ -78,11 +79,8 @@
 	}
 
 	&__photo-1 {
-		width: 74px;
-		height: 83px;
-		grid-row: 3/4;
-		grid-column: 1/2;
-		align-self: end;
+		grid-column: 1/5;
+		grid-row: 9/16;
 
 		@include helpers.mobile() {
 			width: 140px;
@@ -109,12 +107,8 @@
 	}
 
 	&__photo-2 {
-		width: 59px;
-		height: 64px;
-		grid-row: 3/4;
-		grid-column: 1/2;
-		align-self: end;
-		justify-self: right;
+		grid-column: 5/8;
+		grid-row: 11/16;
 
 		@include helpers.mobile() {
 			width: 110px;
@@ -139,10 +133,8 @@
 	}
 
 	&__photo-3 {
-		width: 148px;
-		height: 170px;
-		grid-row: 2/4;
-		grid-column: 2/3;
+		grid-column: 8/16;
+		grid-row: 5/18;
 
 		@include helpers.mobile() {
 			width: 192px;
@@ -170,10 +162,8 @@
 	}
 
 	&__photo-4 {
-		width: 137px;
-		height: 108px;
-		grid-row: 4/5;
-		grid-column: 1/2;
+		grid-column: 1/8;
+		grid-row: 16/25;
 
 		@include helpers.mobile() {
 			width: 254px;
@@ -234,8 +224,8 @@
 	}
 
 	&__hashtag {
-		grid-row: 4/5;
-		grid-column: 2/3;
+		grid-column: 8/16;
+		grid-row: 20/25;
 		align-self: end;
 
 		@include helpers.mobile() {
@@ -286,5 +276,10 @@
 				width: 250px;
 			}
 		}
+	}
+
+	._img {
+		object-fit: cover;
+		object-position: center center;
 	}
 }
