@@ -3,14 +3,16 @@
 .novelty {
 
 	&__container {
-		margin-bottom: 40px;
+		max-width: 1170px;
+		margin: 0 auto 40px;
+		padding: 0 15px;
 
 		@include helpers.mobile() {
-			margin-bottom: 50px;
+			margin: 0 auto 50px;
 		}
 
 		@include helpers.laptop() {
-			margin-bottom: 60px;
+			margin: 0 auto 60px;
 		}
 	}
 
@@ -25,32 +27,40 @@
 			margin-bottom: 26px;
 		}
 	}
+
+	._img {
+		object-fit: cover;
+		object-position: top center;
+	}
 }
 
 .novelty-items__container {
 	display: grid;
-	grid-template-columns: repeat(2, 145px);
+	// grid-template-columns: repeat(2, 145px);
+	grid-template-columns: repeat(2, 1fr);
 	margin-bottom: 15px;
 
 	@include helpers.mobile() {
-		grid-template-columns: repeat(2, 225px);
+		// grid-template-columns: repeat(2, 225px);
 	}
 
 	@include helpers.tablet() {
-		grid-template-columns: repeat(3, 246px);
+		// grid-template-columns: repeat(3, 246px);
+		grid-template-columns: repeat(3, 1fr);
 		margin-bottom: 27px;
 	}
 
 	@include helpers.laptop() {
-		grid-template-columns: repeat(4, 227px);
+		// grid-template-columns: repeat(4, 227px);
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	@include helpers.desktop() {
-		grid-template-columns: repeat(4, 285px);
+		// grid-template-columns: repeat(4, 285px);
 	}
 
 	.product-card-145x200-1 {
-	
+
 		@include helpers.tablet() {
 	
 			&:nth-child(4) {
@@ -61,6 +71,26 @@
 		@include helpers.laptop() {
 			&:nth-child(4) {
 				display: block;
+			}
+		}
+
+		&__photo {
+			width: 100%;
+			height: auto;
+			margin: 0 auto;
+
+			@include helpers.mobile() {
+				width: auto;
+				max-width: 250px;
+				height: 270px;
+			}
+
+			@include helpers.tablet() {
+				max-width: 270px;
+			}
+
+			@include helpers.laptop() {
+				max-width: 240px;
 			}
 		}
 	}
