@@ -3,6 +3,7 @@
 .categories-main {
 
 	&__container {
+		max-width: 1170px;
 		display: grid;
 		grid-gap: 4px;
 		grid-template-columns: repeat(5, 1fr);
@@ -30,10 +31,8 @@
 		}
 
 		@include helpers.desktop() {
-			width: 1140px;
 			grid-template-rows: repeat(13, 40px);
 			grid-gap: 15px;
-			padding: 0;
 		}
 
 		&.menu-open {

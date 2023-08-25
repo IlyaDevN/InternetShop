@@ -9,6 +9,7 @@
 
 	&__container {
 		padding: 10px 15px 8px;
+		max-width: 1170px;
 
 		@include helpers.mobile() {
 			padding: 12px 15px 14px;
@@ -23,9 +24,8 @@
 		}
 
 		@include helpers.desktop() {
-			width: 1140px;
 			margin: 0 auto;
-			padding: 10px 0 51px;
+			padding: 10px 15px 51px;
 		}
 
 		.header__first-line {

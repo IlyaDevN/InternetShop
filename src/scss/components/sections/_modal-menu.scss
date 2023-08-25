@@ -2,6 +2,7 @@
 
 .modal__menu {
 	width: 100%;
+	max-width: 1170px;
 	height: calc(100% - 58px);
 	position: fixed;
 	top: 0;
@@ -22,10 +23,6 @@
 		background-color: initial;
 		transform: translateX(0);
 		transition: none;
-	}
-
-	@include helpers.desktop() {
-		width: 1140px;
 	}
 
 	&.active {
@@ -163,10 +160,6 @@
 
 			@include helpers.tablet {
 				padding: 0 15px;
-			}
-
-			@include helpers.desktop {
-				padding: 0;
 			}
 
 			&.inactive {
