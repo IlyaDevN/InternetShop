@@ -34,20 +34,6 @@
 			grid-template-rows: repeat(13, 40px);
 			grid-gap: 15px;
 		}
-
-		&.menu-open {
-			@include helpers.tablet() {
-				margin-top: 150px;
-			}
-
-			@include helpers.laptop() {
-				margin-top: 154px;
-			}
-
-			@include helpers.desktop() {
-				margin-top: 169px;
-			}
-		}
 	}
 
 	&__item {

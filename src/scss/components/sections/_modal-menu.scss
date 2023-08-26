@@ -188,7 +188,7 @@
 				margin: 0 auto;
 				padding: 10px 0;
 				top: 27px;
-				border-bottom: 1px solid helpers.$color-grey;
+				border-bottom: 2px solid helpers.$color-grey;
 				transform: translateX(0);
 				opacity: 0;
 				visibility: hidden;
@@ -201,8 +201,7 @@
 			}
 
 			@include helpers.desktop() {
-				width: 100%;
-				top: 27px;
+				top: 25px;
 				padding: 15px 0;
 			}
 
@@ -283,13 +282,6 @@
 			}
 
 			&:hover {
-				@include helpers.tablet() {
-					font-style: italic;
-					color: helpers.$color-pink;
-				}
-			}
-
-			&.active {
 				@include helpers.tablet() {
 					font-style: italic;
 					color: helpers.$color-pink;

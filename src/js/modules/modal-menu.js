@@ -1,4 +1,4 @@
-import { mql768 } from './mediaQueries.js';
+// import { mql768 } from './mediaQueries.js';
 
 const modal = document.querySelector(".modal__menu");
 const openButton = document.querySelector(".menu__open-button");
@@ -6,7 +6,6 @@ const closeButton = modal.querySelector(".menu__close-button");
 const menuNameButton = document.querySelector(".menu__name_button");
 const menuListContainerMain = modal.querySelector(".menu__list-container-main");
 const menuItems = modal.querySelectorAll(".menu__item, .menu__sub-item");
-const categories = document.querySelector(".categories-main__container");
 
 let activeSubNameMenu = null;
 let activeSubMenu = null;
@@ -36,9 +35,9 @@ function closeModal() {
 	menuListContainerMain.classList.remove("inactive");
 	menuNameButton.classList.remove("active");
 
-	if (mql768.matches) {
-		categories.classList.remove("menu-open");
-	}
+	// if (mql768.matches) {
+	// 	categories.classList.remove("menu-open");
+	// }
 
 	if (activeSubNameMenu) {
 		activeSubNameMenu.classList.remove("active");
@@ -75,9 +74,9 @@ function menuItemHandler(menuItem) {
 			menuNameButton.classList.add("active");
 			menuListContainerMain.classList.add("inactive");
 
-			if (mql768.matches) {
-				categories.classList.add("menu-open");
-			}
+			// if (mql768.matches) {
+			// 	categories.classList.add("menu-open");
+			// }
 
 			activeMenuItem = menuItem;
 			activeSubNameMenu = subNameMenu;
@@ -92,6 +91,7 @@ function menuNameButtonHandler() {
 	if (menuNameButton.classList.contains("active")) {
 
 		menuListContainerMain.classList.remove("inactive");
+		activeMenuItem.classList.remove("active");
 		activeSubNameMenu.classList.remove("active");
 		activeSubMenu.classList.remove("active");
 		menuNameButton.classList.remove("active");
