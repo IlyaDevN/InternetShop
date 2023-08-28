@@ -1,1 +1,1 @@
-export const mql768 = window.matchMedia("(min-width: 768px)");
+export const mqlMin768 = window.matchMedia("(min-width: 768px)");

@@ -1,107 +1,124 @@
-// import { mql768 } from './mediaQueries.js';
+import { mqlMin768 } from './mediaQueries.js';
 
-const modal = document.querySelector(".modal__menu");
-const openButton = document.querySelector(".menu__open-button");
-const closeButton = modal.querySelector(".menu__close-button");
-const menuNameButton = document.querySelector(".menu__name_button");
-const menuListContainerMain = modal.querySelector(".menu__list-container-main");
-const menuItems = modal.querySelectorAll(".menu__item, .menu__sub-item");
+if(!mqlMin768.matches) {
+	const modal = document.querySelector(".modal__menu");
+	const openButton = document.querySelector(".menu__open-button");
+	const closeButton = modal.querySelector(".menu__close-button");
+	const menuNameButton = document.querySelector(".menu__name_button");
+	const menuListContainerMain = modal.querySelector(".menu__list-container-main");
+	const menuListContainer = modal.querySelector(".menu__list-container");
+	const menuItems = modal.querySelectorAll(".menu__item");
+	const menuSubItems = modal.querySelectorAll(".menu__sub-item");
 
-let activeSubNameMenu = null;
-let activeSubMenu = null;
-let activeMenuItem = null;
+	let activeSubMenuName = null;
+	let activeSubMenuList = null;
+	let activeMenuItem = null;
 
-openButton.addEventListener("click", () => {
-	if (modal.classList.contains("active")) {
-		closeModal();
-	} else {
-		openModal();
-	}
-});
+	menuItems.forEach(menuItem => menuItemHandler(menuItem));
+	menuSubItems.forEach(menuSubItem => menuSubItemHandler(menuSubItem));
 
-closeButton.addEventListener("click", closeModal);
-menuItems.forEach((item) => { menuItemHandler(item) });
-menuNameButton.addEventListener("click", menuNameButtonHandler);
+	closeButton.addEventListener("click", closeModal);
+	menuNameButton.addEventListener("click", menuNameButtonHandler);
+	openButton.addEventListener("click", () => {
+		modal.classList.contains("active") ? closeModal() : openModal();
+	});
 
-function openModal() {
-	modal.classList.add("active");
-	openButton.classList.add("active");
-	disableScroll();
-}
-
-function closeModal() {
-	modal.classList.remove("active");
-	openButton.classList.remove("active");
-	menuListContainerMain.classList.remove("inactive");
-	menuNameButton.classList.remove("active");
-
-	// if (mql768.matches) {
-	// 	categories.classList.remove("menu-open");
-	// }
-
-	if (activeSubNameMenu) {
-		activeSubNameMenu.classList.remove("active");
+	function openModal() {
+		modal.classList.add("active");
+		openButton.classList.add("active");
+		disableScroll();
 	}
 
-	if (activeSubMenu) {
-		activeSubMenu.classList.remove("active");
-	}
-	enableScroll();
-}
+	function closeModal() {
 
-function menuItemHandler(menuItem) {
-	menuItem.addEventListener("click", () => {
+		modal.classList.remove("active");
+		openButton.classList.remove("active");
+		menuListContainerMain.classList.remove("inactive");
+		menuNameButton.classList.remove("active");
+		enableScroll();
+
+		menuListContainer.classList.remove("active");
+
+		if (activeSubMenuName) {
+			activeSubMenuName.classList.remove("active");
+			activeSubMenuName = null;
+		}
+
+		if (activeSubMenuList) {
+			activeSubMenuList.classList.remove("active");
+			activeSubMenuList = null;
+		}
 
 		if (activeMenuItem) {
 			activeMenuItem.classList.remove("active");
+			activeMenuItem = null;
 		}
-
-		if (activeSubNameMenu) {
-			activeSubNameMenu.classList.remove("active");
-		}
-
-		if (activeSubMenu) {
-			activeSubMenu.classList.remove("active");
-		}
-
-		if (menuItem.dataset.hasOwnProperty("link")) {
-			const subNameMenu = document.getElementById(`${menuItem.dataset.link}-subname`);
-			const subMenu = document.getElementById(menuItem.dataset.link);
-
-			menuItem.classList.add("active");
-			subNameMenu.classList.add("active");
-			subMenu.classList.add("active");
-			menuNameButton.classList.add("active");
-			menuListContainerMain.classList.add("inactive");
-
-			// if (mql768.matches) {
-			// 	categories.classList.add("menu-open");
-			// }
-
-			activeMenuItem = menuItem;
-			activeSubNameMenu = subNameMenu;
-			activeSubMenu = subMenu;
-		} else {
-			closeModal();
-		}
-	})
-}
-
-function menuNameButtonHandler() {
-	if (menuNameButton.classList.contains("active")) {
-
-		menuListContainerMain.classList.remove("inactive");
-		activeMenuItem.classList.remove("active");
-		activeSubNameMenu.classList.remove("active");
-		activeSubMenu.classList.remove("active");
-		menuNameButton.classList.remove("active");
 	}
-}
 
-function disableScroll() {
-	document.body.classList.add("stop-scroll");
-}
+	function menuItemHandler(menuItem) {
+		menuItemHandlerOnClick(menuItem);
+	}
 
-function enableScroll() {
-	document.body.classList.remove("stop-scroll");
+	function menuSubItemHandler(menuSubItem) {
+		menuSubItemHandlerOnClick(menuSubItem);
+	}
+
+	function menuItemHandlerOnClick(menuItem) {
+		menuItem.addEventListener("click", () => {
+
+			if (activeMenuItem) {
+				activeMenuItem.classList.remove("active");
+			}
+
+			if (activeSubMenuName) {
+				activeSubMenuName.classList.remove("active");
+			}
+
+			if (activeSubMenuList) {
+				activeSubMenuList.classList.remove("active");
+			}
+
+			if (menuItem.dataset.hasOwnProperty("link")) {
+				const subMenuName = document.getElementById(`${menuItem.dataset.link}-subname`);
+				const subMenuList = document.getElementById(menuItem.dataset.link);
+
+				menuItem.classList.add("active");
+				menuListContainer.classList.add("active");
+				subMenuName.classList.add("active");
+				subMenuList.classList.add("active");
+				menuNameButton.classList.add("active");
+				menuListContainerMain.classList.add("inactive");
+
+				activeMenuItem = menuItem;
+				activeSubMenuName = subMenuName;
+				activeSubMenuList = subMenuList;
+			} else {
+				closeModal();
+			}
+		})
+	}
+
+	function menuSubItemHandlerOnClick(menuSubItem) {
+		menuSubItem.addEventListener("click", closeModal);
+	}
+
+	function menuNameButtonHandler() {
+		if (menuNameButton.classList.contains("active")) {
+
+			menuListContainerMain.classList.remove("inactive");
+			menuListContainer.classList.remove("active");
+			activeMenuItem.classList.remove("active");
+			activeSubMenuName.classList.remove("active");
+			activeSubMenuList.classList.remove("active");
+			menuNameButton.classList.remove("active");
+		}
+	}
+
+	function disableScroll() {
+		document.body.classList.add("stop-scroll");
+	}
+
+	function enableScroll() {
+		document.body.classList.remove("stop-scroll");
+	}
 }

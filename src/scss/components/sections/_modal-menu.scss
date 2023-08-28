@@ -15,7 +15,7 @@
 	@include helpers.tablet() {
 		left: 0;
 		right: 0;
-		top: 76px;
+		top: 60px;
 		margin: 0 auto;
 		height: auto;
 		visibility: visible;
@@ -167,6 +167,7 @@
 
 				@include helpers.tablet {
 					transform: translateX(0);
+
 				}
 			}
 		}
@@ -186,23 +187,25 @@
 				width: calc(100% - 30px);
 				right: 0;
 				margin: 0 auto;
-				padding: 10px 0;
-				top: 27px;
+				height: 38px;
+				top: 43px;
 				border-bottom: 2px solid helpers.$color-grey;
 				transform: translateX(0);
+				transform: translateY(-100%);
 				opacity: 0;
 				visibility: hidden;
-				transition: opacity 1s,
-					visibility 1s;
+				transition: opacity 0.5s,
+					visibility 0.5s,
+					transform 0.5s,
+					background-color 0.5s;
 			}
 
 			@include helpers.laptop() {
-				top: 31px;
+				top: 47px;
 			}
 
 			@include helpers.desktop() {
-				top: 25px;
-				padding: 15px 0;
+				top: 41px;
 			}
 
 			&.active {
@@ -210,6 +213,7 @@
 
 				@include helpers.tablet() {
 					background-color: helpers.$color-white;
+					transform: translateY(0);
 					opacity: 1;
 					visibility: visible;
 				}
@@ -245,6 +249,35 @@
 					gap: unset;
 				}
 			}
+
+			&_subList {
+				width: max-content;
+				transform: translate(-100vh);
+				position: absolute;
+				transition: transform 0.5s;
+
+				@include helpers.tablet() {
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					transform: translate(0);
+					opacity: 0;
+					visibility: hidden;
+					transition: opacity 1s,
+						visibility 1s;
+				}
+
+				&.active {
+					transform: translate(0);
+
+					@include helpers.tablet() {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
 		}
 
 		&__item {
@@ -262,6 +295,7 @@
 			@include helpers.tablet() {
 				font-size: 0.875rem;
 				color: helpers.$color-black;
+				line-height: 3;
 			}
 
 			@include helpers.laptop() {
@@ -278,6 +312,13 @@
 
 				.arrow-right-icon-svg-path {
 					fill: helpers.$color-red;
+				}
+			}
+
+			&.active {
+				@include helpers.tablet() {
+					font-style: italic;
+					color: helpers.$color-pink;
 				}
 			}
 
