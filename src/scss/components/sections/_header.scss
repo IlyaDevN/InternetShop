@@ -1,11 +1,40 @@
 @use "../../common/forwarded" as helpers;
 
 .header {
-	position: fixed;
-	top: 0;
 	width: 100%;
 	background-color: helpers.$color-white;
-	@include helpers.zIndex(layer_middle);
+
+	&.active {
+		position: fixed;
+		top: 0;
+		@include helpers.zIndex(layer_middle);
+
+		.pink-line-top {
+			position: fixed;
+			left: 0;
+			top: 34px;
+			width: 100%;
+			height: 1px;
+			background-color: helpers.$color-pink;
+			@include helpers.zIndex(layer_middle);
+		
+			@include helpers.mobile() {
+				top: 49px;
+			}
+		
+			@include helpers.tablet() {
+				top: 102px;
+			}
+		
+			@include helpers.laptop() {
+				top: 106px;
+			}
+		
+			@include helpers.desktop() {
+				top: 100px;
+			}
+		}
+	}
 
 	&__container {
 		padding: 10px 15px 8px;
@@ -290,30 +319,11 @@
 			}
 		}
 	}
-}
 
-.pink-line-top {
-	position: fixed;
-	left: 0;
-	top: 34px;
-	width: 100%;
-	height: 1px;
-	background-color: helpers.$color-pink;
-	@include helpers.zIndex(layer_middle);
-
-	@include helpers.mobile() {
-		top: 49px;
-	}
-
-	@include helpers.tablet() {
-		top: 102px;
-	}
-
-	@include helpers.laptop() {
-		top: 106px;
-	}
-
-	@include helpers.desktop() {
-		top: 100px;
+	.pink-line-top {
+		width: 100%;
+		height: 1px;
+		background-color: helpers.$color-pink;
 	}
 }
+

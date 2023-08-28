@@ -9,30 +9,30 @@
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 1fr);
 		padding: 0 15px;
-		margin: 39px auto;
+		margin: 4px auto;
 
 		@include helpers.mobile() {
 			grid-template-rows: repeat(4, 180px);
 			grid-gap: 8px;
-			margin: 58px auto 50px;
+			margin: 8px auto 50px;
 		}
 
 		@include helpers.tablet() {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: repeat(13, 25px);
 			transition: margin 0.5s;
-			margin: 113px auto 50px;
+			margin: 10px auto 50px;
 		}
 
 		@include helpers.laptop() {
 			grid-template-rows: repeat(13, 29px);
-			margin: 118px auto 50px;
 			grid-gap: 11px;
 		}
 
 		@include helpers.desktop() {
 			grid-template-rows: repeat(13, 40px);
 			grid-gap: 15px;
+			margin: 15px auto 50px;
 		}
 	}
 
