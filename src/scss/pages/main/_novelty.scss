@@ -4,7 +4,6 @@
 
 	&__container {
 		min-width: 320px;
-		max-width: 1170px;
 		margin: 0 auto 40px;
 		padding: 0 15px;
 
@@ -18,14 +17,15 @@
 	}
 
 	.big__title_novelty {
-		margin-bottom: 10px;
+		max-width: 1170px;
+		margin: 0 auto 10px;
 
 		@include helpers.tablet() {
-			margin-bottom: 24px;
+			margin: 0 auto 24px;
 		}
 	
 		@include helpers.desktop() {
-			margin-bottom: 26px;
+			margin: 0 auto 26px;
 		}
 	}
 
@@ -80,7 +80,7 @@
 			}
 
 			@include helpers.laptop() {
-				max-width: 240px;
+				max-width: 178px;
 			}
 		}
 	}
