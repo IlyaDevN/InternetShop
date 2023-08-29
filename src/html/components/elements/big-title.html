@@ -1,7 +1,9 @@
 <div class="big__title {{title.extra_class}}">
 	<p class="big__title_name">{{title.name}}</p>
-	<p class="big__title_subname">{{title.subname}}</p>
-	<div class="big__title_line-icon">
-		{% include "html/icons_svg/common/title-line-icon.html" %}
+	<div class="big__title_subname-container">
+		<p class="big__title_subname">{{title.subname}}</p>
+		<div class="big__title_line-icon">
+			{% include "html/icons_svg/common/title-line-icon.html" %}
+		</div>
 	</div>
 </div>

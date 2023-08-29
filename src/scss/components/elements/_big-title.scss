@@ -18,6 +18,24 @@
 			font-size: 3.375rem;
 		}
 	}
+	
+	&_subname-container {
+		position: absolute;
+		top: 31px;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+
+		@include helpers.mobile() {
+			top: 47px;
+			gap: 8px;
+		}
+
+		@include helpers.tablet() {
+			top: 70px;
+			gap: 17px;
+		}
+	}
 
 	&_subname {
 		color: helpers.$color-black;
@@ -26,40 +44,28 @@
 		font-weight: 600;
 		line-height: 1.22;
 		text-transform: uppercase;
-		position: absolute;
-		top: 31px;
-		left: 0;
 
 		@include helpers.mobile() {
 			font-size: 1rem;
-			top: 47px;
 		}
 
 		@include helpers.tablet() {
 			font-size: 1.563rem;
-			top: 70px;
 		}
 	}
 
 	&_line-icon {
 		width: 24px;
 		height: 6px;
-		position: absolute;
-		top: 37px;
-		left: 82px;
 	
 		@include helpers.mobile() {
 			width: 37px;
 			height: 9px;
-			top: 52px;
-			left: 97px;
 		}
 	
 		@include helpers.tablet() {
 			width: 65px;
 			height: 15px;
-			top: 78px;
-			left: 154px;
 		}
 	}
 }
