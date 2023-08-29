@@ -1,0 +1,31 @@
+{% set title = {
+	"name": "верх",
+	"subname": "топы"
+} %}
+
+<div class="top-content">
+	<div class="navigation-state">
+		<a class="navigation-state__link navigation-state__link_main" href="#">Главная</a>
+		<div class="navigation-state__arrow-icon">
+			{% include "html/icons_svg/common/nav-state-arrow-icon.html" %}
+		</div>
+		<a class="navigation-state__link navigation-state__link_category" href="#">Верх</a>
+		<div class="navigation-state__arrow-icon">
+			{% include "html/icons_svg/common/nav-state-arrow-icon.html" %}
+		</div>
+		<a class="navigation-state__link navigation-state__link_sub-category" href="#">Топы</a>
+		<div class="navigation-state__arrow-icon">
+			{% include "html/icons_svg/common/nav-state-arrow-icon.html" %}
+		</div>
+	</div>
+	<div class="top-content__poster">
+		<picture>
+			<source srcset="img/pages/categories/navigation-state/poster_x1200.jpg" type="image/jpeg" media="(min-width:1200px)">
+			<source srcset="img/pages/categories/navigation-state/poster_x1000.jpg"" type="image/jpeg" media="(min-width:1000px)">
+			<source srcset="img/pages/categories/navigation-state/poster_x768.jpg"" type="image/jpeg" media="(min-width:768px)">
+			<source srcset="img/pages/categories/navigation-state/poster_x480.jpg"" type="image/jpeg" media="(min-width:480px)">
+			<img class="_img" src="img/pages/categories/navigation-state/poster_x320.jpg"" loading="lazy" alt="Изображение одежды">
+		</picture>
+	</div>
+	{% include "html/components/elements/big-title.html" %}
+</div>
