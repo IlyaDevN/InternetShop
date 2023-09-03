@@ -62,10 +62,6 @@
 }
 
 .pink-line-bottom {
-	position: fixed;
-	left: 0;
-	bottom: 58px;
-	width: 100%;
 	height: 1px;
 	background-color: helpers.$color-pink;
 	@include helpers.zIndex(layer_middle);
