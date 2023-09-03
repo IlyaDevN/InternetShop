@@ -1,5 +1,6 @@
 const PAGE_TOP = 0;
 const button = document.getElementById("buttonScrollTop");
+const observedTarget = document.querySelector(".categories-main, .top-content__poster");
 
 button.addEventListener("click", ()=> window.scrollTo({
 	top: PAGE_TOP,
@@ -14,4 +15,6 @@ const buttonObserver = new IntersectionObserver(([entry]) => {
 	}
 });
 
-buttonObserver.observe(document.querySelector(".categories-main"));
+if(observedTarget) {
+	buttonObserver.observe(observedTarget);
+}
