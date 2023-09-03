@@ -1,0 +1,82 @@
+{% set goods = [
+	{	
+		"img_src_320": "img/pages/categories/goods/320/photo_1_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_1_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_1_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_1_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_1_x1440.jpg",
+		"description_name": "Платье прозрачное в цветочек чееное",
+		"description_price": "1 299 ₴"
+	},
+	{	
+		"img_src_320": "img/pages/categories/goods/320/photo_2_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_2_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_2_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_2_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_2_x1440.jpg",
+		"description_name": "Платье-футболка рыбы в аквариуме",
+		"description_price": "1 299 ₴"
+	},
+	{
+		"img_src_320": "img/pages/categories/goods/320/photo_3_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_3_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_3_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_3_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_3_x1440.jpg",
+		"description_name": "Платье в белый горошек красное",
+		"description_price": "1 299 ₴"
+	},
+	{	
+		"img_src_320": "img/pages/categories/goods/320/photo_1_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_1_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_1_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_1_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_1_x1440.jpg",
+		"description_name": "Платье прозрачное в цветочек чееное",
+		"description_price": "1 299 ₴"
+	},
+	{	
+		"img_src_320": "img/pages/categories/goods/320/photo_2_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_2_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_2_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_2_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_2_x1440.jpg",
+		"description_name": "Платье-футболка рыбы в аквариуме",
+		"description_price": "1 299 ₴"
+	},
+	{
+		"img_src_320": "img/pages/categories/goods/320/photo_3_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_3_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_3_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_3_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_3_x1440.jpg",
+		"description_name": "Платье в белый горошек красное",
+		"description_price": "1 299 ₴"
+	},
+	{	
+		"img_src_320": "img/pages/categories/goods/320/photo_1_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_1_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_1_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_1_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_1_x1440.jpg",
+		"description_name": "Платье прозрачное в цветочек чееное",
+		"description_price": "1 299 ₴"
+	},
+	{	
+		"img_src_320": "img/pages/categories/goods/320/photo_2_x320.jpg",
+		"img_src_480": "img/pages/categories/goods/480/photo_2_x480.jpg",
+		"img_src_768": "img/pages/categories/goods/768/photo_2_x768.jpg",
+		"img_src_1000": "img/pages/categories/goods/1000/photo_2_x1000.jpg",
+		"img_src_1440": "img/pages/categories/goods/1440/photo_2_x1440.jpg",
+		"description_name": "Платье-футболка рыбы в аквариуме",
+		"description_price": "1 299 ₴"
+	}
+] %}
+
+<section class="goods">
+	<div class="goods__container">
+		{% for item in goods %}
+			{% include "html/components/elements/product-card.html" %}
+		{% endfor %}
+	</div>
+</section>
