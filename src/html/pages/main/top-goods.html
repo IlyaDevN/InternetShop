@@ -4,7 +4,7 @@
 		"img_src_480": "img/pages/main/top_goods/480/photo_1_x480.jpg",
 		"img_src_768": "img/pages/main/top_goods/768/photo_1_x768.jpg",
 		"img_src_1000": "img/pages/main/top_goods/1000/photo_1_x1000.jpg",
-		"img_src_1440": "img/pages/main/top_goods/1440/photo_1_x1440.jpg",
+		"img_src_1200": "img/pages/main/top_goods/1200/photo_1_x1200.jpg",
 		"description_name": "Cвитшот вставка клетка",
 		"description_price": "1 099 ₴"
 	},
@@ -13,7 +13,7 @@
 		"img_src_480": "img/pages/main/top_goods/480/photo_2_x480.jpg",
 		"img_src_768": "img/pages/main/top_goods/768/photo_2_x768.jpg",
 		"img_src_1000": "img/pages/main/top_goods/1000/photo_2_x1000.jpg",
-		"img_src_1440": "img/pages/main/top_goods/1440/photo_2_x1440.jpg",
+		"img_src_1200": "img/pages/main/top_goods/1200/photo_2_x1200.jpg",
 		"description_name": "Платье прозрачное в цветочек чееное",
 		"description_price": "1 299 ₴"
 	}
@@ -24,7 +24,7 @@
 	"img_src_480": "img/pages/main/top_goods/480/photo_3_x480.jpg",
 	"img_src_768": "img/pages/main/top_goods/768/photo_3_x768.jpg",
 	"img_src_1000": "img/pages/main/top_goods/1000/photo_3_x1000.jpg",
-	"img_src_1440": "img/pages/main/top_goods/1440/photo_3_x1440.jpg",
+	"img_src_1200": "img/pages/main/top_goods/1200/photo_3_x1200.jpg",
 	"description_name": "Платье-футболка рыбы в аквариуме",
 	"description_price": "899 ₴"
 } %}
@@ -51,13 +51,13 @@
 	<div class="top-goods__container _container">
 		<div class="couple-good-container">
 			{% for item in top_goods_items %}
-				{% include "html/components/product-cards/product-card-145x200-2.html" %}
+				{% include "html/components/elements/product-card.html" %}
 			{% endfor %}
 		</div>
 		<div class="top-goods__poster">
 			<picture>
-				<source srcset="img/pages/main/top_goods/1440/big_photo_x1440.jpg" type="image/jpeg"
-					media="(min-width:1440px)">
+				<source srcset="img/pages/main/top_goods/1200/big_photo_x1200.jpg" type="image/jpeg"
+					media="(min-width:1200px)">
 				<source srcset="img/pages/main/top_goods/1000/big_photo_x1000.jpg" type="image/jpeg"
 					media="(min-width:1000px)">
 				<source srcset="img/pages/main/top_goods/768/big_photo_x768.jpg" type="image/jpeg"
@@ -67,7 +67,7 @@
 				<img class="_img" src="img/pages/main/top_goods/320/big_photo_x320.jpg" loading="lazy" alt="Девушка в модной одежде">
 			</picture>
 		</div>
-		{% include "html/components/product-cards/product-card-290x402.html" %}
+		{% include "html/components/elements/product-card.html" %}
 		{% include "html/components/elements/watch-everything.html" %}
 	</div>
 </section>
