@@ -9,7 +9,7 @@ const filterListMain = filterModal?.querySelector(".filter__categories-list");
 const filterListItems = filterListMain?.querySelectorAll(".categories-item__open-link");
 const filterListSubItems = filterModal?.querySelectorAll(".filter-item-text");
 
-if(!mqlMin768.matches && window.location.pathname === "/categories.html") {
+if(!mqlMin768.matches && filterModal) {
 	openButton.onclick = openButtonHandler;
 	closeButton.onclick = closeFilterModal;
 	filterListItems.forEach(list => { filterItemHandler(list) });
