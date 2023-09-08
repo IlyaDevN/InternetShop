@@ -4,12 +4,15 @@
 	<link rel="stylesheet" href="css/categories.min.css">
 {% endblock %}
 
+{% set page_class = "page_categories" %}
+
 {% block content %}
 	{% include "html/pages/categories/top-content.html" %}
 	{% include "html/pages/categories/goods.html" %}
 	{% include "html/components/sections/instagram.html" %}
 	{% include "html/components/sections/menu.html" %}
 	{% include "html/components/sections/modal-menu.html" %}
+	{% include "html/components/sections/modal-filter.html" %}
 	{% include "html/components/elements/buttonScrollTop.html" %}
 {% endblock %}
 

@@ -1,0 +1,253 @@
+{% set top = [
+{
+"name": "Комбинезоны",
+"href": "#"
+},
+{
+"name": "Пиджаки",
+"href": "#"
+},
+{
+"name": "Рубашки",
+"href": "#"
+},
+{
+"name": "Свитшоты",
+"href": "#"
+},
+{
+"name": "Худи",
+"href": "#"
+},
+{
+"name": "Топы",
+"href": "#"
+},
+{
+"name": "Футболки",
+"href": "#"
+}
+] %}
+
+{% set bottom = [
+{
+"name": "Все товары",
+"href": "#"
+},
+{
+"name": "Брюки",
+"href": "#"
+},
+{
+"name": "Велосипедки",
+"href": "#"
+},
+{
+"name": "Джинсы",
+"href": "#"
+},
+{
+"name": "Штаны",
+"href": "#"
+},
+{
+"name": "Шорты",
+"href": "#"
+},
+{
+"name": "Юбки",
+"href": "#"
+}
+] %}
+
+{% set jaket = [
+{
+"name": "Все товары",
+"href": "#"
+},
+{
+"name": "Бомберы",
+"href": "#"
+},
+{
+"name": "Джинсовки",
+"href": "#"
+},
+{
+"name": "Дождевики",
+"href": "#"
+},
+{
+"name": "Куртки",
+"href": "#"
+},
+{
+"name": "Пальта",
+"href": "#"
+},
+{
+"name": "Пуховики",
+"href": "#"
+},
+{
+"name": "Тренчи",
+"href": "#"
+}
+] %}
+
+{% set little_things = [
+{
+"name": "Все товары",
+"href": "#"
+},
+{
+"name": "Ремни",
+"href": "#"
+},
+{
+"name": "Шарфы",
+"href": "#"
+},
+{
+"name": "Украшения",
+"href": "#"
+}
+] %}
+
+{% set price = [
+{
+"name": "Все цены"
+},
+{
+"name": "до 500"
+},
+{
+"name": "500 — 1000"
+},
+{
+"name": "1000 — 1500"
+},
+{
+"name": "от 1500"
+}
+] %}
+
+{% set size = [
+{
+"name": "XS — S"
+},
+{
+"name": "S — M"
+},
+{
+"name": "M — L"
+},
+{
+"name": "L — XL"
+}
+] %}
+
+<div class="modal__filter">
+	<button class="filter__close-button">
+		{% include "html/icons_svg/menu/menu-close-button-icon.html" %}
+	</button>
+	<div class="filter__container">
+		<p class="filter__name">Категории:</p>
+		<div class="filter__categories-container">
+			<ul class="filter__categories-list">
+				<li class="categories-item filter-section">
+					<a class="categories-item__open-link" href="#">Платья</a>
+				</li>
+				<li class="categories-item filter-section">
+					<button class="categories-item__open-link" data-link="menu__clothes-top">Верх
+						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+					</button>
+					<ul class="categories-item__subList" id="filter__clothes-top">
+						{% for item in top %}
+						<li class="filter-item">
+							<div class="list-marker">
+								{% include "html/icons_svg/filter/marker-icon.html" %}
+							</div>
+							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="categories-item filter-section">
+					<button class="categories-item__open-link" data-link="filter__clothes-bottom">Низ
+						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+					</button>
+					<ul class="categories-item__subList" id="menu__clothes-bottom">
+						{% for item in bottom %}
+						<li class="filter-item">
+							<div class="list-marker">
+								{% include "html/icons_svg/filter/marker-icon.html" %}
+							</div>
+							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="categories-item filter-section">
+					<button class="categories-item__open-link" data-link="filter__clothes-jaket">Куртки
+						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+					</button>
+					<ul class="categories-item__subList" id="filter__clothes-jaket">
+						{% for item in jaket %}
+						<li class="filter-item">
+							<div class="list-marker">
+								{% include "html/icons_svg/filter/marker-icon.html" %}
+							</div>
+							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="categories-item filter-section">
+					<button class="categories-item__open-link" data-link="filter__clothes-little-things">Мелочи
+						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+					</button>
+					<ul class="categories-item__subList" id="menu__clothes-little-things">
+						{% for item in little_things %}
+						<li class="filter-item">
+							<div class="list-marker">
+								{% include "html/icons_svg/filter/marker-icon.html" %}
+							</div>
+							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="categories-item filter-section">
+					<a class="categories-item__open-link" href="#">Костюмы</a>
+				</li>
+			</ul>
+		</div>
+		<p class="filter__name filter__name_price">Цены:</p>
+		<div class="filter__price-container filter-section">
+			<ul class="price__list" id="filter__clothes-top">
+				{% for item in price %}
+				<li class="filter-item">
+					<div class="list-marker">
+						{% include "html/icons_svg/filter/marker-icon.html" %}
+					</div>
+					<button class="price__list-item-button filter-item-text">{{item.name}}</button>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<p class="filter__name filter__name_size">Размер:</p>
+		<div class="filter__size-container filter-section">
+			<ul class="size__list" id="filter__clothes-top">
+				{% for item in size %}
+				<li class="filter-item">
+					<div class="list-marker">
+						{% include "html/icons_svg/filter/marker-icon.html" %}
+					</div>
+					<button class="size__list-item-button filter-item-text">{{item.name}}</button>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

@@ -6,7 +6,7 @@
 	bottom: 0;
 	
 	background-color: helpers.$color-white;
-	@include helpers.zIndex(layer_middle);
+	@include helpers.zIndex(layer_top);
 
 	@include helpers.tablet() {
 		display: none;
@@ -21,10 +21,6 @@
 		@include helpers.mobile() {
 			justify-content: space-around;
 		}
-	}
-
-	&__item {
-		display: block;
 	}
 
 	&__icon-svg {
@@ -68,5 +64,84 @@
 
 	@include helpers.tablet() {
 		display: none;
+	}
+}
+
+.menu__filter-button {
+	display: none;
+}
+
+.page_categories {
+	
+	.menu__write {
+		margin-left: 20px;
+	}
+
+	.menu__cart {
+		margin-right: 20px;
+	}
+
+	.menu__filter-button {
+		display: block;
+		position: relative;
+		width: 58px;
+		height: 58px;
+		margin-top: -34px;
+
+		&.active {
+
+			.menu__filter-button-svg {
+				fill: helpers.$color-light-pink;
+			}
+	
+			.menu__filter-button-border-svg {
+				stroke: none;
+				fill: helpers.$color-light-pink;
+			}
+	
+			.menu__filter-button-svg_path-inner {
+				fill: helpers.$color-black;
+			}
+
+			.menu__filter-button_text {
+				color: helpers.$color-black;
+			}
+		}
+
+		&-svg {
+			fill: helpers.$color-red;
+			transition: fill 0.5s;
+		}
+
+		&-border-svg {
+			stroke: helpers.$color-dark-red;
+		}
+
+		&-svg_path-inner {
+			fill: helpers.$color-white;
+		}
+
+		&-icon-inner {
+			position: absolute;
+			top: 13px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 24px;
+			height: 24px;
+		}
+
+		&_text {
+			position: absolute;
+			top: 40px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			font-family: "Montserrat", sans-serif;
+			font-size: 0.5rem;
+			font-weight: 600;
+			line-height: 1.2;
+			color: helpers.$color-white;
+		}
 	}
 }

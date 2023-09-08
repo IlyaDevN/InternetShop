@@ -2,25 +2,34 @@
 	<div class="pink-line-bottom"></div>
 	<div class="menu__container _container">
 		<div class="menu__open">
-			<button class="menu__open-button menu__item">
+			<button class="menu__open-button">
 				{% include "html/icons_svg/menu/menu-icon.html" %}
 				<p class="menu__open-name menu__text">Меню</p>
 			</button>
 		</div>
 		<div class="menu__write">
-			<button class="write__button menu__item" href="#">
+			<button class="write__button" href="#">
 				{% include "html/icons_svg/menu/write-icon.html" %}
 				<p class="write__name menu__text">Написать</p>
 			</button>
 		</div>
+		<button class="menu__filter-button">
+			<div class="menu__filter-button-icon">
+				{% include "html/icons_svg/menu/filter-icon.html" %}
+			</div>
+			<div class="menu__filter-button-icon-inner">
+				{% include "html/icons_svg/menu/filter-icon-inner.html" %}
+			</div>
+			<p class="menu__filter-button_text">Фильтр</p>
+		</button>
 		<div class="menu__cart">
-			<button class="cart__button menu__item">
+			<button class="cart__button">
 				{% include "html/icons_svg/menu/cart-icon.html" %}
 				<p class="cart__name menu__text">Корзина</p>
 			</button>
 		</div>
 		<div class="menu__wish-list">
-			<a class="wish-list__link menu__item" href="#">
+			<a class="wish-list__link" href="#">
 				{% include "html/icons_svg/menu/wish-list-icon.html" %}
 				<p class="wish-list__name menu__text">Wish list</p>
 			</a>

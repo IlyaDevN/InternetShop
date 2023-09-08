@@ -1,0 +1,226 @@
+@use "../../common/forwarded" as helpers;
+
+.modal__filter {
+	width: 100%;
+	max-width: 1170px;
+	height: calc(100% - 58px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	@include helpers.zIndex(layer_overlay);
+	background-color: helpers.$color-pink;
+	transform: translateY(100%);
+	transition: transform 0.5s;
+	overflow: auto;
+
+	&.active {
+		transform: translateY(0);
+	}
+
+	.filter {
+
+		&__close-button {
+			position: absolute;
+			width: 24px;
+			height: 24px;
+			top: 20px;
+			right: 16px;
+
+			@include helpers.mobile() {
+				width: 36px;
+				height: 36px;
+				top: 40px;
+			}
+
+			&:active {
+				.close-button-svg-path {
+					stroke: helpers.$color-red;
+				}
+			}
+
+			&-svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__container {
+			display: table;
+			margin: 40px auto 0;
+			position: relative;
+			left: 30px;
+		}
+
+		&__name {
+			font-family: "Montserrat", sans-serif;
+			font-size: 1rem;
+			font-weight: 700;
+			color: helpers.$color-white;
+
+			@include helpers.mobile() {
+				font-size: 1.25rem;
+			}
+
+			&_price {
+				margin-top: 30px;
+			}
+
+			&_size {
+				margin-top: 30px;
+			}
+		}
+
+		&__categories-container {
+			margin: 20px 0 0 30px;
+		}
+
+		&__categories-list {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+
+			@include helpers.mobile() {
+				gap: 24px;
+			}
+		}
+	}
+
+	.categories-item {
+		overflow-y: hidden;
+
+		&__open-link {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 600;
+			line-height: 1.2;
+			font-size: 0.875rem;
+			text-transform: capitalize;
+			color: helpers.$color-white;
+
+			@include helpers.mobile() {
+				font-size: 1.125rem;
+			}
+
+			&:active {
+				color: helpers.$color-red;
+
+				.arrow-bottom-icon-svg-path {
+					fill: helpers.$color-red;
+				}
+			}
+
+			&.active {
+				color: helpers.$color-red;
+
+				.arrow-bottom-icon-svg-path {
+					fill: helpers.$color-red;
+				}
+
+				.arrow-bottom-icon-svg {
+					transform: scale( 1, -1);
+				}
+			}
+
+			.arrow-bottom-icon-svg {
+				width: 14px;
+				height: 9px;
+				margin-left: 15px;
+				transition: transform 0.5s;
+			}
+		}
+
+		&__subList {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			height: 0;
+			margin: 0 0 0 30px;
+			transition: height 0.5s,
+				margin 0.5s;
+
+			@include helpers.mobile() {
+				gap: 24px;
+			}
+
+			&.active {
+				margin: 16px 0 0 30px;
+			}
+
+			.categories__subList_content {
+				font-family: "Montserrat", sans-serif;
+				font-weight: 400;
+				font-size: 0.875rem;
+				text-transform: capitalize;
+				color: helpers.$color-white;
+			}
+		}
+	}
+
+	.filter-item {
+
+		&.active {
+			.filter-marker {
+				fill: helpers.$color-red;
+
+				&-circle {
+					stroke: helpers.$color-red;
+				}
+			}
+
+			.filter-item-text {
+				color: helpers.$color-red;
+				font-style: italic;
+			}
+		}
+	}
+
+	.list-marker {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		margin-right: 18px;
+
+		.filter-marker {
+			fill: none;
+
+			&-circle {
+				stroke: helpers.$color-white;
+			}
+		}
+	}
+
+	.filter__price-container {
+		margin: 20px 0 0 30px;
+
+		.price__list {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+	
+			&-item-button {
+				font-family: "Montserrat", sans-serif;
+				font-weight: 600;
+				line-height: 1.2;
+				font-size: 0.875rem;
+				color: helpers.$color-white;;
+			}
+		}
+	}
+
+	.filter__size-container {
+		margin: 20px 0 47px 30px;
+
+		.size__list {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+	
+			&-item-button {
+				font-family: "Montserrat", sans-serif;
+				font-weight: 600;
+				line-height: 1.2;
+				font-size: 0.875rem;
+				color: helpers.$color-white;;
+			}
+		}
+	}
+}
