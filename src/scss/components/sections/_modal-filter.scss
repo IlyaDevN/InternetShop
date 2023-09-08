@@ -49,6 +49,11 @@
 			margin: 40px auto 0;
 			position: relative;
 			left: 30px;
+
+			@include helpers.mobile() {
+				margin: 100px auto 0;
+				left: 50px;
+			}
 		}
 
 		&__name {
@@ -63,15 +68,27 @@
 
 			&_price {
 				margin-top: 30px;
+
+				@include helpers.mobile() {
+					margin-top: 50px;
+				}
 			}
 
 			&_size {
 				margin-top: 30px;
+
+				@include helpers.mobile() {
+					margin-top: 50px;
+				}
 			}
 		}
 
 		&__categories-container {
 			margin: 20px 0 0 30px;
+
+			@include helpers.mobile() {
+				margin: 30px 0 0 50px;
+			}
 		}
 
 		&__categories-list {
@@ -131,26 +148,35 @@
 		&__subList {
 			display: flex;
 			flex-direction: column;
-			gap: 16px;
+			gap: 10px;
 			height: 0;
 			margin: 0 0 0 30px;
 			transition: height 0.5s,
 				margin 0.5s;
 
 			@include helpers.mobile() {
-				gap: 24px;
+				gap: 16px;
 			}
 
 			&.active {
 				margin: 16px 0 0 30px;
+
+				@include helpers.mobile() {
+					margin: 20px 0 0 30px;
+				}
 			}
 
 			.categories__subList_content {
 				font-family: "Montserrat", sans-serif;
 				font-weight: 400;
 				font-size: 0.875rem;
+				line-height: 1.2;
 				text-transform: capitalize;
 				color: helpers.$color-white;
+
+				@include helpers.mobile() {
+					font-size: 1rem;
+				}
 			}
 		}
 	}
@@ -179,6 +205,12 @@
 		height: 8px;
 		margin-right: 18px;
 
+		@include helpers.mobile() {
+			width: 10px;
+			height: 10px;
+			margin-right: 16px;
+		}
+
 		.filter-marker {
 			fill: none;
 
@@ -191,35 +223,59 @@
 	.filter__price-container {
 		margin: 20px 0 0 30px;
 
+		@include helpers.mobile() {
+			margin: 30px 0 0 50px;
+		}
+
 		.price__list {
 			display: flex;
 			flex-direction: column;
 			gap: 16px;
+
+			@include helpers.mobile() {
+				gap: 20px;
+			}
 	
 			&-item-button {
 				font-family: "Montserrat", sans-serif;
 				font-weight: 600;
 				line-height: 1.2;
 				font-size: 0.875rem;
-				color: helpers.$color-white;;
+				color: helpers.$color-white;
+
+				@include helpers.mobile() {
+					font-size: 1.125rem;
+				}
 			}
 		}
 	}
 
 	.filter__size-container {
-		margin: 20px 0 47px 30px;
+		margin: 20px 0 50px 30px;
+
+		@include helpers.mobile() {
+			margin: 30px 0 70px 50px;
+		}
 
 		.size__list {
 			display: flex;
 			flex-direction: column;
 			gap: 16px;
+
+			@include helpers.mobile() {
+				gap: 20px;
+			}
 	
 			&-item-button {
 				font-family: "Montserrat", sans-serif;
 				font-weight: 600;
 				line-height: 1.2;
 				font-size: 0.875rem;
-				color: helpers.$color-white;;
+				color: helpers.$color-white;
+
+				@include helpers.mobile() {
+					font-size: 1.125rem;
+				}
 			}
 		}
 	}
