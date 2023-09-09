@@ -1,15 +1,14 @@
-import { mqlMin768 } from './mediaQueries.js';
 import { disableScroll, enableScroll } from './helpers.js'; 
 import { menuModal, closeMenuModal } from './modal-menu.js';
 
 export const filterModal = document.querySelector(".modal__filter");
 const openButton = document.querySelector(".menu__filter-button");
 const closeButton = filterModal?.querySelector(".filter__close-button");
-const filterListMain = filterModal?.querySelector(".filter__categories-list");
-const filterListItems = filterListMain?.querySelectorAll(".categories-item__open-link");
+const filterContainer = filterModal?.querySelector(".filter__container");
+const filterListItems = filterModal?.querySelectorAll(".categories-item__button");
 const filterListSubItems = filterModal?.querySelectorAll(".filter-item-text");
 
-if(!mqlMin768.matches && filterModal) {
+if(filterModal) {
 	openButton.onclick = openButtonHandler;
 	closeButton.onclick = closeFilterModal;
 	filterListItems.forEach(list => { filterItemHandler(list) });
@@ -47,36 +46,82 @@ function openFilterModalAfterCLosingMenuModal() {
 
 function filterItemHandler(list) {
 	list.addEventListener("click", event => {
-		const listButton = event.target;
-		listButton.classList.toggle("active");
-		const menuList = listButton.closest(".categories-item").querySelector(".categories-item__subList");
-		if (!menuList) {
+		const filterSection = event.target.closest(".filter-item-container");
+		const activeFilterSection =  filterContainer.querySelector(".filter-item-container.active");
+		
+		if(!activeFilterSection) {
+			activateFilterSection(filterSection);
 			return;
 		}
-		const menuListGap = parseInt(window.getComputedStyle(menuList).gap);
-		const listHeight = menuList.querySelector("li").offsetHeight;
-		const listAmout = menuList.childElementCount;
-		const totalGap = menuListGap * (listAmout - 1);
-		const menuListHeight = listHeight * listAmout + totalGap;
-		if (menuList.style.height && menuList.style.height !== "0px") {
-			menuList.style.height = 0;
-		} else {
-			menuList.style.height = `${menuListHeight}px`;
+
+		if(activeFilterSection === filterSection) {
+			deactivateFilterSection(activeFilterSection);
+			return;
 		}
-		menuList.classList.toggle("active");
+
+		deactivateFilterSection(activeFilterSection);
+		activateFilterSection(filterSection);
 	})
+}
+
+function activateFilterSection(section) {
+	section.classList.add("active");
+	const categorySublist = section.querySelector(".categories-item__subList");
+	if(categorySublist) {
+		categorySublistOpen(categorySublist);
+	}
+}
+
+function deactivateFilterSection(section) {
+	section.classList.remove("active");
+	const categorySublist = section.querySelector(".categories-item__subList");
+	if(categorySublist) {
+		categorySublistClose(categorySublist);
+		deactivateActiveFilterItem(section);
+	}
+}
+
+function categorySublistOpen(subList) {
+	const menuListHeight = getSublistHeight(subList);
+	subList.style.height = `${menuListHeight}px`;
+}
+
+function categorySublistClose(subList) {
+	subList.style.height = 0;
+}
+
+function deactivateActiveFilterItem(section) {
+	const activeFilterItem = section.querySelector(".filter-item.active");
+	activeFilterItem?.classList.remove("active");
+}
+
+function getSublistHeight(subList) {
+	const subListGap = parseInt(window.getComputedStyle(subList).gap);
+	const subListItemHeight = subList.querySelector("li").offsetHeight;
+	const subListItemsAmount = subList.childElementCount;
+	const totalGap = subListGap * (subListItemsAmount - 1);
+	const sublistHeight = subListItemHeight * subListItemsAmount + totalGap;
+	return sublistHeight;
 }
 
 function filterSubItemHandler(subItem) {
 	subItem.addEventListener("click", (event) => {
 		const button = event.target;
-		const filterSection = button.closest(".filter-section");
-		const prevActiveElement = filterSection.querySelector(".filter-item.active");
-		prevActiveElement?.classList.remove("active");
+		const filterSection = button.closest(".filter-item-container");
 		const filterItem = button.closest(".filter-item");
-		if(prevActiveElement == filterItem) {
+		const prevActiveFilterItem = filterSection.querySelector(".filter-item.active");
+
+		if(!prevActiveFilterItem) {
+			filterItem.classList.add("active");
 			return;
 		}
-		filterItem.classList.toggle("active");
+
+		if(prevActiveFilterItem === filterItem) {
+			filterItem.classList.remove("active");
+			return;
+		}
+
+		prevActiveFilterItem.classList.remove("active");
+		filterItem.classList.add("active");
 	})
 }

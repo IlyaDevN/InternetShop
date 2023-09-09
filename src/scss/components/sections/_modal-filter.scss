@@ -9,9 +9,15 @@
 	left: 0;
 	@include helpers.zIndex(layer_overlay);
 	background-color: helpers.$color-pink;
-	transform: translateY(100%);
+	transform: translateY(calc(100% + 58px));
 	transition: transform 0.5s;
 	overflow: auto;
+
+	@include helpers.tablet() {
+		position: absolute;
+		height: 0;
+		overflow: unset;
+	}
 
 	&.active {
 		transform: translateY(0);
@@ -30,6 +36,10 @@
 				width: 36px;
 				height: 36px;
 				top: 40px;
+			}
+
+			@include helpers.tablet() {
+				display: none;
 			}
 
 			&:active {
@@ -54,6 +64,13 @@
 				margin: 100px auto 0;
 				left: 50px;
 			}
+
+			@include helpers.tablet() {
+				position: absolute;
+				left: 15px;
+				top: -58px;
+				margin: 315px auto 0;
+			}
 		}
 
 		&__name {
@@ -64,6 +81,10 @@
 
 			@include helpers.mobile() {
 				font-size: 1.25rem;
+			}
+
+			@include helpers.tablet() {
+				color: helpers.$color-black;
 			}
 
 			&_price {
@@ -105,7 +126,37 @@
 	.categories-item {
 		overflow-y: hidden;
 
-		&__open-link {
+		&.active {
+			.categories-item__button {
+				color: helpers.$color-red;
+
+				@include helpers.tablet() {
+					color: helpers.$color-pink;
+				}
+
+				.arrow-bottom-icon-svg-path {
+					fill: helpers.$color-red;
+
+					@include helpers.tablet() {
+						fill: helpers.$color-pink;
+					}
+				}
+
+				.arrow-bottom-icon-svg {
+					transform: scale( 1, -1);
+				}
+			}
+
+			.categories-item__subList {
+				margin: 16px 0 0 30px;
+
+				@include helpers.mobile() {
+					margin: 20px 0 0 30px;
+				}
+			}
+		}
+
+		&__button {
 			font-family: "Montserrat", sans-serif;
 			font-weight: 600;
 			line-height: 1.2;
@@ -117,32 +168,30 @@
 				font-size: 1.125rem;
 			}
 
-			&:active {
-				color: helpers.$color-red;
-
-				.arrow-bottom-icon-svg-path {
-					fill: helpers.$color-red;
-				}
-			}
-
-			&.active {
-				color: helpers.$color-red;
-
-				.arrow-bottom-icon-svg-path {
-					fill: helpers.$color-red;
-				}
-
-				.arrow-bottom-icon-svg {
-					transform: scale( 1, -1);
-				}
+			@include helpers.tablet() {
+				color: helpers.$color-black;
 			}
 
 			.arrow-bottom-icon-svg {
-				width: 14px;
-				height: 9px;
+				width: 13px;
+				height: 10px;
 				margin-left: 15px;
 				transition: transform 0.5s;
+
+				@include helpers.tablet() {
+					width: 14px;
+					height: 12px;
+				}
 			}
+
+			.arrow-bottom-icon-svg-path {
+				fill: helpers.$color-white;
+
+				@include helpers.tablet() {
+					fill: helpers.$color-black;
+				}
+			}
+			
 		}
 
 		&__subList {
@@ -158,14 +207,6 @@
 				gap: 16px;
 			}
 
-			&.active {
-				margin: 16px 0 0 30px;
-
-				@include helpers.mobile() {
-					margin: 20px 0 0 30px;
-				}
-			}
-
 			.categories__subList_content {
 				font-family: "Montserrat", sans-serif;
 				font-weight: 400;
@@ -177,6 +218,11 @@
 				@include helpers.mobile() {
 					font-size: 1rem;
 				}
+
+				@include helpers.tablet() {
+					color: helpers.$color-black;
+					font-weight: 500;
+				}
 			}
 		}
 	}
@@ -186,15 +232,27 @@
 		&.active {
 			.filter-marker {
 				fill: helpers.$color-red;
+				
+				@include helpers.tablet() {
+					fill: helpers.$color-pink;
+				}
 
 				&-circle {
 					stroke: helpers.$color-red;
+
+					@include helpers.tablet() {
+						stroke: helpers.$color-pink;
+					}
 				}
 			}
 
 			.filter-item-text {
 				color: helpers.$color-red;
 				font-style: italic;
+
+				@include helpers.tablet() {
+					color: helpers.$color-pink;
+				}
 			}
 		}
 	}
@@ -216,6 +274,10 @@
 
 			&-circle {
 				stroke: helpers.$color-white;
+
+				@include helpers.tablet() {
+					stroke: helpers.$color-black;
+				}
 			}
 		}
 	}
@@ -246,6 +308,10 @@
 				@include helpers.mobile() {
 					font-size: 1.125rem;
 				}
+
+				@include helpers.tablet() {
+					color: helpers.$color-black;
+				}
 			}
 		}
 	}
@@ -275,6 +341,10 @@
 
 				@include helpers.mobile() {
 					font-size: 1.125rem;
+				}
+
+				@include helpers.tablet() {
+					color: helpers.$color-black;
 				}
 			}
 		}

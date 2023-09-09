@@ -1,149 +1,123 @@
 {% set top = [
 {
-"name": "Комбинезоны",
-"href": "#"
+	"name": "Комбинезоны"
 },
 {
-"name": "Пиджаки",
-"href": "#"
+	"name": "Пиджаки"
 },
 {
-"name": "Рубашки",
-"href": "#"
+	"name": "Рубашки"
 },
 {
-"name": "Свитшоты",
-"href": "#"
+	"name": "Свитшоты"
 },
 {
-"name": "Худи",
-"href": "#"
+	"name": "Худи"
 },
 {
-"name": "Топы",
-"href": "#"
+	"name": "Топы"
 },
 {
-"name": "Футболки",
-"href": "#"
+	"name": "Футболки"
 }
 ] %}
 
 {% set bottom = [
 {
-"name": "Все товары",
-"href": "#"
+	"name": "Все товары"
 },
 {
-"name": "Брюки",
-"href": "#"
+	"name": "Брюки"
 },
 {
-"name": "Велосипедки",
-"href": "#"
+	"name": "Велосипедки"
 },
 {
-"name": "Джинсы",
-"href": "#"
+	"name": "Джинсы"
 },
 {
-"name": "Штаны",
-"href": "#"
+	"name": "Штаны"
 },
 {
-"name": "Шорты",
-"href": "#"
+	"name": "Шорты"
 },
 {
-"name": "Юбки",
-"href": "#"
+	"name": "Юбки"
 }
 ] %}
 
 {% set jaket = [
 {
-"name": "Все товары",
-"href": "#"
+	"name": "Все товары"
 },
 {
-"name": "Бомберы",
-"href": "#"
+	"name": "Бомберы"
 },
 {
-"name": "Джинсовки",
-"href": "#"
+	"name": "Джинсовки"
 },
 {
-"name": "Дождевики",
-"href": "#"
+	"name": "Дождевики"
 },
 {
-"name": "Куртки",
-"href": "#"
+	"name": "Куртки"
 },
 {
-"name": "Пальта",
-"href": "#"
+	"name": "Пальта"
 },
 {
-"name": "Пуховики",
-"href": "#"
+	"name": "Пуховики"
 },
 {
-"name": "Тренчи",
-"href": "#"
+	"name": "Тренчи"
 }
 ] %}
 
 {% set little_things = [
 {
-"name": "Все товары",
-"href": "#"
+	"name": "Все товары"
 },
 {
-"name": "Ремни",
-"href": "#"
+	"name": "Ремни"
 },
 {
-"name": "Шарфы",
-"href": "#"
+	"name": "Шарфы"
 },
 {
-"name": "Украшения",
-"href": "#"
+	"name": "Украшения"
 }
 ] %}
 
 {% set price = [
 {
-"name": "Все цены"
+	"name": "Все цены"
 },
 {
-"name": "до 500"
+	"name": "до 500"
 },
 {
-"name": "500 — 1000"
+	"name": "500 — 1000"
 },
 {
-"name": "1000 — 1500"
+	"name": "1000 — 1500"
 },
 {
-"name": "от 1500"
+	"name": "от 1500"
 }
 ] %}
 
 {% set size = [
 {
-"name": "XS — S"
+	"name": "XS — S"
 },
 {
-"name": "S — M"
+	"name": "S — M"
 },
 {
-"name": "M — L"
+	"name": "M — L"
 },
 {
-"name": "L — XL"
+	"name": "L — XL"
 }
 ] %}
 
@@ -155,11 +129,11 @@
 		<p class="filter__name">Категории:</p>
 		<div class="filter__categories-container">
 			<ul class="filter__categories-list">
-				<li class="categories-item filter-section">
-					<a class="categories-item__open-link" href="#">Платья</a>
+				<li class="categories-item filter-item-container">
+					<button class="categories-item__button">Платья</button>
 				</li>
-				<li class="categories-item filter-section">
-					<button class="categories-item__open-link" data-link="menu__clothes-top">Верх
+				<li class="categories-item filter-item-container">
+					<button class="categories-item__button" data-link="menu__clothes-top">Верх
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
 					<ul class="categories-item__subList" id="filter__clothes-top">
@@ -168,13 +142,13 @@
 							<div class="list-marker">
 								{% include "html/icons_svg/filter/marker-icon.html" %}
 							</div>
-							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
 						</li>
 						{% endfor %}
 					</ul>
 				</li>
-				<li class="categories-item filter-section">
-					<button class="categories-item__open-link" data-link="filter__clothes-bottom">Низ
+				<li class="categories-item filter-item-container">
+					<button class="categories-item__button" data-link="filter__clothes-bottom">Низ
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
 					<ul class="categories-item__subList" id="menu__clothes-bottom">
@@ -183,13 +157,13 @@
 							<div class="list-marker">
 								{% include "html/icons_svg/filter/marker-icon.html" %}
 							</div>
-							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
 						</li>
 						{% endfor %}
 					</ul>
 				</li>
-				<li class="categories-item filter-section">
-					<button class="categories-item__open-link" data-link="filter__clothes-jaket">Куртки
+				<li class="categories-item filter-item-container">
+					<button class="categories-item__button" data-link="filter__clothes-jaket">Куртки
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
 					<ul class="categories-item__subList" id="filter__clothes-jaket">
@@ -198,13 +172,13 @@
 							<div class="list-marker">
 								{% include "html/icons_svg/filter/marker-icon.html" %}
 							</div>
-							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
 						</li>
 						{% endfor %}
 					</ul>
 				</li>
-				<li class="categories-item filter-section">
-					<button class="categories-item__open-link" data-link="filter__clothes-little-things">Мелочи
+				<li class="categories-item filter-item-container">
+					<button class="categories-item__button" data-link="filter__clothes-little-things">Мелочи
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
 					<ul class="categories-item__subList" id="menu__clothes-little-things">
@@ -213,18 +187,18 @@
 							<div class="list-marker">
 								{% include "html/icons_svg/filter/marker-icon.html" %}
 							</div>
-							<a class="categories__subList_content filter-item-text" href={{item.href}}>{{item.name}}</a>
+							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
 						</li>
 						{% endfor %}
 					</ul>
 				</li>
-				<li class="categories-item filter-section">
-					<a class="categories-item__open-link" href="#">Костюмы</a>
+				<li class="categories-item filter-item-container">
+					<button class="categories-item__button">Костюмы</button>
 				</li>
 			</ul>
 		</div>
 		<p class="filter__name filter__name_price">Цены:</p>
-		<div class="filter__price-container filter-section">
+		<div class="filter__price-container filter-item-container">
 			<ul class="price__list" id="filter__clothes-top">
 				{% for item in price %}
 				<li class="filter-item">
@@ -237,7 +211,7 @@
 			</ul>
 		</div>
 		<p class="filter__name filter__name_size">Размер:</p>
-		<div class="filter__size-container filter-section">
+		<div class="filter__size-container filter-item-container">
 			<ul class="size__list" id="filter__clothes-top">
 				{% for item in size %}
 				<li class="filter-item">

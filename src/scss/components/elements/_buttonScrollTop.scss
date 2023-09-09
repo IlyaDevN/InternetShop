@@ -11,7 +11,7 @@
 	@include helpers.zIndex(layer_base);
 
 	@include helpers.tablet() {
-		bottom: 5vh;
+		bottom: 5px;
 	}
 
 	&:disabled {

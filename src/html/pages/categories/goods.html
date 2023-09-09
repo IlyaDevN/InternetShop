@@ -75,8 +75,11 @@
 
 <section class="goods">
 	<div class="goods__container">
-		{% for item in goods %}
-			{% include "html/components/elements/product-card.html" %}
-		{% endfor %}
+		<div class="product-card__container">
+			{% for item in goods %}
+				{% include "html/components/elements/product-card.html" %}
+			{% endfor %}
+		</div>
+		
 	</div>
 </section>
