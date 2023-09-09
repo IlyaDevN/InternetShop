@@ -4,9 +4,23 @@
 	
 	&__container {
 		padding: 0 15px;
+		max-width: 1170px;
+		margin: 0 auto 40px;
+
+		@include helpers.mobile() {
+			margin-bottom: 60px;
+		}
 
 		@include helpers.tablet() {
-			// display: flex;
+			margin-bottom: 70px;
+		}
+
+		@include helpers.laptop() {
+			margin-bottom: 80px;
+		}
+
+		@include helpers.desktop() {
+			margin-bottom: 70px;
 		}
 
 		.product-card__container {
@@ -26,7 +40,6 @@
 		.product-card {
 			position: relative;
 			display: block;
-			min-height: 402px;
 			padding: 5px 10px 13px;
 			margin-bottom: 8px;
 		
@@ -42,19 +55,15 @@
 			}
 		
 			@include helpers.laptop() {
-				padding: 6px 6px 17px;
+				padding: 6px 14px 17px;
 			}
 		
 			@include helpers.desktop() {
-
+				padding: 6px 28px 17px;
 			}
-
+		
 			&:last-child {
-				margin-bottom: 40px;
-
-				@include helpers.mobile() {
-					margin-bottom: 60px;
-				}
+				margin-bottom: 0;
 			}
 		
 			&__photo {
@@ -71,11 +80,11 @@
 				}
 		
 				@include helpers.laptop() {
-					
+					width: 300px;
 				}
 
 				@include helpers.desktop() {
-
+					width: 410px;
 				}
 			}
 		
@@ -92,11 +101,8 @@
 				}
 		
 				@include helpers.laptop() {
-
-				}
-		
-				@include helpers.desktop() {
-
+					width: 28px;
+					height: 26px;
 				}
 			}
 		
@@ -115,7 +121,7 @@
 				}
 		
 				@include helpers.desktop() {
-
+					margin: 0 auto 28px;
 				}
 			}
 		
@@ -135,8 +141,8 @@
 						font-size: 0.875rem;
 					}
 			
-					@include helpers.laptop() {
-
+					@include helpers.desktop() {
+						font-size: 1rem;
 					}
 				}
 		
@@ -159,6 +165,11 @@
 			
 					@include helpers.laptop() {
 						font-size: 1.25rem;
+					}
+
+					@include helpers.desktop() {
+						font-size: 1.5rem;
+						min-width: 90px;
 					}
 				}
 			}

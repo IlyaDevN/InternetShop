@@ -2,7 +2,6 @@
 
 .modal__filter {
 	width: 100%;
-	max-width: 1170px;
 	height: calc(100% - 58px);
 	position: fixed;
 	top: 0;
@@ -56,6 +55,7 @@
 
 		&__container {
 			display: table;
+			max-width: 1170px;
 			margin: 40px auto 0;
 			position: relative;
 			left: 30px;
@@ -66,14 +66,14 @@
 			}
 
 			@include helpers.tablet() {
-				position: absolute;
-				left: 15px;
-				top: -58px;
-				margin: 315px auto 0;
+				position: static;
+				display: block;
+				padding: 0 15px;
+				margin: 257px auto 0;
 			}
 
 			@include helpers.laptop() {
-				margin: 395px auto 0;
+				margin: 330px auto 0;
 			}
 		}
 
