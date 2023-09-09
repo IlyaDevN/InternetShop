@@ -4,28 +4,26 @@
 		<div class="menu__open">
 			<button class="menu__open-button">
 				{% include "html/icons_svg/menu/menu-icon.html" %}
-				<p class="menu__open-name menu__text">Меню</p>
+				<span class="menu__open-name menu__text">Меню</span>
 			</button>
 		</div>
 		<div class="menu__write">
-			<button class="write__button" href="#">
+			<button class="write__button">
 				{% include "html/icons_svg/menu/write-icon.html" %}
-				<p class="write__name menu__text">Написать</p>
+				<span class="write__name menu__text">Написать</span>
 			</button>
 		</div>
 		<button class="menu__filter-button">
-			<div class="menu__filter-button-icon">
-				{% include "html/icons_svg/menu/filter-icon.html" %}
-			</div>
-			<div class="menu__filter-button-icon-inner">
+			{% include "html/icons_svg/menu/filter-icon.html" %}
+			<span class="menu__filter-button-icon-inner">
 				{% include "html/icons_svg/menu/filter-icon-inner.html" %}
-			</div>
-			<p class="menu__filter-button_text">Фильтр</p>
+			</span>
+			<span class="menu__filter-button_text">Фильтр</span>
 		</button>
 		<div class="menu__cart">
 			<button class="cart__button">
 				{% include "html/icons_svg/menu/cart-icon.html" %}
-				<p class="cart__name menu__text">Корзина</p>
+				<span class="cart__name menu__text">Корзина</span>
 			</button>
 		</div>
 		<div class="menu__wish-list">
