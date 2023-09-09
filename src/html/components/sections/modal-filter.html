@@ -133,10 +133,10 @@
 					<button class="categories-item__button">Платья</button>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button" data-link="menu__clothes-top">Верх
+					<button class="categories-item__button">Верх
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
-					<ul class="categories-item__subList" id="filter__clothes-top">
+					<ul class="categories-item__subList">
 						{% for item in top %}
 						<li class="filter-item">
 							<div class="list-marker">
@@ -148,10 +148,10 @@
 					</ul>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button" data-link="filter__clothes-bottom">Низ
+					<button class="categories-item__button">Низ
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
-					<ul class="categories-item__subList" id="menu__clothes-bottom">
+					<ul class="categories-item__subList">
 						{% for item in bottom %}
 						<li class="filter-item">
 							<div class="list-marker">
@@ -163,10 +163,10 @@
 					</ul>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button" data-link="filter__clothes-jaket">Куртки
+					<button class="categories-item__button">Куртки
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
-					<ul class="categories-item__subList" id="filter__clothes-jaket">
+					<ul class="categories-item__subList">
 						{% for item in jaket %}
 						<li class="filter-item">
 							<div class="list-marker">
@@ -178,10 +178,10 @@
 					</ul>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button" data-link="filter__clothes-little-things">Мелочи
+					<button class="categories-item__button">Мелочи
 						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 					</button>
-					<ul class="categories-item__subList" id="menu__clothes-little-things">
+					<ul class="categories-item__subList">
 						{% for item in little_things %}
 						<li class="filter-item">
 							<div class="list-marker">
@@ -199,7 +199,7 @@
 		</div>
 		<p class="filter__name filter__name_price">Цены:</p>
 		<div class="filter__price-container filter-item-container">
-			<ul class="price__list" id="filter__clothes-top">
+			<ul class="price__list">
 				{% for item in price %}
 				<li class="filter-item">
 					<div class="list-marker">
@@ -212,7 +212,7 @@
 		</div>
 		<p class="filter__name filter__name_size">Размер:</p>
 		<div class="filter__size-container filter-item-container">
-			<ul class="size__list" id="filter__clothes-top">
+			<ul class="size__list">
 				{% for item in size %}
 				<li class="filter-item">
 					<div class="list-marker">
