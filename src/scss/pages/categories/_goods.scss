@@ -6,7 +6,7 @@
 		padding: 0 15px;
 
 		@include helpers.tablet() {
-			display: flex;
+			// display: flex;
 		}
 
 		.product-card__container {
@@ -15,6 +15,11 @@
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				gap: 15px;
+				padding-left: 24px;
+			}
+
+			@include helpers.laptop() {
+				padding-left: 60px;
 			}
 		}
 
@@ -37,7 +42,7 @@
 			}
 		
 			@include helpers.laptop() {
-
+				padding: 6px 6px 17px;
 			}
 		
 			@include helpers.desktop() {
@@ -54,13 +59,21 @@
 		
 			&__photo {
 				height: auto;
-				max-width: 400px;
+				width: 244px;
 				margin: auto;
-		
-				@include helpers.laptop() {
+				
+				@include helpers.mobile() {
+					width: 400px;
+				}
 
+				@include helpers.tablet() {
+					width: 244px;
 				}
 		
+				@include helpers.laptop() {
+					
+				}
+
 				@include helpers.desktop() {
 
 				}
@@ -98,11 +111,7 @@
 				}
 		
 				@include helpers.tablet() {
-					margin: 0 auto 17px;
-				}
-		
-				@include helpers.laptop() {
-
+					margin: 0 auto 16px;
 				}
 		
 				@include helpers.desktop() {
@@ -149,7 +158,7 @@
 					}
 			
 					@include helpers.laptop() {
-
+						font-size: 1.25rem;
 					}
 				}
 			}

@@ -71,6 +71,10 @@
 				top: -58px;
 				margin: 315px auto 0;
 			}
+
+			@include helpers.laptop() {
+				margin: 395px auto 0;
+			}
 		}
 
 		&__name {
