@@ -13,9 +13,10 @@
 	overflow: auto;
 
 	@include helpers.tablet() {
-		position: absolute;
+		position: static;
 		height: 0;
 		overflow: unset;
+		transform: translateY(0);
 	}
 
 	&.active {
@@ -68,12 +69,8 @@
 			@include helpers.tablet() {
 				position: static;
 				display: block;
-				padding: 0 15px;
-				margin: 257px auto 0;
-			}
-
-			@include helpers.laptop() {
-				margin: 330px auto 0;
+				padding-left: 15px;
+				margin: 0 auto;
 			}
 		}
 
@@ -114,6 +111,10 @@
 			@include helpers.mobile() {
 				margin: 30px 0 0 50px;
 			}
+
+			@include helpers.tablet() {
+				margin: 30px 0 0 0;
+			}
 		}
 
 		&__categories-list {
@@ -123,6 +124,10 @@
 
 			@include helpers.mobile() {
 				gap: 24px;
+			}
+
+			@include helpers.tablet() {
+				gap: 15px;
 			}
 		}
 	}
@@ -156,6 +161,10 @@
 
 				@include helpers.mobile() {
 					margin: 20px 0 0 30px;
+				}
+
+				@include helpers.tablet() {
+					margin: 20px 0 5px 50px;
 				}
 			}
 		}
@@ -203,12 +212,17 @@
 			flex-direction: column;
 			gap: 10px;
 			height: 0;
-			margin: 0 0 0 30px;
+			margin-left: 30px;
 			transition: height 0.5s,
 				margin 0.5s;
 
 			@include helpers.mobile() {
 				gap: 16px;
+			}
+
+			@include helpers.tablet() {
+				gap: 10px;
+				margin-left: 50px;
 			}
 		}
 	}

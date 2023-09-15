@@ -25,15 +25,18 @@
 
 		.product-card__container {
 			@include helpers.tablet() {
-				margin-left: 187px;
+				margin-left: 210px;
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				gap: 15px;
-				padding-left: 24px;
 			}
 
 			@include helpers.laptop() {
-				padding-left: 60px;
+				margin-left: 250px;
+			}
+
+			@include helpers.tablet() {
+				margin-left: 200px;
 			}
 		}
 
@@ -80,7 +83,7 @@
 				}
 
 				@include helpers.tablet() {
-					width: 244px;
+					width: 240px;
 				}
 		
 				@include helpers.laptop() {
