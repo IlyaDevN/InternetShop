@@ -6,7 +6,7 @@ const openButton = document.querySelector(".menu__filter-button");
 const closeButton = filterModal?.querySelector(".filter__close-button");
 const filterContainer = filterModal?.querySelector(".filter__container");
 const filterListItems = filterModal?.querySelectorAll(".categories-item__button");
-const filterListSubItems = filterModal?.querySelectorAll(".filter-item-text");
+const filterListSubItems = filterModal?.querySelectorAll(".filter-item-label");
 
 if(filterModal) {
 	openButton.onclick = openButtonHandler;
@@ -106,11 +106,13 @@ function getSublistHeight(subList) {
 
 function filterSubItemHandler(subItem) {
 	subItem.addEventListener("click", (event) => {
+		if(!event.target.classList.contains("filter-item-marker")) {
+			return;
+		}
 		const button = event.target;
 		const filterSection = button.closest(".filter-item-container");
 		const filterItem = button.closest(".filter-item");
 		const prevActiveFilterItem = filterSection.querySelector(".filter-item.active");
-
 		if(!prevActiveFilterItem) {
 			filterItem.classList.add("active");
 			return;

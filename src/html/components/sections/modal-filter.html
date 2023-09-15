@@ -139,10 +139,10 @@
 					<ul class="categories-item__subList">
 						{% for item in top %}
 						<li class="filter-item">
-							<div class="list-marker">
-								{% include "html/icons_svg/filter/marker-icon.html" %}
-							</div>
-							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
+							<label class="filter-item-label">
+								<input class="filter-item-marker" type="radio" name="top">
+								<span class="filter-item-text">{{item.name}}</span>
+							</label>
 						</li>
 						{% endfor %}
 					</ul>
@@ -154,10 +154,10 @@
 					<ul class="categories-item__subList">
 						{% for item in bottom %}
 						<li class="filter-item">
-							<div class="list-marker">
-								{% include "html/icons_svg/filter/marker-icon.html" %}
-							</div>
-							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
+							<label class="filter-item-label">
+								<input class="filter-item-marker" type="radio" name="top">
+								<span class="filter-item-text">{{item.name}}</span>
+							</label>
 						</li>
 						{% endfor %}
 					</ul>
@@ -169,10 +169,10 @@
 					<ul class="categories-item__subList">
 						{% for item in jaket %}
 						<li class="filter-item">
-							<div class="list-marker">
-								{% include "html/icons_svg/filter/marker-icon.html" %}
-							</div>
-							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
+							<label class="filter-item-label">
+								<input class="filter-item-marker" type="radio" name="top">
+								<span class="filter-item-text">{{item.name}}</span>
+							</label>
 						</li>
 						{% endfor %}
 					</ul>
@@ -184,10 +184,10 @@
 					<ul class="categories-item__subList">
 						{% for item in little_things %}
 						<li class="filter-item">
-							<div class="list-marker">
-								{% include "html/icons_svg/filter/marker-icon.html" %}
-							</div>
-							<button class="categories__subList_content filter-item-text">{{item.name}}</button>
+							<label class="filter-item-label">
+								<input class="filter-item-marker" type="radio" name="top">
+								<span class="filter-item-text">{{item.name}}</span>
+							</label>
 						</li>
 						{% endfor %}
 					</ul>
@@ -201,11 +201,11 @@
 		<div class="filter__price-container filter-item-container">
 			<ul class="price__list">
 				{% for item in price %}
-				<li class="filter-item">
-					<div class="list-marker">
-						{% include "html/icons_svg/filter/marker-icon.html" %}
-					</div>
-					<button class="price__list-item-button filter-item-text">{{item.name}}</button>
+				<li class="filter-item price-and-size">
+					<label class="filter-item-label">
+						<input class="filter-item-marker" type="radio" name="top">
+						<span class="filter-item-text">{{item.name}}</span>
+					</label>
 				</li>
 				{% endfor %}
 			</ul>
@@ -214,11 +214,11 @@
 		<div class="filter__size-container filter-item-container">
 			<ul class="size__list">
 				{% for item in size %}
-				<li class="filter-item">
-					<div class="list-marker">
-						{% include "html/icons_svg/filter/marker-icon.html" %}
-					</div>
-					<button class="size__list-item-button filter-item-text">{{item.name}}</button>
+				<li class="filter-item price-and-size">
+					<label class="filter-item-label">
+						<input class="filter-item-marker" type="radio" name="top">
+						<span class="filter-item-text">{{item.name}}</span>
+					</label>
 				</li>
 				{% endfor %}
 			</ul>
