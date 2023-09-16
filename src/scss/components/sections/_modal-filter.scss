@@ -136,7 +136,7 @@
 		overflow-y: hidden;
 
 		&.active {
-			.categories-item__button {
+			.categories-item__name {
 				color: helpers.$color-red;
 
 				@include helpers.tablet() {
@@ -152,7 +152,7 @@
 				}
 
 				.arrow-bottom-icon-svg {
-					transform: scale( 1, -1);
+					transform: scale(1, -1);
 				}
 			}
 
@@ -169,7 +169,7 @@
 			}
 		}
 
-		&__button {
+		&__name {
 			font-family: "Montserrat", sans-serif;
 			font-weight: 600;
 			line-height: 1.2;
@@ -204,9 +204,9 @@
 					fill: helpers.$color-black;
 				}
 			}
-			
+
 		}
-		
+
 		&__subList-wrapper {
 			display: grid;
 			grid-template-rows: 0fr;
@@ -237,16 +237,16 @@
 		}
 	}
 
-	.filter-item-details {
+	.categories-item__name-container {
 		min-width: 165px;
 
-		&[open] + .categories-item__subList-wrapper {
+		&[open]+.categories-item__subList-wrapper {
 			grid-template-rows: 1fr;
 			visibility: visible;
 		}
 	}
-	
-	.categories-item__button {
+
+	.categories-item__name {
 		list-style: none;
 	}
 
@@ -265,7 +265,7 @@
 			@include helpers.mobile() {
 				gap: 20px;
 			}
-	
+
 			&-item-button {
 				font-family: "Montserrat", sans-serif;
 				font-weight: 600;
@@ -299,7 +299,7 @@
 			@include helpers.mobile() {
 				gap: 20px;
 			}
-	
+
 			&-item-button {
 				font-family: "Montserrat", sans-serif;
 				font-weight: 600;
@@ -359,7 +359,7 @@
 			opacity: 0;
 			position: relative;
 			@include helpers.zIndex(layer_negative);
-	
+
 			@include helpers.mobile() {
 				width: 10px;
 				height: 10px;

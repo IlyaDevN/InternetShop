@@ -1,14 +1,14 @@
-import { disableScroll, enableScroll } from './helpers.js'; 
+import { disableScroll, enableScroll } from './helpers.js';
 import { menuModal, closeMenuModal } from './modal-menu.js';
 
 export const filterModal = document.querySelector(".modal__filter");
 const openButton = document.querySelector(".menu__filter-button");
 const closeButton = filterModal?.querySelector(".filter__close-button");
 const filterContainer = filterModal?.querySelector(".filter__container");
-const filterListItems = filterModal?.querySelectorAll(".categories-item__button");
+const filterListItems = filterModal?.querySelectorAll(".categories-item__name");
 const filterListSubItems = filterModal?.querySelectorAll(".filter-item-label");
 
-if(filterModal) {
+if (filterModal) {
 	openButton.onclick = openButtonHandler;
 	closeButton.onclick = closeFilterModal;
 	filterListItems.forEach(list => { filterItemHandler(list) });
@@ -28,7 +28,7 @@ export function closeFilterModal() {
 }
 
 function openButtonHandler() {
-	if(filterModal.classList.contains("active")) {
+	if (filterModal.classList.contains("active")) {
 		closeFilterModal();
 	} else {
 		openFilterModalAfterCLosingMenuModal();
@@ -36,8 +36,8 @@ function openButtonHandler() {
 }
 
 function openFilterModalAfterCLosingMenuModal() {
-	if(menuModal && menuModal.classList.contains("active")) {
-		menuModal.addEventListener("transitionend", openFilterModal, {once: true});
+	if (menuModal && menuModal.classList.contains("active")) {
+		menuModal.addEventListener("transitionend", openFilterModal, { once: true });
 		closeMenuModal();
 	} else {
 		openFilterModal();
@@ -47,14 +47,14 @@ function openFilterModalAfterCLosingMenuModal() {
 function filterItemHandler(list) {
 	list.addEventListener("click", event => {
 		const filterSection = event.target.closest(".filter-item-container");
-		const activeFilterSection =  filterContainer.querySelector(".filter-item-container.active");
-		
-		if(!activeFilterSection) {
+		const activeFilterSection = filterContainer.querySelector(".filter-item-container.active");
+
+		if (!activeFilterSection) {
 			activateFilterSection(filterSection);
 			return;
 		}
 
-		if(activeFilterSection === filterSection) {
+		if (activeFilterSection === filterSection) {
 			deactivateFilterSection(activeFilterSection);
 			return;
 		}
@@ -72,13 +72,13 @@ function activateFilterSection(section) {
 function deactivateFilterSection(section) {
 	section.classList.remove("active");
 	const categorySublist = section.querySelector(".categories-item__subList");
-	if(categorySublist) {
+	if (categorySublist) {
 		deactivateActiveFilterItem(section);
 	}
 }
 
 function categorySublistClose(section) {
-	const details = section.querySelector(".filter-item-details");
+	const details = section.querySelector(".categories-item__name-container");
 	details.removeAttribute("open");
 }
 
@@ -89,19 +89,19 @@ function deactivateActiveFilterItem(section) {
 
 function filterSubItemHandler(subItem) {
 	subItem.addEventListener("click", (event) => {
-		if(!event.target.classList.contains("filter-item-marker")) {
+		if (!event.target.classList.contains("filter-item-marker")) {
 			return;
 		}
 		const button = event.target;
 		const filterSection = button.closest(".filter-item-container");
 		const filterItem = button.closest(".filter-item");
 		const prevActiveFilterItem = filterSection.querySelector(".filter-item.active");
-		if(!prevActiveFilterItem) {
+		if (!prevActiveFilterItem) {
 			filterItem.classList.add("active");
 			return;
 		}
 
-		if(prevActiveFilterItem === filterItem) {
+		if (prevActiveFilterItem === filterItem) {
 			filterItem.classList.remove("active");
 			return;
 		}

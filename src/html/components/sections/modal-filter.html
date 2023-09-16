@@ -1,123 +1,123 @@
 {% set top = [
 {
-	"name": "Комбинезоны"
+"name": "Комбинезоны"
 },
 {
-	"name": "Пиджаки"
+"name": "Пиджаки"
 },
 {
-	"name": "Рубашки"
+"name": "Рубашки"
 },
 {
-	"name": "Свитшоты"
+"name": "Свитшоты"
 },
 {
-	"name": "Худи"
+"name": "Худи"
 },
 {
-	"name": "Топы"
+"name": "Топы"
 },
 {
-	"name": "Футболки"
+"name": "Футболки"
 }
 ] %}
 
 {% set bottom = [
 {
-	"name": "Все товары"
+"name": "Все товары"
 },
 {
-	"name": "Брюки"
+"name": "Брюки"
 },
 {
-	"name": "Велосипедки"
+"name": "Велосипедки"
 },
 {
-	"name": "Джинсы"
+"name": "Джинсы"
 },
 {
-	"name": "Штаны"
+"name": "Штаны"
 },
 {
-	"name": "Шорты"
+"name": "Шорты"
 },
 {
-	"name": "Юбки"
+"name": "Юбки"
 }
 ] %}
 
 {% set jaket = [
 {
-	"name": "Все товары"
+"name": "Все товары"
 },
 {
-	"name": "Бомберы"
+"name": "Бомберы"
 },
 {
-	"name": "Джинсовки"
+"name": "Джинсовки"
 },
 {
-	"name": "Дождевики"
+"name": "Дождевики"
 },
 {
-	"name": "Куртки"
+"name": "Куртки"
 },
 {
-	"name": "Пальта"
+"name": "Пальта"
 },
 {
-	"name": "Пуховики"
+"name": "Пуховики"
 },
 {
-	"name": "Тренчи"
+"name": "Тренчи"
 }
 ] %}
 
 {% set little_things = [
 {
-	"name": "Все товары"
+"name": "Все товары"
 },
 {
-	"name": "Ремни"
+"name": "Ремни"
 },
 {
-	"name": "Шарфы"
+"name": "Шарфы"
 },
 {
-	"name": "Украшения"
+"name": "Украшения"
 }
 ] %}
 
 {% set price = [
 {
-	"name": "Все цены"
+"name": "Все цены"
 },
 {
-	"name": "до 500"
+"name": "до 500"
 },
 {
-	"name": "500 — 1000"
+"name": "500 — 1000"
 },
 {
-	"name": "1000 — 1500"
+"name": "1000 — 1500"
 },
 {
-	"name": "от 1500"
+"name": "от 1500"
 }
 ] %}
 
 {% set size = [
 {
-	"name": "XS — S"
+"name": "XS — S"
 },
 {
-	"name": "S — M"
+"name": "S — M"
 },
 {
-	"name": "M — L"
+"name": "M — L"
 },
 {
-	"name": "L — XL"
+"name": "L — XL"
 }
 ] %}
 
@@ -130,13 +130,13 @@
 		<div class="filter__categories-container">
 			<ul class="filter__categories-list">
 				<li class="categories-item filter-item-container">
-					<details class="filter-item-details">
-						<summary class="categories-item__button">Платья</summary>
+					<details class="categories-item__name-container">
+						<summary class="categories-item__name">Платья</summary>
 					</details>
 				</li>
 				<li class="categories-item filter-item-container">
-					<details class="filter-item-details">
-						<summary class="categories-item__button">Верх
+					<details class="categories-item__name-container">
+						<summary class="categories-item__name">Верх
 							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 						</summary>
 					</details>
@@ -156,8 +156,8 @@
 					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<details class="filter-item-details">
-						<summary class="categories-item__button">Низ
+					<details class="categories-item__name-container">
+						<summary class="categories-item__name">Низ
 							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 						</summary>
 					</details>
@@ -177,8 +177,8 @@
 					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<details class="filter-item-details">
-						<summary class="categories-item__button">Куртки
+					<details class="categories-item__name-container">
+						<summary class="categories-item__name">Куртки
 							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 						</summary>
 					</details>
@@ -198,8 +198,8 @@
 					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<details class="filter-item-details">
-						<summary class="categories-item__button">Мелочи
+					<details class="categories-item__name-container">
+						<summary class="categories-item__name">Мелочи
 							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
 						</summary>
 					</details>
@@ -219,8 +219,8 @@
 					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<details class="filter-item-details">
-						<summary class="categories-item__button">Костюмы</summary>
+					<details class="categories-item__name-container">
+						<summary class="categories-item__name">Костюмы</summary>
 					</details>
 				</li>
 			</ul>
