@@ -206,15 +206,25 @@
 			}
 			
 		}
+		
+		&__subList-wrapper {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: height 0.5s,
+				margin 0.5s,
+				grid-template-rows 0.5s;
+
+			&_inner {
+				min-height: 0;
+			}
+		}
 
 		&__subList {
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
-			height: 0;
 			margin-left: 30px;
-			transition: height 0.5s,
-				margin 0.5s;
+			transition: margin 0.5s;
 
 			@include helpers.mobile() {
 				gap: 16px;
@@ -225,6 +235,19 @@
 				margin-left: 50px;
 			}
 		}
+	}
+
+	.filter-item-details {
+		min-width: 165px;
+
+		&[open] + .categories-item__subList-wrapper {
+			grid-template-rows: 1fr;
+			visibility: visible;
+		}
+	}
+	
+	.categories-item__button {
+		list-style: none;
 	}
 
 	.filter__price-container {

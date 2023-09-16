@@ -130,70 +130,98 @@
 		<div class="filter__categories-container">
 			<ul class="filter__categories-list">
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button">Платья</button>
+					<details class="filter-item-details">
+						<summary class="categories-item__button">Платья</summary>
+					</details>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button">Верх
-						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
-					</button>
-					<ul class="categories-item__subList">
-						{% for item in top %}
-						<li class="filter-item">
-							<label class="filter-item-label">
-								<input class="filter-item-marker" type="radio" name="top">
-								<span class="filter-item-text">{{item.name}}</span>
-							</label>
-						</li>
-						{% endfor %}
-					</ul>
+					<details class="filter-item-details">
+						<summary class="categories-item__button">Верх
+							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+						</summary>
+					</details>
+					<div class="categories-item__subList-wrapper">
+						<div class="categories-item__subList-wrapper_inner">
+							<ul class="categories-item__subList">
+								{% for item in top %}
+								<li class="filter-item">
+									<label class="filter-item-label">
+										<input class="filter-item-marker" type="radio" name="top">
+										<span class="filter-item-text">{{item.name}}</span>
+									</label>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button">Низ
-						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
-					</button>
-					<ul class="categories-item__subList">
-						{% for item in bottom %}
-						<li class="filter-item">
-							<label class="filter-item-label">
-								<input class="filter-item-marker" type="radio" name="top">
-								<span class="filter-item-text">{{item.name}}</span>
-							</label>
-						</li>
-						{% endfor %}
-					</ul>
+					<details class="filter-item-details">
+						<summary class="categories-item__button">Низ
+							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+						</summary>
+					</details>
+					<div class="categories-item__subList-wrapper">
+						<div class="categories-item__subList-wrapper_inner">
+							<ul class="categories-item__subList">
+								{% for item in bottom %}
+								<li class="filter-item">
+									<label class="filter-item-label">
+										<input class="filter-item-marker" type="radio" name="top">
+										<span class="filter-item-text">{{item.name}}</span>
+									</label>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button">Куртки
-						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
-					</button>
-					<ul class="categories-item__subList">
-						{% for item in jaket %}
-						<li class="filter-item">
-							<label class="filter-item-label">
-								<input class="filter-item-marker" type="radio" name="top">
-								<span class="filter-item-text">{{item.name}}</span>
-							</label>
-						</li>
-						{% endfor %}
-					</ul>
+					<details class="filter-item-details">
+						<summary class="categories-item__button">Куртки
+							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+						</summary>
+					</details>
+					<div class="categories-item__subList-wrapper">
+						<div class="categories-item__subList-wrapper_inner">
+							<ul class="categories-item__subList">
+								{% for item in jaket %}
+								<li class="filter-item">
+									<label class="filter-item-label">
+										<input class="filter-item-marker" type="radio" name="top">
+										<span class="filter-item-text">{{item.name}}</span>
+									</label>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button">Мелочи
-						{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
-					</button>
-					<ul class="categories-item__subList">
-						{% for item in little_things %}
-						<li class="filter-item">
-							<label class="filter-item-label">
-								<input class="filter-item-marker" type="radio" name="top">
-								<span class="filter-item-text">{{item.name}}</span>
-							</label>
-						</li>
-						{% endfor %}
-					</ul>
+					<details class="filter-item-details">
+						<summary class="categories-item__button">Мелочи
+							{% include "html/icons_svg/filter/arrow-bottom-icon.html" %}
+						</summary>
+					</details>
+					<div class="categories-item__subList-wrapper">
+						<div class="categories-item__subList-wrapper_inner">
+							<ul class="categories-item__subList">
+								{% for item in little_things %}
+								<li class="filter-item">
+									<label class="filter-item-label">
+										<input class="filter-item-marker" type="radio" name="top">
+										<span class="filter-item-text">{{item.name}}</span>
+									</label>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
 				</li>
 				<li class="categories-item filter-item-container">
-					<button class="categories-item__button">Костюмы</button>
+					<details class="filter-item-details">
+						<summary class="categories-item__button">Костюмы</summary>
+					</details>
 				</li>
 			</ul>
 		</div>

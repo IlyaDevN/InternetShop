@@ -60,48 +60,31 @@ function filterItemHandler(list) {
 		}
 
 		deactivateFilterSection(activeFilterSection);
+		categorySublistClose(activeFilterSection);
 		activateFilterSection(filterSection);
 	})
 }
 
 function activateFilterSection(section) {
 	section.classList.add("active");
-	const categorySublist = section.querySelector(".categories-item__subList");
-	if(categorySublist) {
-		categorySublistOpen(categorySublist);
-	}
 }
 
 function deactivateFilterSection(section) {
 	section.classList.remove("active");
 	const categorySublist = section.querySelector(".categories-item__subList");
 	if(categorySublist) {
-		categorySublistClose(categorySublist);
 		deactivateActiveFilterItem(section);
 	}
 }
 
-function categorySublistOpen(subList) {
-	const menuListHeight = getSublistHeight(subList);
-	subList.style.height = `${menuListHeight}px`;
-}
-
-function categorySublistClose(subList) {
-	subList.style.height = 0;
+function categorySublistClose(section) {
+	const details = section.querySelector(".filter-item-details");
+	details.removeAttribute("open");
 }
 
 function deactivateActiveFilterItem(section) {
 	const activeFilterItem = section.querySelector(".filter-item.active");
 	activeFilterItem?.classList.remove("active");
-}
-
-function getSublistHeight(subList) {
-	const subListGap = parseInt(window.getComputedStyle(subList).gap);
-	const subListItemHeight = subList.querySelector("li").offsetHeight;
-	const subListItemsAmount = subList.childElementCount;
-	const totalGap = subListGap * (subListItemsAmount - 1);
-	const sublistHeight = subListItemHeight * subListItemsAmount + totalGap;
-	return sublistHeight;
 }
 
 function filterSubItemHandler(subItem) {
