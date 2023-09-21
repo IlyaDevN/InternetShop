@@ -176,9 +176,8 @@
 			--height: auto;
 			height: var(--height);
 			font-family: "Montserrat";
-			font-size: 0.75rem;
+			font-size: 1rem;
 			line-height: 1.2;
-			transition: height 0.5s;
 			display: -webkit-box;
 			-webkit-line-clamp: 5;
 			-webkit-box-orient: vertical;  
@@ -193,7 +192,8 @@
 		.description-unwrap-button {
 			display: none;
 			font-family: "Montserrat";
-			font-size: 0.75rem;
+			font-size: 1rem;
+			font-weight: 600;
 			line-height: 1.2;
 			color: helpers.$color-pink;
 
