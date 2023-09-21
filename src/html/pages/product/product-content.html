@@ -1,0 +1,80 @@
+{% set slides = [
+	{
+		"img_number": "1"
+	},
+	{
+		"img_number": "2"
+	},
+	{
+		"img_number": "3"
+	},
+	{
+		"img_number": "4"
+	},
+	{
+		"img_number": "5"
+	}
+] %}
+
+<section class="product-content">
+	<div class="product-content__container">
+		<div class="navigation-state-wrapper">
+			{% include "html/components/elements/navigation-state.html" %}
+		</div>
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				{% for slide in slides %}
+					<div class="swiper-slide">
+						<div class="product-content__image-container">
+							<picture>
+								<source srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
+									media="(min-width:1200px)">
+								<source srcset="img/pages/product/product_image/1000/photo_{{slide.img_number}}_x1000.jpg" type="image/jpeg"
+									media="(min-width:1000px)">
+								<source srcset="img/pages/product/product_image/768/photo_{{slide.img_number}}_x768.jpg" type="image/jpeg"
+									media="(min-width:768px)">
+								<source srcset="img/pages/product/product_image/480/photo_{{slide.img_number}}_x480.jpg" type="image/jpeg"
+									media="(min-width:480px)">
+								<img class="_img" src="img/pages/product/product_image/320/photo_{{slide.img_number}}_x320.jpg" alt="Слайд в слайдере">
+							</picture>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<h2 class="product-content__title">
+			Платье прозрачное в цветочек чееное
+		</h2>
+		<p class="product-content__price">
+			1299 ₴
+		</p>
+		<p class="product-content__size">
+			Размер:
+		</p>
+		<button class="product-content__choose-size-button">
+			Выберите размер
+			<div class="product-content__chosen-size"></div>
+			<div class="choose-size-marker">
+				<div class="choose-size-marker_line-1 marker_line"></div>
+				<div class="choose-size-marker_line-2 marker_line"></div>
+			</div>
+		</button>
+		<button class="product-content__buy-buttton">
+			{% include "html/icons_svg/pages/product/into-cart-icon.html" %}
+			<p class="product-content__buy-buttton-name white">в корзину</p>
+		</button>
+		<button class="product-content__buy-buttton">
+			{% include "html/icons_svg/pages/product/quick-order-icon.html" %}
+			<p class="product-content__buy-buttton-name pink">быстрый заказ</p>
+		</button>
+		<div class="product-content__description">
+			<p class="description-text">
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nostrum unde dolorem! Dolorum, quidem tempora? Nobis, cupiditate ab? Voluptatum quam quaerat officiis totam eligendi tenetur laboriosam, labore error modi minus!
+				Inventore eveniet voluptates ex officiis nesciunt provident adipisci magnam, similique, architecto illo ut voluptatibus quos? Dolorum, quisquam architecto iste ipsum praesentium dignissimos vitae, eligendi debitis fuga aperiam illum sint recusandae.
+			</p>
+			<button class="description-unwrap-button visible">Развернуть описание</button>
+		</div>
+		<div class="product-content__dotted-line"></div>
+	</div>
+</section>

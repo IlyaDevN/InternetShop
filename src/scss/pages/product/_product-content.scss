@@ -1,0 +1,213 @@
+@use "../../common/forwarded" as helpers;
+
+.product-content {
+
+	&__container {
+		margin-top: 15px;
+		padding: 0 15px;
+
+		.swiper {
+			margin-bottom: 30px;
+
+			.swiper-pagination-bullet {
+				background-color: helpers.$color-white;
+				border: 1px solid helpers.$color-black;
+				opacity: 1;
+				margin: 0 7px 0;
+		
+				&-active {
+					border: none;
+					background-color: helpers.$color-pink;
+				}
+			}
+		}
+	}
+
+	.navigation-state-wrapper {
+		margin-bottom: 28px;
+	}
+
+	&__image-container {
+		height: 380px;
+
+		@include helpers.mobile() {
+			height: 590px;
+		}
+
+		._img {
+			object-fit: cover;
+			object-position: top;
+		}
+	}
+
+	&__title {
+		font-family: "Montserrat";
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.2;
+		color: helpers.$color-black-standart;
+		margin-bottom: 4px;
+	}
+
+	&__price {
+		font-family: "Montserrat";
+		font-variant-numeric: lining-nums tabular-nums;
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1.2;
+		color: helpers.$color-pink;
+		margin-bottom: 20px;
+	}
+
+	&__size {
+		font-family: "Montserrat";
+		color: helpers.$color-black-standart;
+		font-size: 0.75rem;
+		font-weight: 400;
+		font-style: italic;
+		line-height: 1.2;
+		margin-bottom: 10px;
+	}
+
+	&__choose-size-button {
+		font-family: "Montserrat";
+		line-height: 1.2;
+		color: helpers.$color-black;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 40px;
+		width: 100%;
+		border-top: 1px solid helpers.$color-black;
+		border-bottom: 1px solid helpers.$color-black;
+		margin-bottom: 26px;
+
+		.choose-size-marker {
+			position: relative;
+			width: 16px;
+			height: 16px;
+			border: 1px solid helpers.$color-black;
+			border-radius: 50%;
+	
+			.marker_line {
+				height: 1px;
+				width: 5px;
+				background-color: helpers.$color-black;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+	
+			&_line-1 {
+				transform: translateX(-79%) rotate(45deg);
+				
+			}
+	
+			&_line-2 {
+				transform: translateX(-21%) rotate(-45deg);
+				
+			}
+		}
+	}
+
+	&__choose-size-button.active {
+		justify-content: center;
+
+		.choose-size-marker {
+			position: absolute;
+			right: 0;
+			background-color: helpers.$color-pink;
+			border: none;
+
+			.marker_line {
+				width: 8px;
+				background-color: helpers.$color-white;
+			}
+
+			&_line-1 {
+				transform: translate(-50%, -35%) rotate(45deg);
+			}
+	
+			&_line-2 {
+				transform: translate(-50%, -35%) rotate(-45deg);
+			}
+		}
+	}
+
+	&__chosen-size {
+		font-family: "Montserrat";
+		line-height: 1.2;
+		color: helpers.$color-pink;
+	}
+
+	&__buy-buttton {
+		height: 55px;
+		display: block;
+		margin: 0 auto 8px;
+		position: relative;
+
+		&:last-child {
+			margin: 0 auto 20px;
+		}
+
+		&-name {
+			font-family: "Sunday Best [rus by aLiNcE]";
+			font-size: 0.75rem;
+			line-height: 1.2;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 30%;
+
+			&.white {
+				color: helpers.$color-white;
+			}
+
+			&.pink {
+				color: helpers.$color-pink;
+			}
+		}
+	}
+
+	&__description {
+
+		.description-text {
+			--height: auto;
+			height: var(--height);
+			font-family: "Montserrat";
+			font-size: 0.75rem;
+			line-height: 1.2;
+			transition: height 0.5s;
+			display: -webkit-box;
+			-webkit-line-clamp: 5;
+			-webkit-box-orient: vertical;  
+			overflow: hidden;
+			transition: height 0.5s;
+
+			&.opened {
+				display: block;
+			}
+		}
+
+		.description-unwrap-button {
+			display: none;
+			font-family: "Montserrat";
+			font-size: 0.75rem;
+			line-height: 1.2;
+			color: helpers.$color-pink;
+
+			&.visible {
+				display: block;
+			}
+		}
+	}
+
+	&__dotted-line {
+		width: 100%;
+		height: 2px;
+		margin: 20px auto;
+		background-image: url(../../../img/pages/product/dot/dot.svg);
+	}
+}
+

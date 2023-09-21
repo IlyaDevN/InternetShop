@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "leaflet": "1.9.4",
+    "swiper": "10.2.0",
     "throttle-debounce": "5.0.0"
   }
 }

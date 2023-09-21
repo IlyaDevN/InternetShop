@@ -1,0 +1,24 @@
+{% extends "html/layouts/default.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="css/product.min.css">
+{% endblock %}
+
+{% set page_class = "product" %}
+
+{% block content %}
+	{% include "html/pages/product/product-content.html" %}
+	{% include "html/pages/product/modal-choose-size.html" %}
+	{% include "html/pages/product/model-parametrs.html" %}
+	{% include "html/pages/product/product-transport.html" %}
+	{% include "html/pages/product/photo-from-instagram.html" %}
+	{% include "html/pages/product/you-may-like-it.html" %}
+	{% include "html/components/sections/instagram.html" %}
+	{% include "html/components/sections/modal-menu.html" %}
+	{% include "html/components/sections/menu.html" %}	
+	{% include "html/components/elements/buttonScrollTop.html" %}
+{% endblock %}
+
+{% block js %}
+	<script type="module" src="js/product.min.js"></script>
+{% endblock %}

@@ -1,0 +1,114 @@
+@use "../../common/forwarded" as helpers;
+
+.product-transport {
+
+	&__container {
+		margin: 40px auto;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		padding: 0 15px;
+
+		@include helpers.mobile() {
+			padding: 0;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: 50px auto;
+		}
+
+		@include helpers.tablet() {
+			margin: 60px auto;
+		}
+	}
+
+	&__card {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 220px;
+		margin: 0 auto;
+		
+		@include helpers.mobile() {
+			justify-content: center;
+			gap: 8px;
+		}
+
+		@include helpers.tablet() {
+			gap: 30px;
+		}
+
+		@include helpers.laptop() {
+			gap: 20px;
+		}
+
+		@include helpers.desktop() {
+			gap: 30px;
+		}
+
+		&:nth-child(3) {
+			@include helpers.mobile() {
+				display: flex;
+				margin: 30px auto 0;
+			}
+
+			@include helpers.tablet() {
+				margin: 35px auto 0;
+			}
+
+			@include helpers.laptop() {
+				margin: unset;
+			}
+		}
+
+		&_content {
+			width: 135px;
+
+			@include helpers.mobile() {
+				width: auto;
+			}
+		}
+
+		&_img {
+			width: 66px;
+			height: 68px;
+			display: inline-block;
+
+			@include helpers.tablet() {
+				width: 81px;
+				height: 98px;
+			}
+		}
+
+		&_title {
+			font-family: "Montserrat", sans-serif;
+			font-size: 0.875rem;
+			font-weight: 600;
+			color: helpers.$color-black;
+			margin-bottom: 14px;
+			line-height: 1.2;
+
+			@include helpers.tablet() {
+				font-size: 1.563rem;
+				margin-bottom: 15px;
+			}
+		}
+
+		&_description {
+			font-family: "Montserrat", sans-serif;
+			font-size: 0.75rem;
+			font-weight: 400;
+			line-height: 1.2;
+			text-transform: uppercase;
+
+			@include helpers.tablet() {
+				font-size: 1rem;
+			}
+
+			span {
+				font-size: 0.375rem;
+				vertical-align: 4px;
+			}
+		}
+	}
+}

@@ -1,0 +1,133 @@
+@use "../../common/forwarded" as helpers;
+
+.modal-choose-size {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	background-color: helpers.$color-black-transparent;
+	@include helpers.zIndex(layer_overlay);
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.6s,
+		visibility 0.6s;
+
+	&[open] {
+		opacity: 1;
+		visibility: visible;
+
+		.modal-choose-size__content {
+			transform: translateY(0);
+		}
+	}
+
+	&__content {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 0 15px;
+		background-color: helpers.$color-white;
+		transform: translateY(100%);
+		transition: transform 0.6s;
+	}
+
+	&__title {
+		position: relative;
+		height: 40px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 1px solid helpers.$color-pink-transparent;
+	}
+
+	&__marker {
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		position: absolute;
+		right: 0;
+		background-color: helpers.$color-pink;
+
+		.marker-line {
+			height: 1px;
+			width: 8px;
+			background-color: helpers.$color-white;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		&-line-1 {
+			transform: translate(-50%, -35%) rotate(45deg);
+		}
+
+		&-line-2 {
+			transform: translate(-50%, -35%) rotate(-45deg);
+		}
+	}
+
+	.size-list {
+		&__item {
+			
+			position: relative;
+			height: 40px;
+			border-bottom: 1px solid helpers.$color-pink-transparent;
+		}
+
+		&__availability {
+			font-family: "Montserrat";
+			font-size: 0.625rem;
+			font-weight: 600;
+			line-height: 1.2;
+			color: helpers.$color-red;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			height: 12px;
+			margin: auto 0;
+			opacity: 0;
+		}
+
+		&__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+
+			&:disabled {
+				.size-list__name {
+					color: helpers.$color-grey;
+					border-top: 1px solid helpers.$color-grey;
+					border-bottom: 1px solid helpers.$color-grey;
+				}
+			}
+
+			&.active {
+				.size-list__name {
+					color: helpers.$color-pink;
+					border-top: 1px solid helpers.$color-pink;
+					border-bottom: 1px solid helpers.$color-pink;
+				}
+			}
+		}
+
+		&__name {
+			font-family: "Montserrat";
+			font-size: 1rem;
+			line-height: 30px;
+			height: 32px;
+			width: 70px;
+			border-top: 1px solid helpers.$color-black-standart;
+			border-bottom: 1px solid helpers.$color-black-standart;
+		}
+	}
+}
+

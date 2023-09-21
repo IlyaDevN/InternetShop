@@ -1,0 +1,62 @@
+{% set title = 
+	{
+		"name": "понравится",
+		"extra_text": "могут",
+		"subname": "тебе могут понравится"
+		
+	}
+%}
+
+{% set novelty_items = [
+	{	
+		"img_src_320": "img/pages/main/novelty/320/photo_1_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_1_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_1_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_1_x1000.jpg",
+		"img_src_1200": "img/pages/main/novelty/1200/photo_1_x1200.jpg",
+		"description_name": "Cвитшот вставка клетка",
+		"description_price": "1 099 ₴",
+		"link": "./product.html"
+	},
+	{	
+		"img_src_320": "img/pages/main/novelty/320/photo_2_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_2_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_2_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_2_x1000.jpg",
+		"img_src_1200": "img/pages/main/novelty/1200/photo_2_x1200.jpg",
+		"description_name": "Платье прозрачное в цветочек чееное",
+		"description_price": "1 299 ₴",
+		"link": "./product.html"
+	},
+	{
+		"img_src_320": "img/pages/main/novelty/320/photo_3_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_3_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_3_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_3_x1000.jpg",
+		"img_src_1200": "img/pages/main/novelty/1200/photo_3_x1200.jpg",
+		"description_name": "Платье-футболка рыбы в аквариуме",
+		"description_price": "899 ₴",
+		"link": "./product.html"
+	},
+	{	
+		"img_src_320": "img/pages/main/novelty/320/photo_4_x320.jpg",
+		"img_src_480": "img/pages/main/novelty/480/photo_4_x480.jpg",
+		"img_src_768": "img/pages/main/novelty/768/photo_4_x768.jpg",
+		"img_src_1000": "img/pages/main/novelty/1000/photo_4_x1000.jpg",
+		"img_src_1200": "img/pages/main/novelty/1200/photo_4_x1200.jpg",
+		"description_name": "Бомбер Gone Crazy хаки",
+		"description_price": "2 499 ₴",
+		"link": "./product.html"
+	}
+] %}
+
+<section class="you-may-like-it">
+	<div class="you-may-like-it__container">
+		{% include "html/components/elements/big-title.html" %}
+		<div class="you-may-like-it__products-container">
+			{% for item in novelty_items %}
+				{% include "html/components/elements/product-card.html" %}
+			{% endfor %}
+		</div>
+	</div>
+</section>

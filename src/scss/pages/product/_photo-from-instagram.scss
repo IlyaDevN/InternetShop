@@ -1,0 +1,24 @@
+@use "../../common/forwarded" as helpers;
+
+.photo-from-instagram {
+	&__container {
+		padding: 0 15px;
+		margin-bottom: 40px;
+	}
+
+	&__title {
+		display: block;
+		margin-bottom: 8px;
+		color: helpers.$color-pink;
+		font-family: "Montserrat";
+		font-weight: 700;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	&__photo {
+		height: 188px;
+		width: 188px;
+		margin: 0 auto;
+	}
+}
