@@ -16,7 +16,7 @@
 			margin: 50px auto;
 		}
 
-		@include helpers.mobile() {
+		@include helpers.tablet() {
 			margin: 60px auto;
 		}
 	}
