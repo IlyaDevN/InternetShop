@@ -25,6 +25,10 @@
 		@include helpers.desktop() {
 			font-size: 1rem;
 		}
+
+		&_sub-category {
+			color: helpers.$color-pink;
+		}
 	}
 
 	&__arrow-icon {	
