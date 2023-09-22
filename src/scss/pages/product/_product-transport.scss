@@ -3,17 +3,14 @@
 .product-transport {
 
 	&__container {
+		width: 220px;
 		margin: 40px auto;
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
-		padding: 0 15px;
 
 		@include helpers.mobile() {
-			padding: 0;
-			flex-direction: row;
-			justify-content: space-between;
-			flex-wrap: wrap;
+			width: 294px;
 			margin: 50px auto;
 		}
 
@@ -26,12 +23,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 220px;
-		margin: 0 auto;
 		
 		@include helpers.mobile() {
-			justify-content: center;
-			gap: 8px;
+			justify-content: flex-start;
+			gap: 16px;
 		}
 
 		@include helpers.tablet() {
@@ -47,12 +42,8 @@
 		}
 
 		&:nth-child(3) {
-			@include helpers.mobile() {
-				display: flex;
-				margin: 30px auto 0;
-			}
-
 			@include helpers.tablet() {
+				display: flex;
 				margin: 35px auto 0;
 			}
 
@@ -87,6 +78,13 @@
 			color: helpers.$color-black;
 			margin-bottom: 14px;
 			line-height: 1.2;
+			white-space: pre-line;
+
+			@include helpers.mobile() {
+				font-size: 1rem;
+				white-space: normal;
+				margin-bottom: 8px;
+			}
 
 			@include helpers.tablet() {
 				font-size: 1.563rem;

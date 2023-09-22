@@ -26,6 +26,9 @@
 				{% for slide in slides %}
 					<div class="swiper-slide">
 						<div class="product-content__image-container">
+							<div class="product-content__heart-icon">
+								{% include "html/icons_svg/common/heart-icon.html" %}
+							</div>
 							<picture>
 								<source srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
 									media="(min-width:1200px)">
@@ -60,14 +63,16 @@
 				<div class="choose-size-marker_line-2 marker_line"></div>
 			</div>
 		</button>
-		<button class="product-content__buy-buttton">
-			{% include "html/icons_svg/pages/product/into-cart-icon.html" %}
-			<p class="product-content__buy-buttton-name white">в корзину</p>
-		</button>
-		<button class="product-content__buy-buttton">
-			{% include "html/icons_svg/pages/product/quick-order-icon.html" %}
-			<p class="product-content__buy-buttton-name pink">быстрый заказ</p>
-		</button>
+		<div class="product-content__buy-buttton-container">
+			<button class="product-content__buy-buttton">
+				{% include "html/icons_svg/pages/product/into-cart-icon.html" %}
+				<p class="product-content__buy-buttton-name white">в корзину</p>
+			</button>
+			<button class="product-content__buy-buttton">
+				{% include "html/icons_svg/pages/product/quick-order-icon.html" %}
+				<p class="product-content__buy-buttton-name pink">быстрый заказ</p>
+			</button>
+		</div>
 		<div class="product-content__description">
 			<p class="description-text">
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nostrum unde dolorem! Dolorum, quidem tempora? Nobis, cupiditate ab? Voluptatum quam quaerat officiis totam eligendi tenetur laboriosam, labore error modi minus!

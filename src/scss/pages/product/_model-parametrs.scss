@@ -3,13 +3,19 @@
 .model-parametrs {
 
 	&__container {
+		max-width: 425px;
 		padding: 0 15px;
+		margin: 0 auto;
+
+		@include helpers.mobile() {
+			// width: 425px;
+		}
 	}
 
 	&__description {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 26px;
+		margin-bottom: 25px;
 	}
 
 	&-title {
@@ -19,6 +25,10 @@
 		font-weight: 600;
 		line-height: 1.2;
 		text-transform: uppercase;
+
+		@include helpers.mobile() {
+			font-size: 0.875rem;
+		}
 	}
 
 	&-text {
@@ -164,5 +174,9 @@
 		font-family: "Sunday Best [rus by aLiNcE]";
 		font-size: 0.75rem;
 		line-height: 1.2;
+
+		@include helpers.mobile() {
+			width: 178px;
+		}
 	}
 }

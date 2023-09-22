@@ -10,6 +10,10 @@
 	&__products-container {
 		display: flex;
 		margin-top: 12px;
+
+		@include helpers.mobile() {
+			margin-bottom: 50px;
+		}
 	
 		@include helpers.tablet() {
 			
@@ -72,7 +76,6 @@
 				margin: 0 auto;
 	
 				@include helpers.mobile() {
-					width: auto;
 					width: 201px;
 					height: 270px;
 				}

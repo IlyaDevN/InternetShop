@@ -4,6 +4,10 @@
 	&__container {
 		padding: 0 15px;
 		margin-bottom: 40px;
+
+		@include helpers.mobile() {
+			margin-bottom: 50px;
+		}
 	}
 
 	&__title {
@@ -14,11 +18,21 @@
 		font-weight: 700;
 		line-height: 1.2;
 		text-align: center;
+
+		@include helpers.mobile() {
+			font-size: 1.625rem;
+			margin-bottom: 13px;
+		}
 	}
 
 	&__photo {
 		height: 188px;
 		width: 188px;
 		margin: 0 auto;
+
+		@include helpers.mobile() {
+			width: 304px;
+			height: 304px;
+		}
 	}
 }
