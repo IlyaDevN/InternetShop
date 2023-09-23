@@ -46,40 +46,89 @@
 			</div>
 			<div class="swiper-pagination"></div>
 		</div>
-		<h2 class="product-content__title">
-			Платье прозрачное в цветочек чееное
-		</h2>
-		<p class="product-content__price">
-			1299 ₴
-		</p>
-		<p class="product-content__size">
-			Размер:
-		</p>
-		<button class="product-content__choose-size-button">
-			Выберите размер
-			<div class="product-content__chosen-size"></div>
-			<div class="choose-size-marker">
-				<div class="choose-size-marker_line-1 marker_line"></div>
-				<div class="choose-size-marker_line-2 marker_line"></div>
-			</div>
-		</button>
-		<div class="product-content__buy-buttton-container">
-			<button class="product-content__buy-buttton">
-				{% include "html/icons_svg/pages/product/into-cart-icon.html" %}
-				<p class="product-content__buy-buttton-name white">в корзину</p>
-			</button>
-			<button class="product-content__buy-buttton">
-				{% include "html/icons_svg/pages/product/quick-order-icon.html" %}
-				<p class="product-content__buy-buttton-name pink">быстрый заказ</p>
-			</button>
-		</div>
-		<div class="product-content__description">
-			<p class="description-text">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nostrum unde dolorem! Dolorum, quidem tempora? Nobis, cupiditate ab? Voluptatum quam quaerat officiis totam eligendi tenetur laboriosam, labore error modi minus!
-				Inventore eveniet voluptates ex officiis nesciunt provident adipisci magnam, similique, architecto illo ut voluptatibus quos? Dolorum, quisquam architecto iste ipsum praesentium dignissimos vitae, eligendi debitis fuga aperiam illum sint recusandae.
+		<div class="product-content__rest-content">
+			<h2 class="product-content__title">
+				Платье прозрачное в цветочек чееное
+			</h2>
+			<p class="product-content__price">
+				1299 ₴
 			</p>
-			<button class="description-unwrap-button visible">Развернуть описание</button>
+			<p class="product-content__size">
+				Размер:
+			</p>
+			<button class="product-content__choose-size-button">
+				Выберите размер
+				<div class="product-content__chosen-size"></div>
+				<div class="choose-size-marker">
+					<div class="choose-size-marker_line-1 marker_line"></div>
+					<div class="choose-size-marker_line-2 marker_line"></div>
+				</div>
+			</button>
+			<div class="product-content__buy-buttton-container">
+				<button class="product-content__buy-buttton">
+					{% include "html/icons_svg/pages/product/into-cart-icon.html" %}
+					<p class="product-content__buy-buttton-name white">в корзину</p>
+				</button>
+				<button class="product-content__buy-buttton">
+					{% include "html/icons_svg/pages/product/quick-order-icon.html" %}
+					<p class="product-content__buy-buttton-name pink">быстрый заказ</p>
+				</button>
+			</div>
+			<div class="product-content__description">
+				<p class="description-text">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nostrum unde dolorem! Dolorum, quidem tempora? Nobis, cupiditate ab? Voluptatum quam quaerat officiis totam eligendi tenetur laboriosam, labore error modi minus!
+					Inventore eveniet voluptates ex officiis nesciunt provident adipisci magnam, similique, architecto illo ut voluptatibus quos? Dolorum, quisquam architecto iste ipsum praesentium dignissimos vitae, eligendi debitis fuga aperiam illum sint recusandae.
+				</p>
+				<button class="description-unwrap-button visible">Развернуть описание</button>
+			</div>
+			<div class="product-content__dotted-line"></div>
+			<div class="model-parametrs__description">
+				<div class="model-parametrs__parametrs">
+					<strong class="parametrs-title model-parametrs-title">Параметры модели:</strong>
+					<p class="parametrs-text model-parametrs-text">(На модели XS — S-ка)</p>
+					<div class="model-parametrs__scheme">
+						<div class="model-height">
+							<p class="model-height-size">171 см</p>
+							<p class="model-height-text">рост</p>
+						</div>
+						<div class="double-side-arrow-wrapper">
+							{% include "html/icons_svg/pages/product/double-side-arrow.html" %}
+						</div>
+						<div class="scheme-image-wrapper">
+							{% include "html/icons_svg/pages/product/model-scheme.html" %}
+						</div>
+						<div class="top-pinter-wrapper">
+							{% include "html/icons_svg/pages/product/top-pointer.html" %}
+						</div>
+						<div class="middle-pinter-wrapper">
+							{% include "html/icons_svg/pages/product/middle-pointer.html" %}
+						</div>
+						<div class="bottom-pinter-wrapper">
+							{% include "html/icons_svg/pages/product/bottom-pointer.html" %}
+						</div>
+						<div class="bust-size body-part-size">
+							<p class="body-part-size_size">83 см</p>
+							<p class="body-part-size_text">объем груди</p>
+						</div>
+						<div class="waist-size body-part-size">
+							<p class="body-part-size_size">66 см</p>
+							<p class="body-part-size_text">объем талии</p>
+						</div>
+						<div class="hips-size body-part-size">
+							<p class="body-part-size_size">93 см</p>
+							<p class="body-part-size_text">объем бедер</p>
+						</div>
+					</div>
+				</div>
+				<div class="model-parametrs__consist">
+					<strong class="consist-title model-parametrs-title">Состав:</strong>
+					<ul class="consist-list">
+						<li class="consist-list-item model-parametrs-text">50% вискоза</li>
+						<li class="consist-list-item model-parametrs-text">50% полиэстер</li>
+					</ul>
+				</div>
+			</div>
+			<button class="size-table-button">таблица размеров</button>
 		</div>
-		<div class="product-content__dotted-line"></div>
 	</div>
 </section>
