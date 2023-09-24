@@ -3,11 +3,34 @@
 .product-content {
 
 	&__container {
-		margin: 15px auto 0;
+		margin: 0 auto 40px;
 		padding: 0 15px;
 
-		.swiper {
+		@include helpers.mobile() {
+			margin: 0 auto 50px;
+		}
+
+		@include helpers.tablet() {
+			display: flex;
+			gap: 48px;
+			max-width: 850px;
+		}
+
+		.sliders-container {
+			overflow: hidden;
+			width: 100%;
+
+			@include helpers.tablet() {
+				margin-right: auto;
+			}
+		}
+
+		.swiper-main {
 			margin-bottom: 30px;
+
+			@include helpers.tablet() {
+				margin-bottom: 7px;
+			}
 
 			.swiper-pagination-bullet {
 				background-color: helpers.$color-white;
@@ -20,23 +43,56 @@
 					background-color: helpers.$color-pink;
 				}
 			}
+
+			.swiper-button-next,
+			.swiper-button-prev {
+				color: helpers.$color-pink;
+			}
+
+			&__image-container {
+				position: relative;
+				width: 290px;
+				height: 380px;
+				margin: auto;
+		
+				@include helpers.mobile() {
+					width: 450px;
+					height: 590px;
+				}
+		
+				@include helpers.tablet() {
+					width: 360px;
+					height: 476px;
+				}
+			}
+		}
+
+		.swiper-thumbs {
+			display: none;
+
+			@include helpers.tablet() {
+				display: block;
+				height: 85px;
+			}
+
+			.swiper-slide {
+				opacity: 0.5;
+			}
+
+			.swiper-slide-thumb-active {
+				opacity: 1;
+			  }
+
+			&__image-container {
+				width: 65px;
+				height: 85px;
+			}
 		}
 	}
 
 	.navigation-state-wrapper {
-		margin-bottom: 28px;
-	}
-
-	&__image-container {
-		position: relative;
-		width: 290px;
-		height: 380px;
-		margin: auto;
-
-		@include helpers.mobile() {
-			width: 450px;
-			height: 590px;
-		}
+		margin: 15px 0 28px;
+		padding: 0 15px;
 	}
 
 	&__heart-icon {
@@ -51,6 +107,12 @@
 			right: 26px;
 			width: 26px;
 			height: 24px;
+		}
+	}
+
+	&__rest-content {
+		@include helpers.tablet() {
+			width: 330px;
 		}
 	}
 
@@ -79,6 +141,10 @@
 		@include helpers.mobile() {
 			font-size: 2.25rem;
 		}
+
+		@include helpers.tablet() {
+			margin-bottom: 7px;
+		}
 	}
 
 	&__size {
@@ -92,6 +158,168 @@
 
 		@include helpers.mobile() {
 			font-size: 0.875rem;
+		}
+
+		@include helpers.tablet() {
+			margin-bottom: 8px;
+		}
+	}
+
+	.modal-choose-size {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		background-color: helpers.$color-black-transparent;
+		@include helpers.zIndex(layer_overlay);
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.5s,
+			visibility 0.5s;
+	
+		@include helpers.tablet() {
+			position: static;
+			opacity: 1;
+			visibility: visible;
+			background-color: transparent;
+			z-index: auto;
+			height: 40px;
+			margin-bottom: 20px;
+		}
+	
+		&[open] {
+			opacity: 1;
+			visibility: visible;
+	
+			.modal-choose-size__content {
+				transform: translateY(0);
+			}
+		}
+	
+		&__content {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 0 15px;
+			background-color: helpers.$color-white;
+			transform: translateY(100%);
+			transition: transform 0.5s;
+	
+			@include helpers.tablet() {
+				position: static;
+				background: none;
+				transform: translateY(0);
+				padding: 0;
+			}
+		}
+	
+		&__title {
+			position: relative;
+			height: 40px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid helpers.$color-pink-transparent;
+	
+			@include helpers.tablet() {
+				display: none;
+			}
+		}
+	
+		&__marker {
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			position: absolute;
+			right: 0;
+			background-color: helpers.$color-pink;
+	
+			.marker-line {
+				height: 1px;
+				width: 8px;
+				background-color: helpers.$color-white;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+	
+			&-line-1 {
+				transform: translate(-50%, -35%) rotate(45deg);
+			}
+	
+			&-line-2 {
+				transform: translate(-50%, -35%) rotate(-45deg);
+			}
+		}
+	
+		&__size-list {
+			@include helpers.tablet() {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	
+		.size-list {
+			&__item {
+				position: relative;
+				height: 40px;
+				border-bottom: 1px solid helpers.$color-pink-transparent;
+			}
+	
+			&__availability {
+				font-family: "Montserrat";
+				font-size: 0.625rem;
+				font-weight: 600;
+				line-height: 1.2;
+				color: helpers.$color-red;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				height: 12px;
+				margin: auto 0;
+				display: none;
+			}
+	
+			&__button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+	
+				&:disabled {
+					.size-list__name {
+						color: helpers.$color-grey;
+						border-top: 1px solid helpers.$color-grey;
+						border-bottom: 1px solid helpers.$color-grey;
+					}
+				}
+	
+				&.active {
+					.size-list__name {
+						color: helpers.$color-pink;
+						border-top: 1px solid helpers.$color-pink;
+						border-bottom: 1px solid helpers.$color-pink;
+					}
+				}
+			}
+	
+			&__name {
+				font-family: "Montserrat";
+				font-size: 1rem;
+				line-height: 30px;
+				height: 32px;
+				width: 70px;
+				border-top: 1px solid helpers.$color-black-standart;
+				border-bottom: 1px solid helpers.$color-black-standart;
+			}
 		}
 	}
 
@@ -108,6 +336,10 @@
 		border-top: 1px solid helpers.$color-black;
 		border-bottom: 1px solid helpers.$color-black;
 		margin-bottom: 26px;
+
+		@include helpers.tablet() {
+			display: none;
+		}
 
 		.choose-size-marker {
 			position: relative;
@@ -190,6 +422,11 @@
 			height: 58px;
 		}
 
+		@include helpers.tablet() {
+			width: 157px;
+			height: 50px;
+		}
+
 		&-name {
 			font-family: "Sunday Best [rus by aLiNcE]";
 			font-size: 0.75rem;
@@ -222,6 +459,10 @@
 			overflow: hidden;
 			transition: height 0.5s;
 
+			@include helpers.tablet() {
+				-webkit-line-clamp: 3;
+			}
+
 			&.opened {
 				display: block;
 			}
@@ -245,6 +486,10 @@
 		height: 2px;
 		margin: 20px auto;
 		background-image: url(../../../img/pages/product/dot/dot.svg);
+	
+		@include helpers.tablet() {
+			margin: 15px auto;
+		}
 	}
 }
 
@@ -258,6 +503,10 @@
 
 		@include helpers.mobile() {
 			margin: 0 auto 15px;
+		}
+
+		@include helpers.tablet() {
+			margin: 0 auto 24px;
 		}
 	}
 
@@ -280,6 +529,10 @@
 		font-size: 0.75rem;
 		line-height: 1.2;
 		margin-bottom: 20px;
+
+		@include helpers.tablet() {
+			font-size: 0.875rem;
+		}
 	}
 
 	&__parametrs {
@@ -421,5 +674,11 @@
 
 	@include helpers.mobile() {
 		width: 178px;
+	}
+
+	@include helpers.tablet() {
+		font-size: 0.875rem;
+		width: 214px;
+		height: 44px;
 	}
 }

@@ -1,31 +1,45 @@
-<section class="product-transport">
-	<div class="product-transport__container">
-		<div class="product-transport__card">
-			<div class="product-transport__card_img">
-				{% include "html/icons_svg/common/send-icon-svg.html" %}</div>
-			<div class="product-transport__card_content">
-				<div class="product-transport__card_title">Отправляем
-					день в день</div>
-				<div class="product-transport__card_description">При заказе до 18<span>00</span></div>
+<section class="transport-and-photo-from-instagram">
+	<div class="transport-and-photo-from-instagram__container">
+		<div class="product-transport">
+			<div class="product-transport__card">
+				<div class="product-transport__card_img">
+					{% include "html/icons_svg/common/send-icon-svg.html" %}</div>
+				<div class="product-transport__card_content">
+					<div class="product-transport__card_title">Отправляем
+						день в день</div>
+					<div class="product-transport__card_description">При заказе до 18<span>00</span></div>
+				</div>
+			</div>
+			<div class="product-transport__card">
+				<div class="product-transport__card_img">
+					{% include "html/icons_svg/common/return-icon-svg.html" %}</div>
+				<div class="product-transport__card_content">
+					<div class="product-transport__card_title">Легкий
+						возврат/обмен</div>
+					<div class="product-transport__card_description">В течении 14 дней</div>
+				</div>
+			</div>
+			<div class="product-transport__card">
+				<div class="product-transport__card_img">
+					{% include "html/icons_svg/common/cash-on-delivery-icon.html" %}
+				</div>
+				<div class="product-transport__card_content">
+					<div class="product-transport__card_title">Отправляем
+						наложкой</div>
+					<div class="product-transport__card_description">+ 2% от суммы</div>
+				</div>
 			</div>
 		</div>
-		<div class="product-transport__card">
-			<div class="product-transport__card_img">
-				{% include "html/icons_svg/common/return-icon-svg.html" %}</div>
-			<div class="product-transport__card_content">
-				<div class="product-transport__card_title">Легкий
-					возврат/обмен</div>
-				<div class="product-transport__card_description">В течении 14 дней</div>
-			</div>
-		</div>
-		<div class="product-transport__card">
-			<div class="product-transport__card_img">
-				{% include "html/icons_svg/common/cash-on-delivery-icon.html" %}
-			</div>
-			<div class="product-transport__card_content">
-				<div class="product-transport__card_title">Отправляем
-					наложкой</div>
-				<div class="product-transport__card_description">+ 2% от суммы</div>
+		<div class="photo-from-instagram">
+			<h1 class="photo-from-instagram__title">ФОТО ИЗ INSTAGRAM</h1>
+			<div class="photo-from-instagram__photo">
+				<picture>
+					<source srcset="img/pages/product/photo_from_instagram/photo_x768.jpg" type="image/jpeg"
+						media="(min-width:768px)">
+					<source srcset="img/pages/product/photo_from_instagram/photo_x480.jpg" type="image/jpeg"
+						media="(min-width:480px)">
+					<img class="_img" src="img/pages/product/photo_from_instagram/photo_x320.jpg" alt="Фото из инстаграм">
+				</picture>
 			</div>
 		</div>
 	</div>

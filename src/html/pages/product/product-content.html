@@ -17,34 +17,55 @@
 ] %}
 
 <section class="product-content">
+	<div class="navigation-state-wrapper">
+		{% include "html/components/elements/navigation-state.html" %}
+	</div>
 	<div class="product-content__container">
-		<div class="navigation-state-wrapper">
-			{% include "html/components/elements/navigation-state.html" %}
-		</div>
-		<div class="swiper">
-			<div class="swiper-wrapper">
-				{% for slide in slides %}
-					<div class="swiper-slide">
-						<div class="product-content__image-container">
-							<div class="product-content__heart-icon">
-								{% include "html/icons_svg/common/heart-icon.html" %}
+		<div class="sliders-container">
+			<div class="swiper swiper-main">
+				<div class="swiper-wrapper">
+					{% for slide in slides %}
+						<div class="swiper-slide">
+							<div class="swiper-main__image-container">
+								<div class="product-content__heart-icon">
+									{% include "html/icons_svg/common/heart-icon.html" %}
+								</div>
+								<picture>
+									<source srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
+										media="(min-width:1200px)">
+									<source srcset="img/pages/product/product_image/1000/photo_{{slide.img_number}}_x1000.jpg" type="image/jpeg"
+										media="(min-width:1000px)">
+									<source srcset="img/pages/product/product_image/768/photo_{{slide.img_number}}_x768.jpg" type="image/jpeg"
+										media="(min-width:768px)">
+									<source srcset="img/pages/product/product_image/480/photo_{{slide.img_number}}_x480.jpg" type="image/jpeg"
+										media="(min-width:480px)">
+									<img class="_img" src="img/pages/product/product_image/320/photo_{{slide.img_number}}_x320.jpg" alt="Слайд в слайдере">
+								</picture>
 							</div>
-							<picture>
-								<source srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
-									media="(min-width:1200px)">
-								<source srcset="img/pages/product/product_image/1000/photo_{{slide.img_number}}_x1000.jpg" type="image/jpeg"
-									media="(min-width:1000px)">
-								<source srcset="img/pages/product/product_image/768/photo_{{slide.img_number}}_x768.jpg" type="image/jpeg"
-									media="(min-width:768px)">
-								<source srcset="img/pages/product/product_image/480/photo_{{slide.img_number}}_x480.jpg" type="image/jpeg"
-									media="(min-width:480px)">
-								<img class="_img" src="img/pages/product/product_image/320/photo_{{slide.img_number}}_x320.jpg" alt="Слайд в слайдере">
-							</picture>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
 			</div>
-			<div class="swiper-pagination"></div>
+			<div thumbsSlider="" class="swiper swiper-thumbs">
+				<div class="swiper-wrapper">
+					{% for slide in slides %}
+						<div class="swiper-slide">
+							<div class="swiper-thumbs__image-container">
+								<picture>
+									<source srcset="img/pages/product/slider_thumbs/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
+										media="(min-width:1200px)">
+									<source srcset="img/pages/product/slider_thumbs/1000/photo_{{slide.img_number}}_x1000.jpg" type="image/jpeg"
+										media="(min-width:1000px)">
+									<img class="_img" src="img/pages/product/slider_thumbs/768/photo_{{slide.img_number}}_x768.jpg" alt="Слайд в слайдере">
+								</picture>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 		<div class="product-content__rest-content">
 			<h2 class="product-content__title">
@@ -56,6 +77,43 @@
 			<p class="product-content__size">
 				Размер:
 			</p>
+			<dialog class="modal-choose-size">
+				<div class="modal-choose-size__content">
+					<div class="modal-choose-size__title">
+						Выберите размер
+						<button class="modal-choose-size__marker">
+							<div class="modal-choose-size__marker-line-1 marker-line"></div>
+							<div class="modal-choose-size__marker-line-2 marker-line"></div>
+						</button>
+					</div>
+					<ul class="modal-choose-size__size-list">
+						<li class="size-list__item">
+							<p class="size-list__availability">нет в наличии</p>
+							<button  disabled class="size-list__button">
+								<p class="size-list__name">XS — S</p>
+							</button>
+						</li>
+						<li class="size-list__item">
+							<p class="size-list__availability">нет в наличии</p>
+							<button class="size-list__button">
+								<p class="size-list__name">S — M</p>
+							</button>
+						</li>
+						<li class="size-list__item">
+							<p class="size-list__availability">нет в наличии</p>
+							<button class="size-list__button">
+								<p class="size-list__name">M — L</p>
+							</button>
+						</li>
+						<li class="size-list__item">
+							<p class="size-list__availability">нет в наличии</p>
+							<button class="size-list__button">
+								<p class="size-list__name">L — XL</p>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</dialog>
 			<button class="product-content__choose-size-button">
 				Выберите размер
 				<div class="product-content__chosen-size"></div>

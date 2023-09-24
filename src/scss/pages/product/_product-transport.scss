@@ -1,22 +1,40 @@
 @use "../../common/forwarded" as helpers;
 
-.product-transport {
+.transport-and-photo-from-instagram {
 
 	&__container {
-		width: 220px;
-		margin: 40px auto;
-		display: flex;
-		flex-direction: column;
-		gap: 30px;
+		padding: 0 15px;
+		margin-bottom: 40px;
 
 		@include helpers.mobile() {
-			width: 294px;
-			margin: 50px auto;
+			margin-bottom: 50px;
 		}
 
 		@include helpers.tablet() {
-			margin: 60px auto;
+			display: flex;
+			justify-content: space-between;
+			max-width: 850px;
+			margin: 0 auto 50px;
+			gap: 48px;
 		}
+	}
+}
+
+.product-transport {
+	width: 220px;
+	margin: 0 auto 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	@include helpers.mobile() {
+		width: 294px;
+		margin: 0 auto 50px;
+	}
+
+	@include helpers.tablet() {
+		width: 336px;
+		margin: 0;
 	}
 
 	&__card {
@@ -30,26 +48,7 @@
 		}
 
 		@include helpers.tablet() {
-			gap: 30px;
-		}
-
-		@include helpers.laptop() {
-			gap: 20px;
-		}
-
-		@include helpers.desktop() {
-			gap: 30px;
-		}
-
-		&:nth-child(3) {
-			@include helpers.tablet() {
-				display: flex;
-				margin: 35px auto 0;
-			}
-
-			@include helpers.laptop() {
-				margin: unset;
-			}
+			gap: 15px;
 		}
 
 		&_content {
@@ -87,8 +86,8 @@
 			}
 
 			@include helpers.tablet() {
-				font-size: 1.563rem;
-				margin-bottom: 15px;
+				font-size: 1.125rem;
+				margin-bottom: 8px;
 			}
 		}
 
@@ -100,13 +99,42 @@
 			text-transform: uppercase;
 
 			@include helpers.tablet() {
-				font-size: 1rem;
+				font-size: 0.875rem;
 			}
 
 			span {
 				font-size: 0.375rem;
 				vertical-align: 4px;
 			}
+		}
+	}
+}
+
+.photo-from-instagram {
+
+	&__title {
+		display: block;
+		margin-bottom: 8px;
+		color: helpers.$color-pink;
+		font-family: "Montserrat";
+		font-weight: 700;
+		line-height: 1.2;
+		text-align: center;
+
+		@include helpers.mobile() {
+			font-size: 1.625rem;
+			margin-bottom: 13px;
+		}
+	}
+
+	&__photo {
+		height: 188px;
+		width: 188px;
+		margin: 0 auto;
+
+		@include helpers.mobile() {
+			width: 304px;
+			height: 304px;
 		}
 	}
 }

@@ -16,7 +16,7 @@
 		}
 	
 		@include helpers.tablet() {
-			
+			margin-top: 10px;
 		}
 	
 		@include helpers.laptop() {
@@ -81,18 +81,10 @@
 				}
 	
 				@include helpers.tablet() {
-					max-width: 270px;
+					width: 222px;
 					height: 302px;
 				}
 	
-				@include helpers.laptop() {
-					max-width: 178px;
-				}
-	
-				@include helpers.desktop() {
-					max-width: 320px;
-					height: 434px;
-				}
 			}
 	
 			&__heart-icon {
