@@ -45,11 +45,13 @@
 						</div>
 					{% endfor %}
 				</div>
-				<div class="swiper-pagination"></div>
+				<div class="swiper-pagination swiper-main-pagination"></div>
 				<div class="swiper-button-next"></div>
 				<div class="swiper-button-prev"></div>
 			</div>
 			<div thumbsSlider="" class="swiper swiper-thumbs">
+				<div class="custom-vertical-pagination">
+				</div>
 				<div class="swiper-wrapper">
 					{% for slide in slides %}
 						<div class="swiper-slide">
@@ -65,6 +67,7 @@
 						</div>
 					{% endfor %}
 				</div>
+				<div class="swiper-pagination swiper-thumbs-pagination"></div>
 			</div>
 		</div>
 		<div class="product-content__rest-content">

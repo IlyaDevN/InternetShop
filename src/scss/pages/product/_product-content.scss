@@ -16,12 +16,23 @@
 			max-width: 850px;
 		}
 
+		@include helpers.laptop() {
+			gap: 15px;
+			max-width: 1000px;
+			margin: 0 auto 60px;
+		}
+
 		.sliders-container {
 			overflow: hidden;
 			width: 100%;
 
 			@include helpers.tablet() {
 				margin-right: auto;
+			}
+
+			@include helpers.laptop() {
+				display: flex;
+				flex-flow: row-reverse;
 			}
 		}
 
@@ -32,12 +43,17 @@
 				margin-bottom: 7px;
 			}
 
+			@include helpers.laptop() {
+				margin-bottom: 0;
+				height: 576px;
+			}
+
 			.swiper-pagination-bullet {
 				background-color: helpers.$color-white;
 				border: 1px solid helpers.$color-black;
 				opacity: 1;
-				margin: 0 7px 0;
-		
+				--swiper-pagination-bullet-horizontal-gap: 15px;
+
 				&-active {
 					border: none;
 					background-color: helpers.$color-pink;
@@ -54,15 +70,20 @@
 				width: 290px;
 				height: 380px;
 				margin: auto;
-		
+
 				@include helpers.mobile() {
 					width: 450px;
 					height: 590px;
 				}
-		
+
 				@include helpers.tablet() {
 					width: 360px;
 					height: 476px;
+				}
+
+				@include helpers.laptop() {
+					width: 436px;
+					height: 576px;
 				}
 			}
 		}
@@ -72,7 +93,11 @@
 
 			@include helpers.tablet() {
 				display: block;
-				height: 85px;
+			}
+
+			@include helpers.laptop() {
+				width: 100%;
+				height: 576px;
 			}
 
 			.swiper-slide {
@@ -81,11 +106,46 @@
 
 			.swiper-slide-thumb-active {
 				opacity: 1;
-			  }
+			}
 
 			&__image-container {
-				width: 65px;
-				height: 85px;
+				@include helpers.tablet() {
+					width: 65px;
+					height: 85px;
+				}
+
+				@include helpers.laptop() {
+					width: 84px;
+					height: 110px;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		.custom-vertical-pagination {
+			display: none;
+
+			@include helpers.laptop() {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				z-index: 100;
+				top: 50%;
+				transform: translateY(-50%);
+
+				.custom-pagination-bullet {
+					height: 7px;
+					width: 7px;
+					border-radius: 50%;
+					border: 1px solid black;
+					background-color: white;
+
+					&.active {
+						border: none;
+						background-color: #FDA3C4;
+					}
+				}
 			}
 		}
 	}
@@ -180,7 +240,7 @@
 		visibility: hidden;
 		transition: opacity 0.5s,
 			visibility 0.5s;
-	
+
 		@include helpers.tablet() {
 			position: static;
 			opacity: 1;
@@ -188,18 +248,18 @@
 			background-color: transparent;
 			z-index: auto;
 			height: 40px;
-			margin-bottom: 20px;
+			margin-bottom: 8px;
 		}
-	
+
 		&[open] {
 			opacity: 1;
 			visibility: visible;
-	
+
 			.modal-choose-size__content {
 				transform: translateY(0);
 			}
 		}
-	
+
 		&__content {
 			position: fixed;
 			left: 0;
@@ -209,7 +269,7 @@
 			background-color: helpers.$color-white;
 			transform: translateY(100%);
 			transition: transform 0.5s;
-	
+
 			@include helpers.tablet() {
 				position: static;
 				background: none;
@@ -217,7 +277,7 @@
 				padding: 0;
 			}
 		}
-	
+
 		&__title {
 			position: relative;
 			height: 40px;
@@ -226,12 +286,12 @@
 			align-items: center;
 			justify-content: center;
 			border-bottom: 1px solid helpers.$color-pink-transparent;
-	
+
 			@include helpers.tablet() {
 				display: none;
 			}
 		}
-	
+
 		&__marker {
 			width: 16px;
 			height: 16px;
@@ -239,7 +299,7 @@
 			position: absolute;
 			right: 0;
 			background-color: helpers.$color-pink;
-	
+
 			.marker-line {
 				height: 1px;
 				width: 8px;
@@ -248,30 +308,30 @@
 				top: 50%;
 				left: 50%;
 			}
-	
+
 			&-line-1 {
 				transform: translate(-50%, -35%) rotate(45deg);
 			}
-	
+
 			&-line-2 {
 				transform: translate(-50%, -35%) rotate(-45deg);
 			}
 		}
-	
+
 		&__size-list {
 			@include helpers.tablet() {
 				display: flex;
 				justify-content: space-between;
 			}
 		}
-	
+
 		.size-list {
 			&__item {
 				position: relative;
 				height: 40px;
 				border-bottom: 1px solid helpers.$color-pink-transparent;
 			}
-	
+
 			&__availability {
 				font-family: "Montserrat";
 				font-size: 0.625rem;
@@ -286,14 +346,14 @@
 				margin: auto 0;
 				display: none;
 			}
-	
+
 			&__button {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				width: 100%;
 				height: 100%;
-	
+
 				&:disabled {
 					.size-list__name {
 						color: helpers.$color-grey;
@@ -301,7 +361,7 @@
 						border-bottom: 1px solid helpers.$color-grey;
 					}
 				}
-	
+
 				&.active {
 					.size-list__name {
 						color: helpers.$color-pink;
@@ -310,7 +370,7 @@
 					}
 				}
 			}
-	
+
 			&__name {
 				font-family: "Montserrat";
 				font-size: 1rem;
@@ -347,7 +407,7 @@
 			height: 16px;
 			border: 1px solid helpers.$color-black;
 			border-radius: 50%;
-	
+
 			.marker_line {
 				height: 1px;
 				width: 5px;
@@ -356,15 +416,15 @@
 				top: 50%;
 				left: 50%;
 			}
-	
+
 			&_line-1 {
 				transform: translateX(-79%) rotate(45deg);
-				
+
 			}
-	
+
 			&_line-2 {
 				transform: translateX(-21%) rotate(-45deg);
-				
+
 			}
 		}
 	}
@@ -386,7 +446,7 @@
 			&_line-1 {
 				transform: translate(-50%, -35%) rotate(45deg);
 			}
-	
+
 			&_line-2 {
 				transform: translate(-50%, -35%) rotate(-45deg);
 			}
@@ -409,6 +469,7 @@
 		@include helpers.mobile() {
 			flex-direction: row;
 			justify-content: space-evenly;
+			margin-bottom: 8px;
 		}
 	}
 
@@ -455,12 +516,13 @@
 			line-height: 1.2;
 			display: -webkit-box;
 			-webkit-line-clamp: 5;
-			-webkit-box-orient: vertical;  
+			-webkit-box-orient: vertical;
 			overflow: hidden;
 			transition: height 0.5s;
 
 			@include helpers.tablet() {
 				-webkit-line-clamp: 3;
+				font-size: 0.875rem;
 			}
 
 			&.opened {
@@ -475,6 +537,10 @@
 			line-height: 1.2;
 			color: helpers.$color-pink;
 
+			@include helpers.tablet() {
+				font-size: 0.875rem;
+			}
+
 			&.visible {
 				display: block;
 			}
@@ -486,9 +552,9 @@
 		height: 2px;
 		margin: 20px auto;
 		background-image: url(../../../img/pages/product/dot/dot.svg);
-	
+
 		@include helpers.tablet() {
-			margin: 15px auto;
+			margin: 8px auto;
 		}
 	}
 }
@@ -650,7 +716,7 @@
 		}
 
 		.consist-list {
-			.consist-list-item{
+			.consist-list-item {
 				margin-bottom: 7px;
 
 				&:last-child {

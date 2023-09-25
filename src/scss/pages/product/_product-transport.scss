@@ -15,7 +15,11 @@
 			justify-content: space-between;
 			max-width: 850px;
 			margin: 0 auto 50px;
-			gap: 48px;
+		}
+
+		@include helpers.laptop() {
+			max-width: 1000px;
+			margin: 0 auto 55px;
 		}
 	}
 }
@@ -35,6 +39,10 @@
 	@include helpers.tablet() {
 		width: 336px;
 		margin: 0;
+	}
+
+	@include helpers.laptop() {
+		width: 455px;
 	}
 
 	&__card {
@@ -87,7 +95,10 @@
 
 			@include helpers.tablet() {
 				font-size: 1.125rem;
-				margin-bottom: 8px;
+			}
+
+			@include helpers.laptop() {
+				font-size: 1.563rem;
 			}
 		}
 
@@ -100,6 +111,10 @@
 
 			@include helpers.tablet() {
 				font-size: 0.875rem;
+			}
+
+			@include helpers.laptop() {
+				font-size: 1rem;
 			}
 
 			span {

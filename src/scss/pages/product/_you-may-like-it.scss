@@ -5,6 +5,17 @@
 	&__container {
 		padding: 0 15px;
 		margin-bottom: 40px;
+
+		@include helpers.laptop() {
+			padding: 0 5px;
+		}
+
+		.big__title {
+			@include helpers.laptop() {
+				max-width: 860px;
+				margin: 0 auto;
+			}
+		}
 	}
 
 	&__products-container {
@@ -20,7 +31,7 @@
 		}
 	
 		@include helpers.laptop() {
-			
+			margin-bottom: 60px;
 		}
 	
 		.product-card {
