@@ -21,6 +21,10 @@
 			max-width: 1000px;
 			margin: 0 auto 55px;
 		}
+
+		@include helpers.desktop() {
+			margin: 0 auto 60px;
+		}
 	}
 }
 

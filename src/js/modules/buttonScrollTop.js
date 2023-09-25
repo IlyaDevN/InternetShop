@@ -1,6 +1,6 @@
 const PAGE_TOP = 0;
 const button = document.getElementById("buttonScrollTop");
-const observedTarget = document.querySelector(".categories-main, .top-content__poster");
+const observedTarget = document.querySelector(".categories-main, .top-content__poster, .sliders-container");
 
 button.addEventListener("click", ()=> window.scrollTo({
 	top: PAGE_TOP,

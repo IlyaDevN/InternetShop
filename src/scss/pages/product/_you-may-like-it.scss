@@ -4,16 +4,21 @@
 	
 	&__container {
 		padding: 0 15px;
-		margin-bottom: 40px;
+		margin: 0 auto 40px;
+		max-width: 1140px;
 
 		@include helpers.laptop() {
-			padding: 0 5px;
+			padding: 0 15px;
 		}
 
 		.big__title {
 			@include helpers.laptop() {
-				max-width: 860px;
+				max-width: 970px;
 				margin: 0 auto;
+			}
+
+			@include helpers.desktop() {
+				max-width: none;
 			}
 		}
 	}
@@ -47,7 +52,7 @@
 			}
 	
 			@include helpers.tablet() {
-				padding: 3px 14px 14px;
+				padding: 3px 10px 14px;
 	
 				&:nth-child(4) {
 					display: none;
@@ -171,13 +176,12 @@
 					}
 		
 					@include helpers.laptop() {
-						max-width: 135px;
+						max-width: 150px;
 					}
 		
 					@include helpers.desktop() {
 						font-size: 1rem;
 						line-height: 1.29;
-						max-width: 150px;
 					}
 				}
 		

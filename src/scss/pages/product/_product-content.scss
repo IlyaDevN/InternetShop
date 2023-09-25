@@ -22,13 +22,15 @@
 			margin: 0 auto 60px;
 		}
 
+		@include helpers.desktop() {
+			gap: 35px;
+			max-width: 1170px;
+			margin: 0 auto 64px;
+		}
+
 		.sliders-container {
 			overflow: hidden;
 			width: 100%;
-
-			@include helpers.tablet() {
-				margin-right: auto;
-			}
 
 			@include helpers.laptop() {
 				display: flex;
@@ -46,6 +48,10 @@
 			@include helpers.laptop() {
 				margin-bottom: 0;
 				height: 576px;
+			}
+
+			@include helpers.desktop() {
+				height: 666px;
 			}
 
 			.swiper-pagination-bullet {
@@ -85,6 +91,11 @@
 					width: 436px;
 					height: 576px;
 				}
+
+				@include helpers.desktop() {
+					width: 463px;
+					height: 666px;
+				}
 			}
 		}
 
@@ -119,6 +130,11 @@
 					height: 110px;
 					margin: 0 auto;
 				}
+
+				@include helpers.desktop() {
+					width: 96px;
+					height: 125px;
+				}
 			}
 		}
 
@@ -151,8 +167,9 @@
 	}
 
 	.navigation-state-wrapper {
-		margin: 15px 0 28px;
+		margin: 15px auto 28px;
 		padding: 0 15px;
+		max-width: 1170px;
 	}
 
 	&__heart-icon {
@@ -173,6 +190,12 @@
 	&__rest-content {
 		@include helpers.tablet() {
 			width: 330px;
+			min-width: 330px;
+		}
+
+		@include helpers.desktop() {
+			width: 472px;
+			min-width: 472px;
 		}
 	}
 
@@ -186,6 +209,10 @@
 
 		@include helpers.mobile() {
 			font-size: 1.563rem;
+		}
+
+		@include helpers.desktop() {
+			font-size: 2.25rem;
 		}
 	}
 
@@ -205,6 +232,11 @@
 		@include helpers.tablet() {
 			margin-bottom: 7px;
 		}
+
+		@include helpers.desktop() {
+			font-size: 2.625rem;
+			margin-bottom: 5px;
+		}
 	}
 
 	&__size {
@@ -222,6 +254,10 @@
 
 		@include helpers.tablet() {
 			margin-bottom: 8px;
+		}
+
+		@include helpers.desktop() {
+			margin-bottom: 10px;
 		}
 	}
 
@@ -246,9 +282,16 @@
 			opacity: 1;
 			visibility: visible;
 			background-color: transparent;
-			z-index: auto;
 			height: 40px;
 			margin-bottom: 8px;
+		}
+
+		@include helpers.laptop() {
+			margin-bottom: 15px;
+		}
+
+		@include helpers.desktop() {
+			margin-bottom: 20px;
 		}
 
 		&[open] {
@@ -379,6 +422,10 @@
 				width: 70px;
 				border-top: 1px solid helpers.$color-black-standart;
 				border-bottom: 1px solid helpers.$color-black-standart;
+
+				@include helpers.desktop() {
+					font-size: 1.25rem;
+				}
 			}
 		}
 	}
@@ -471,6 +518,14 @@
 			justify-content: space-evenly;
 			margin-bottom: 8px;
 		}
+
+		@include helpers.tablet() {
+			justify-content: space-between;
+		}
+
+		@include helpers.desktop() {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__buy-buttton {
@@ -486,6 +541,11 @@
 		@include helpers.tablet() {
 			width: 157px;
 			height: 50px;
+		}
+
+		@include helpers.desktop() {
+			width: 220px;
+			height: 55px;
 		}
 
 		&-name {
@@ -525,6 +585,10 @@
 				font-size: 0.875rem;
 			}
 
+			@include helpers.desktop() {
+				-webkit-line-clamp: 4;
+			}
+
 			&.opened {
 				display: block;
 			}
@@ -556,6 +620,14 @@
 		@include helpers.tablet() {
 			margin: 8px auto;
 		}
+
+		@include helpers.laptop() {
+			margin: 10px auto;
+		}
+
+		@include helpers.desktop() {
+			margin: 10px auto;
+		}
 	}
 }
 
@@ -573,6 +645,14 @@
 
 		@include helpers.tablet() {
 			margin: 0 auto 24px;
+		}
+
+		@include helpers.laptop() {
+			margin: 0 auto 13px;
+		}
+
+		@include helpers.desktop() {
+			margin: 0 auto 20px;
 		}
 	}
 
