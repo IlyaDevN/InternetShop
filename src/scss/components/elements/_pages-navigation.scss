@@ -1,0 +1,84 @@
+@use "../../common/forwarded.scss" as helpers;
+
+.pages-navigation {
+
+	&__open-button {
+		position: fixed;
+		bottom: 65px;
+		left: 20px;
+		font-size: 2rem;
+		color: helpers.$color-white;
+		background-color: helpers.$color-pink;
+		border: 5px solid teal;
+		border-radius: 10px;
+		width: fit-content;
+		padding: 0 5px;
+		@include helpers.zIndex(layer_middle);
+	}
+
+	&__modal {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		min-width: 100%;
+		min-height: 100%;
+		background-color: helpers.$color-pink;
+		@include helpers.zIndex(layer_overlay);
+		transform: translateX(100%);
+		transition: transform 0.5s;
+
+		&[open] {
+			transform: translateX(0);
+		}
+
+		&::backdrop {
+			background-color: transparent;
+		}
+	}
+
+	&__content {
+		position: absolute;
+		width: fit-content;
+		top: 150px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		padding: 15px;
+		border: 2px solid helpers.$color-white;
+		border-radius: 10px;
+	}
+
+	&__link-list {
+		li {
+			list-style-type: disc;
+			list-style-position: inside;
+			
+			&::marker {
+				color: helpers.$color-white;
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	&__link {
+		color: helpers.$color-white;
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+
+	&__close-button {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 30px;
+		height: 30px;
+
+		@include helpers.tablet() {
+			top: 50px;
+			right: 50px;
+		}
+	}
+}
