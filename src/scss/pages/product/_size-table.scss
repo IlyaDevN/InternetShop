@@ -1,0 +1,255 @@
+@use "../../common/forwarded" as helpers;
+
+.modal-size-table {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	background-color: helpers.$color-pink;
+	@include helpers.zIndex(layer_top);
+	transform: translateX(-100%);
+	transition: transform 0.5s;
+
+	&[open] {
+		transform: translateX(0);
+	}
+
+	&::backdrop {
+		background-color: transparent;
+	}
+
+	&__content {
+		padding: 0 15px;
+		width: 100%;
+		max-width: 1180px;
+
+		@include helpers.laptop {
+			margin: 0 auto;
+			padding: 0 140px;
+		}
+
+		@include helpers.desktop() {
+			padding: 0 15px;
+		}
+	}
+
+	&__close-button {
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		top: 30px;
+		right: 15px;
+
+		@include helpers.mobile() {
+			width: 46px;
+			height: 46px;
+			top: 60px;
+		}
+	}
+
+	&__title {
+		margin-top: 113px;
+		color: helpers.$color-white;
+		font-family: "Sunday Best [rus by aLiNcE]";
+		font-size: 0.875rem;
+		line-height: 1.2;
+
+		@include helpers.mobile() {
+			margin-top: 166px;
+			font-size: 1.563rem;
+		}
+
+		@include helpers.tablet() {
+			margin-top: 170px;
+			font-size: 2.25rem;
+		}
+	}
+
+	.size-parametrs__wrapper {
+		position: absolute;
+		top: 180px;
+		right: 0;
+		left: 0;
+		max-width: 1180px;
+
+		@include helpers.mobile() {
+			top: 265px;
+		}
+
+		@include helpers.tablet() {
+			top: 280px;
+			display: flex;
+			gap: 30px;
+			padding: 0 15px;
+		}
+
+		@include helpers.laptop {
+			padding: 0 140px;
+		}
+
+		@include helpers.desktop() {
+			padding: 0 15px;
+			margin: 0 auto;
+			gap: 75px;
+		}
+	}
+
+	.size-parametrs {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		display: table;
+		margin: 0 auto;
+		width: 100%;
+		padding: 0 15px;
+
+		@include helpers.tablet() {
+			position: static;
+			padding: 0;
+		}
+
+		@include helpers.desktop() {
+			max-width: 576px;
+		}
+	}
+
+	.size-table {
+		width: 100%;
+		border-collapse: collapse;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.table-title {
+		color: helpers.$color-black;
+		font-family: "Montserrat";
+		font-size: 0.875rem;
+		line-height: 1.2;
+		text-align: left;
+		margin-bottom: 20px;
+
+		@include helpers.mobile() {
+			font-size: 1rem;
+		}
+
+		@include helpers.tablet() {
+			font-size: 1.125rem;
+		}
+	}
+
+	.table-row {
+		border-top: 1px solid helpers.$color-white;
+		border-bottom: 1px solid helpers.$color-white;
+		height: 47px;
+
+		@include helpers.mobile() {
+			height: 55px;
+		}
+
+		td {
+			color: helpers.$color-black;;
+			font-family: "Montserrat";
+			font-size: 0.625rem;
+			line-height: 1.2;
+
+			@include helpers.mobile() {
+				font-size: 0.75rem;
+			}
+		}
+	}
+
+	.table-th {
+		color: helpers.$color-black;
+		text-align: center;
+		font-family: "Montserrat";
+		font-size: 0.625rem;
+		font-weight: 600;
+		line-height: 1.2;
+		white-space: pre-line;
+
+		@include helpers.mobile() {
+			font-size: 0.75rem;
+		}
+
+		@include helpers.tablet() {
+			font-size: 0.875rem;
+		}
+	}
+
+	.link-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 7px;
+		margin-left: auto;
+
+		@include helpers.tablet() {
+			display: none;
+		}
+
+		.link-text {
+			color: helpers.$color-white;
+			font-family: "Montserrat";
+			font-size: 0.875rem;
+			font-weight: 600;
+			line-height: 1.2;
+		}
+	
+		.link-arrow {
+			width: 9px;
+			height: 12px;
+		}
+	}
+	.link-wrapper_outside {
+		.link-arrow {
+			transform: rotate(180deg);
+		}
+	}
+
+	.person-parametrs {
+		transform: perspective(300px) translateX(-100%) rotateY(90deg);
+		opacity: 0;
+		visibility: hidden;
+		transition: transform 0.8s, opacity 0.8s, visibility 0.8s;
+
+		@include helpers.tablet() {
+			transform: perspective(300px) translateX(0) rotateY(0);
+			opacity: 1;
+			visibility: visible;
+			transition: none;
+		}
+		
+		&.active {
+			transform: perspective(300px) translateX(0) rotateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.product-parametrs {
+		transform: perspective(300px) translateX(100%) rotateY(90deg);
+		opacity: 0;
+		visibility: hidden;
+		transition: transform 0.8s, opacity 0.8s, visibility 0.8s;
+
+		&.active {
+			transform: perspective(300px) translateX(0) rotateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+
+		@include helpers.tablet() {
+			transform: perspective(300px) translateX(0) rotateY(0);
+			opacity: 1;
+			visibility: visible;
+			transition: none;
+		}
+	}
+
+
+}
