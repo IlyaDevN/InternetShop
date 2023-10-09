@@ -27,9 +27,9 @@
 					{% for slide in slides %}
 						<div class="swiper-slide">
 							<div class="swiper-main__image-container">
-								<div class="product-content__heart-icon">
+								<button class="product-content__heart-icon product-card__heart-icon">
 									{% include "html/icons_svg/common/heart-icon.html" %}
-								</div>
+								</button>
 								<picture>
 									<source srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
 										media="(min-width:1200px)">

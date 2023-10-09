@@ -6,3 +6,4 @@ import "./modules/modal-choose-size.js";
 import "./modules/openDescription.js";
 import "./modules/pages-navigation.js";
 import "./modules/size-table.js";
+import "./modules/productCard.js";

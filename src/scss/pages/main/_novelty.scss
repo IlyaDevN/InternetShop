@@ -28,11 +28,6 @@
 			margin: 0 auto 26px;
 		}
 	}
-
-	._img {
-		object-fit: cover;
-		object-position: top center;
-	}
 }
 
 .novelty-items__container {
@@ -101,6 +96,11 @@
 			@include helpers.desktop() {
 				max-width: 320px;
 				height: 434px;
+			}
+
+			._img {
+				object-fit: cover;
+				object-position: top center;
 			}
 		}
 
