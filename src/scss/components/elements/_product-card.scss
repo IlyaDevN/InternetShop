@@ -15,21 +15,12 @@
 			fill: helpers.$color-white;
 			transition: fill 0.5s;
 		}
-
-		.heart-icon-stroke {
-			fill: helpers.$color-black;
-			transition: fill 0.5s;
-		}
 	}
 
 	&:hover {
 		._svg {
 			@include helpers.laptop {
 				.heart-icon-fill{
-					fill: helpers.$color-pink;
-				}
-	
-				.heart-icon-stroke {
 					fill: helpers.$color-pink;
 				}
 			}
@@ -39,10 +30,6 @@
 	&.active {
 		._svg {
 			.heart-icon-fill{
-				fill: helpers.$color-red;
-			}
-
-			.heart-icon-stroke {
 				fill: helpers.$color-red;
 			}
 		}
