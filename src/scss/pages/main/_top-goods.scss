@@ -355,6 +355,7 @@ $textGap: 44px;
 			&__photo {
 				width: 133px;
 				height: 157px;
+				margin: 0 auto;
 		
 				@include helpers.mobile() {
 					width: 201px;
