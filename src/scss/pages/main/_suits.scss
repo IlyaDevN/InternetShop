@@ -39,6 +39,23 @@
 
 	&__photo {
 		width: 100%;
+		min-height: 237px;
+
+		@include helpers.mobile() {
+			min-height: 354px;
+		}
+
+		@include helpers.tablet() {
+			min-height: 378px;
+		}
+
+		@include helpers.laptop() {
+			min-height: 396px;
+		}
+
+		@include helpers.desktop() {
+			min-height: 442px;
+		}
 	}
 
 	&__price-top {
