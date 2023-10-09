@@ -24,12 +24,14 @@
 
 	&:hover {
 		._svg {
-			.heart-icon-fill{
-				fill: helpers.$color-pink;
-			}
-
-			.heart-icon-stroke {
-				fill: helpers.$color-pink;
+			@include helpers.laptop {
+				.heart-icon-fill{
+					fill: helpers.$color-pink;
+				}
+	
+				.heart-icon-stroke {
+					fill: helpers.$color-pink;
+				}
 			}
 		}
 	}
