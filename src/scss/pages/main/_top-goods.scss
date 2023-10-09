@@ -116,6 +116,7 @@ $textGap: 44px;
 				display: block;
 				min-height: 200px;
 				padding: 2px 6px 9px;
+				width: 100%;
 			
 				@include helpers.mobile() {
 					padding: 4px 12px 11px;
