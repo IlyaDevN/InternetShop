@@ -1,14 +1,81 @@
-<button class="pages-navigation__open-button">Pages</button>
-
-<dialog class="pages-navigation__modal">
-	<button class="pages-navigation__close-button" aria-label="Кнопка закрытия модального окна">
-		{% include "html/icons_svg/menu/menu-close-button-icon.html" %}
-	</button>
-	<div class="pages-navigation__content">
-		<ul class="pages-navigation__link-list">
-			<li><a class="pages-navigation__link" href="./index.html">main</a></li>
-			<li><a class="pages-navigation__link" href="./categories.html">categories</a></li>
-			<li><a class="pages-navigation__link" href="./product.html">product</a></li>
-		</ul>
+<div class="pages-navigation">
+	<!-- page-navigation удалить на проде -->
+	<ul class="pages-navigation__link-list">
+		<li><a class="pages-navigation__link" href="./index.html">Главная</a></li>
+		<li><a class="pages-navigation__link" href="./categories.html">Категории</a></li>
+		<li><a class="pages-navigation__link" href="./product.html">Страница товара</a></li>
+	</ul>
+	<div class="pages-navigation__buttons">
+		<button class="pages-navigation__open-button page-nav-button">Pages</button>
+		<button class="pages-navigation__close-button page-nav-button">Close</button>
 	</div>
-</dialog>
+</div>
+
+<script>
+
+	let style = document.createElement("style");
+	style.innerHTML = `
+		.pages-navigation {
+			position: fixed;
+			bottom: 70px;
+			left: 15px;
+			z-index: 500;
+		}
+
+		.pages-navigation.active .pages-navigation__link-list{
+			visibility: visible;
+		}
+
+		.pages-navigation.active .pages-navigation__open-button {
+			display: none;
+		}
+
+		.pages-navigation.active .pages-navigation__close-button {
+			display: block;
+		}
+
+		.pages-navigation__link-list {
+			background: #FDA3C4;
+			visibility: hidden;
+		}
+
+		.pages-navigation__link-list li {
+			border-bottom: 1px solid #FFF;
+			padding: 5px;
+		}
+
+		.pages-navigation__link {
+			font-family: "Montserrat";
+			color: #FFF;
+			line-height: 1.6;
+		}
+
+		.page-nav-button {
+			font-family: "Sunday Best [rus by aLiNcE]";
+			color: #FFF;
+			background: #FDA3C4;
+			padding: 5px;
+			width: 100%;
+		}
+
+		.pages-navigation__close-button {
+			display: none;
+		}
+	`
+
+	document.querySelector("head").append(style);
+
+	const openButton = document.querySelector(".pages-navigation__open-button");
+	const closeButton = document.querySelector(".pages-navigation__close-button");
+	const pageNav = document.querySelector(".pages-navigation");
+
+	openButton.addEventListener("click", () => {
+		pageNav.classList.add("active");
+	})
+
+	closeButton.addEventListener("click", () => {
+		pageNav.classList.remove("active");
+	})
+
+</script>
+
