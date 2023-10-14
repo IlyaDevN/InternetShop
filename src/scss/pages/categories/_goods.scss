@@ -75,22 +75,27 @@
 		
 			&__photo {
 				height: auto;
+				min-height: 338px;
 				width: 270px;
 				margin: auto;
 				
 				@include helpers.mobile() {
+					min-height: 492px;
 					width: 400px;
 				}
 
 				@include helpers.tablet() {
+					min-height: 275px;
 					width: 240px;
 				}
 		
 				@include helpers.laptop() {
+					min-height: 348px;
 					width: 300px;
 				}
 
 				@include helpers.desktop() {
+					min-height: 497px;
 					width: 410px;
 				}
 			}
