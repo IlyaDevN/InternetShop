@@ -1,19 +1,19 @@
 {% set slides = [
-	{
-		"img_number": "1"
-	},
-	{
-		"img_number": "2"
-	},
-	{
-		"img_number": "3"
-	},
-	{
-		"img_number": "4"
-	},
-	{
-		"img_number": "5"
-	}
+{
+"img_number": "1"
+},
+{
+"img_number": "2"
+},
+{
+"img_number": "3"
+},
+{
+"img_number": "4"
+},
+{
+"img_number": "5"
+}
 ] %}
 
 <section class="product-content">
@@ -25,24 +25,28 @@
 			<div class="swiper swiper-main">
 				<div class="swiper-wrapper">
 					{% for slide in slides %}
-						<div class="swiper-slide">
-							<div class="swiper-main__image-container">
-								<button class="product-content__heart-icon product-card__heart-icon">
-									{% include "html/icons_svg/common/heart-icon.html" %}
-								</button>
-								<picture>
-									<source srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
-										media="(min-width:1200px)">
-									<source srcset="img/pages/product/product_image/1000/photo_{{slide.img_number}}_x1000.jpg" type="image/jpeg"
-										media="(min-width:1000px)">
-									<source srcset="img/pages/product/product_image/768/photo_{{slide.img_number}}_x768.jpg" type="image/jpeg"
-										media="(min-width:768px)">
-									<source srcset="img/pages/product/product_image/480/photo_{{slide.img_number}}_x480.jpg" type="image/jpeg"
-										media="(min-width:480px)">
-									<img class="_img" src="img/pages/product/product_image/320/photo_{{slide.img_number}}_x320.jpg" alt="Слайд в слайдере">
-								</picture>
-							</div>
+					<div class="swiper-slide">
+						<div class="swiper-main__image-container">
+							<button class="product-content__heart-icon product-card__heart-icon">
+								{% include "html/icons_svg/common/heart-icon.html" %}
+							</button>
+							<picture>
+								<source
+									srcset="img/pages/product/product_image/1200/photo_{{slide.img_number}}_x1200.jpg"
+									type="image/jpeg" media="(min-width:1200px)">
+								<source
+									srcset="img/pages/product/product_image/1000/photo_{{slide.img_number}}_x1000.jpg"
+									type="image/jpeg" media="(min-width:1000px)">
+								<source srcset="img/pages/product/product_image/768/photo_{{slide.img_number}}_x768.jpg"
+									type="image/jpeg" media="(min-width:768px)">
+								<source srcset="img/pages/product/product_image/480/photo_{{slide.img_number}}_x480.jpg"
+									type="image/jpeg" media="(min-width:480px)">
+								<img class="_img"
+									src="img/pages/product/product_image/320/photo_{{slide.img_number}}_x320.jpg"
+									alt="Слайд в слайдере">
+							</picture>
 						</div>
+					</div>
 					{% endfor %}
 				</div>
 				<div class="swiper-pagination swiper-main-pagination"></div>
@@ -54,17 +58,21 @@
 				</div>
 				<div class="swiper-wrapper">
 					{% for slide in slides %}
-						<div class="swiper-slide">
-							<div class="swiper-thumbs__image-container">
-								<picture>
-									<source srcset="img/pages/product/slider_thumbs/1200/photo_{{slide.img_number}}_x1200.jpg" type="image/jpeg"
-										media="(min-width:1200px)">
-									<source srcset="img/pages/product/slider_thumbs/1000/photo_{{slide.img_number}}_x1000.jpg" type="image/jpeg"
-										media="(min-width:1000px)">
-									<img class="_img" src="img/pages/product/slider_thumbs/768/photo_{{slide.img_number}}_x768.jpg" alt="Слайд в слайдере">
-								</picture>
-							</div>
+					<div class="swiper-slide">
+						<div class="swiper-thumbs__image-container">
+							<picture>
+								<source
+									srcset="img/pages/product/slider_thumbs/1200/photo_{{slide.img_number}}_x1200.jpg"
+									type="image/jpeg" media="(min-width:1200px)">
+								<source
+									srcset="img/pages/product/slider_thumbs/1000/photo_{{slide.img_number}}_x1000.jpg"
+									type="image/jpeg" media="(min-width:1000px)">
+								<img class="_img"
+									src="img/pages/product/slider_thumbs/768/photo_{{slide.img_number}}_x768.jpg"
+									alt="Слайд в слайдере">
+							</picture>
 						</div>
+					</div>
 					{% endfor %}
 				</div>
 				<div class="swiper-pagination swiper-thumbs-pagination"></div>
@@ -92,7 +100,7 @@
 					<ul class="modal-choose-size__size-list">
 						<li class="size-list__item">
 							<p class="size-list__availability">нет в наличии</p>
-							<button  disabled class="size-list__button">
+							<button disabled class="size-list__button">
 								<p class="size-list__name">XS — S</p>
 							</button>
 						</li>
@@ -137,8 +145,11 @@
 			</div>
 			<div class="product-content__description">
 				<p class="description-text">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nostrum unde dolorem! Dolorum, quidem tempora? Nobis, cupiditate ab? Voluptatum quam quaerat officiis totam eligendi tenetur laboriosam, labore error modi minus!
-					Inventore eveniet voluptates ex officiis nesciunt provident adipisci magnam, similique, architecto illo ut voluptatibus quos? Dolorum, quisquam architecto iste ipsum praesentium dignissimos vitae, eligendi debitis fuga aperiam illum sint recusandae.
+					Легкое полупрозрачное платье средней длины. Платье — любая одежда кроме белья и обуви. Также
+					предмет женского гардероба, обязательно с достаточно длинными полами, укрывающими тело и верхнюю
+					часть ног. Платье — это верхняя одежда, состоящая из лифа и юбки, которая может быть изготовлена
+					​​из одной или нескольких частей. Платья, как правило, подходят как в качестве повседневной, так
+					и официальной одежды для женщин и девочек. Взято из Википедиии.
 				</p>
 				<button class="description-unwrap-button visible">Развернуть описание</button>
 			</div>
