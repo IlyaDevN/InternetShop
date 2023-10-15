@@ -37,12 +37,8 @@
 	}
 
 	&__container {
-		padding: 10px 15px 8px;
-		max-width: 1170px;
-
-		@include helpers.mobile() {
-			padding: 12px 15px 14px;
-		}
+		background-color: helpers.$color-white;
+		padding: 15px;
 
 		@include helpers.tablet() {
 			padding: 6px 15px 51px;
@@ -54,12 +50,86 @@
 
 		@include helpers.desktop() {
 			margin: 0 auto;
-			padding: 10px 15px 51px;
+		}
+		// == Плавный подъем меню ==
+		// &.inactive {
+		// 	position: fixed;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	z-index: 150;
+		// 	animation: 0.3s ease-in-out 1 headerHide;
+		// 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		
+		// 	@include helpers.tablet() {
+		// 		padding: 6px 15px;
+		// 	}
+		// }
+
+		// @keyframes headerHide {
+		// 	from {
+		// 		transform: translateY(0);
+		// 	}
+
+		// 	to {
+		// 		transform: translateY(-100%);
+		// 	}
+		// }
+
+		&.active {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			z-index: 150;
+			animation: 0.5s ease-in-out 1 headerShow;
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		
+			@include helpers.tablet() {
+				padding: 6px 15px;
+			}
+
+			@include helpers.laptop() {
+				padding: 10px 15px;
+			}
+		}
+
+		@keyframes headerShow {
+			from {
+				transform: translateY(-100%);
+			}
+
+			to {
+				transform: translateY(0);
+			}
+		}
+
+		&.active+.pink-line-top, &.inactive+.pink-line-top {
+			margin-top: 47px;
+
+			@include helpers.mobile() {
+				margin-top: 54px;
+			}
+
+			@include helpers.tablet() {
+				margin-top: 102px;
+			}
+	
+			@include helpers.laptop() {
+				margin-top: 106px;
+			}
+	
+			@include helpers.desktop() {
+				margin-top: 101px;
+			}
 		}
 
 		.header__first-line {
 			display: flex;
 			align-items: center;
+			max-width: 1140px;
+    		margin: 0 auto;
 
 			.header__logo-icon {
 				margin-right: auto;
@@ -145,7 +215,6 @@
 							height: 24px;
 							margin-right: 7px;
 						}
-						
 					}
 				}
 
