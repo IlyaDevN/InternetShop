@@ -57,7 +57,7 @@
 		// 	top: 0;
 		// 	left: 0;
 		// 	width: 100%;
-		// 	z-index: 150;
+		// 	@include helpers.zIndex(layer_overlay);
 		// 	animation: 0.3s ease-in-out 1 headerHide;
 		// 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 		
@@ -80,9 +80,8 @@
 			position: fixed;
 			top: 0;
 			left: 0;
-			right: 0;
 			width: 100%;
-			z-index: 150;
+			@include helpers.zIndex(layer_overlay);
 			animation: 0.5s ease-in-out 1 headerShow;
 			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 		
