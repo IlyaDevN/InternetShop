@@ -1,0 +1,177 @@
+@use "../../common/forwarded" as helpers;
+
+.cart {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	transform: translateX(100%);
+	transition: transform 0.5s;
+	@include helpers.zIndex(layer_top);
+
+	&[open] {
+		transform: translateX(0);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding: 30px 15px 0;
+	}
+
+	&__close-button {
+		width: 24px;
+		height: 24px;
+		margin-left: auto;
+		margin-bottom: 40px;
+		margin: 0 0 40px auto;
+	}
+
+	&__title {
+		font-family: "Montserrat";
+		font-weight: 700;
+		line-height: 1.2;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	&__items-container {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin-bottom: 40px;
+		height: 250px;
+		overflow-y: scroll;
+	}
+
+	&__item {
+		display: flex;
+	}
+
+	&__item-photo {
+		min-width: 90px;
+		height: 120px;
+
+		._img {
+			object-fit: cover;
+		}
+	}
+
+	&__item-description {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item-delete-button-container {
+		min-width: 40px;
+		text-align: right;
+	}
+
+	&__item-delete-button {
+		width: 12px;
+		height: 12px;
+		margin-right: 10px;
+		border-radius: 50%;
+		position: relative;
+		background-color: helpers.$color-pink;
+		vertical-align: top;
+
+		.button-line {
+			height: 1px;
+			width: 8px;
+			background-color: helpers.$color-white;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		&-line-1 {
+			transform: translate(-50%, -35%) rotate(45deg);
+		}
+
+		&-line-2 {
+			transform: translate(-50%, -35%) rotate(-45deg);
+		}
+	}
+
+	&__total-price {
+		margin-bottom: 30px;
+		color: helpers.$color-pink;
+		font-family: "Montserrat";
+		line-height: 1.2;
+		display: flex;
+		align-items: end;
+		
+
+		&-text {
+			flex-shrink: 0;
+		}
+
+		&-dots {
+			width: 100%;
+			height: 5px;
+			background-image: url(../../../img/pages/product/dot/dot.svg);
+			background-repeat: repeat-x;
+			
+		}
+
+		&-sum {
+			font-weight: 700;
+			flex-shrink: 0;
+		}
+	}
+
+	&__make-order-button {
+		margin: 0 auto;
+		position: relative;
+		width: 160px;
+		height: 44px;
+
+		@include helpers.tablet() {
+			width: 200px;
+			height: 50px;
+		}
+
+		&-text {
+			font-family: "Sunday Best [rus by aLiNcE]", arial;
+			font-size: 0.75rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: helpers.$color-white;
+			position: absolute;
+			left: 0;
+			right: 0;
+			text-align: center;
+			top: 18%;
+
+			@include helpers.tablet() {
+				font-size: 0.875rem;
+			}
+		}
+	}
+}
+.item-description-title {
+	font-family: "Montserrat";
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.2;
+	margin-bottom: 12px;
+}
+.item-description-size {
+	font-family: "Montserrat";
+	font-size: 0.75rem;
+	line-height: 1.2;
+	margin-bottom: auto;
+}
+.item-description-price {
+	color: helpers.$color-pink;
+	font-family: "Montserrat";
+	font-weight: 700;
+	line-height: 1.2;
+}

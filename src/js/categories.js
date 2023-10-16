@@ -4,3 +4,4 @@ import "./modules/modal-filter.js";
 import "./modules/buttonScrollTop.js";
 import "./modules/productCard.js";
 import "./modules/header.js";
+import "./modules/cart.js";

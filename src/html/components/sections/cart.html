@@ -1,0 +1,58 @@
+{% set cart = [
+{
+	"img_src": "img/common/cart/photo_1_x320.jpg",
+	"name": "Платье прозрачное в цветочек чееное",
+	"size": "S — M",
+	"price": "1 299 ₴"
+},
+{
+	"img_src": "img/common/cart/photo_1_x320.jpg",
+	"name": "Платье прозрачное в цветочек чееное",
+	"size": "S — M",
+	"price": "1 299 ₴"
+},
+{
+	"img_src": "img/common/cart/photo_1_x320.jpg",
+	"name": "Платье прозрачное в цветочек чееное",
+	"size": "S — M",
+	"price": "1 299 ₴"
+}
+] %}
+
+<dialog class="cart">
+	<div class="cart__content">
+		<button class="cart__close-button">
+			{% include "html/icons_svg/common/close-button-black-icon.html" %}
+		</button>
+		<h3 class="cart__title">Корзина</h3>
+		<div class="cart__items-container">
+			{% for item in cart %}
+			<div class="cart__item">
+				<div class="cart__item-photo">
+					<img class="_img" src={{item.img_src}} alt="Фото товара">
+				</div>
+				<div class="cart__item-description">
+					<div class="item-description-title">{{item.name}}</div>
+					<p class="item-description-size">{{item.size}}</p>
+					<div class="item-description-price">{{item.price}}</div>
+				</div>
+				<div class="cart__item-delete-button-container">
+					<button class="cart__item-delete-button">
+						<div class="cart__item-delete-button-line-1 button-line"></div>
+						<div class="cart__item-delete-button-line-2 button-line"></div>
+					</button>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="cart__total-price">
+			<div class="cart__total-price-text" uk-leader>Cумма заказа:</div>
+			<div class="cart__total-price-dots"></div>
+			<div class="cart__total-price-sum">2598 ₴</div>
+		</div>
+		<button class="cart__make-order-button">
+			{% include "html/icons_svg/common/general-button-icon.html" %}
+			<p class="cart__make-order-button-text">Оформить заказ</p>
+		</button>
+	</div>
+</dialog>
