@@ -1,10 +1,10 @@
 import { disableScroll, enableScroll } from './helpers.js';
 
-const openCartButton = document.querySelector(".cart__button");
+const openCartButtons = document.querySelectorAll(".cart__button, .header__cart-icon");
 const modalCart = document.querySelector(".cart");
 const closeCartButton = document.querySelector(".cart__close-button");
 
-openCartButton.onclick = openModal;
+openCartButtons.forEach(openButton => openButton.onclick = openModal);
 closeCartButton.onclick = closeModal;
 
 function openModal() {

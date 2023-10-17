@@ -10,26 +10,59 @@
 	min-width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	transform: translateX(100%);
-	transition: transform 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s,
+		visibility 0.5s;
 	@include helpers.zIndex(layer_top);
+	background-color: rgba(0, 0, 0, 0.77);
 
 	&[open] {
-		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+
+		.cart__content {
+			transform: translateX(0);
+		}
 	}
 
 	&__content {
 		display: flex;
 		flex-direction: column;
 		padding: 30px 15px 0;
+		min-height: 100%;
+		background-color: helpers.$color-white;
+		transform: translateX(100%);
+		transition: transform 0.5s;
+
+		@include helpers.mobile() {
+			padding: 48px 15px 0;
+		}
+
+		@include helpers.tablet() {
+			width: 470px;
+			position: fixed;
+			right: 0;
+			padding: 20px 42px 0 25px;
+		}
 	}
 
 	&__close-button {
 		width: 24px;
 		height: 24px;
-		margin-left: auto;
-		margin-bottom: 40px;
 		margin: 0 0 40px auto;
+
+		@include helpers.mobile() {
+			width: 36px;
+			height: 36px;
+			margin: 0 0 23px auto;
+		}
+
+		@include helpers.tablet() {
+			width: 46px;
+			height: 46px;
+			margin: 0 0 0 auto;
+		}
 	}
 
 	&__title {
@@ -39,6 +72,11 @@
 		text-transform: uppercase;
 		text-align: center;
 		margin-bottom: 20px;
+
+		@include helpers.tablet() {
+			font-size: 1.563rem;
+			margin-bottom: 40px;
+		}
 	}
 
 	&__items-container {
@@ -47,16 +85,41 @@
 		gap: 10px;
 		margin-bottom: 40px;
 		height: 250px;
-		overflow-y: scroll;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		@include helpers.mobile() {
+			height: 370px;
+			margin-bottom: 50px;
+		}
+
+		@include helpers.tablet() {
+			margin-bottom: 40px;
+		}
 	}
 
 	&__item {
 		display: flex;
+		gap: 10px;
+		margin: 0 auto;
+
+		@include helpers.mobile() {
+			gap: 15px;
+		}
+
+		@include helpers.tablet() {
+			gap: 10px;
+		}
 	}
 
 	&__item-photo {
 		min-width: 90px;
 		height: 120px;
+
+		@include helpers.mobile() {
+			min-width: 155px;
+			height: 180px;
+		}
 
 		._img {
 			object-fit: cover;
@@ -69,18 +132,34 @@
 	}
 
 	&__item-delete-button-container {
-		min-width: 40px;
+		min-width: 30px;
 		text-align: right;
+
+		@include helpers.mobile() {
+			min-width: 32px;
+		}
+
+		@include helpers.tablet() {
+			min-width: 48px;
+		}
 	}
 
 	&__item-delete-button {
 		width: 12px;
 		height: 12px;
-		margin-right: 10px;
+		margin: 0 10px 0 0;
 		border-radius: 50%;
 		position: relative;
 		background-color: helpers.$color-pink;
 		vertical-align: top;
+
+		@include helpers.mobile() {
+			margin: 30px 20px 0 0;
+		}
+
+		@include helpers.tablet() {
+			margin: 30px 35px 0 0;
+		}
 
 		.button-line {
 			height: 1px;
@@ -101,16 +180,30 @@
 	}
 
 	&__total-price {
-		margin-bottom: 30px;
+		margin: 0 auto 30px;
+		width: 100%;
 		color: helpers.$color-pink;
 		font-family: "Montserrat";
 		line-height: 1.2;
 		display: flex;
 		align-items: end;
 		
+		@include helpers.mobile() {
+			max-width: 350px;
+		}
+
+		@include helpers.tablet() {
+			margin: 0 auto 40px;
+			max-width: 362px;
+		}
 
 		&-text {
 			flex-shrink: 0;
+
+			@include helpers.tablet() {
+				color: helpers.$color-black-standart;
+				font-size: 1.563rem;
+			}
 		}
 
 		&-dots {
@@ -119,11 +212,20 @@
 			background-image: url(../../../img/pages/product/dot/dot.svg);
 			background-repeat: repeat-x;
 			
+			@include helpers.tablet() {
+				height: 8px;
+				background-image: url(../../../img/pages/product/dot/dots_black.svg);
+			}
 		}
 
 		&-sum {
 			font-weight: 700;
 			flex-shrink: 0;
+
+			@include helpers.tablet() {
+				color: helpers.$color-black-standart;
+				font-size: 1.563rem;
+			}
 		}
 	}
 
@@ -156,18 +258,39 @@
 		}
 	}
 }
+
 .item-description-title {
 	font-family: "Montserrat";
 	font-size: 0.875rem;
 	font-weight: 600;
 	line-height: 1.2;
-	margin-bottom: 12px;
+	margin: 0 0 12px;
+
+	@include helpers.mobile() {
+		margin-top: 33px;
+		margin: 33px 0 12px;
+	}
+
+	@include helpers.tablet() {
+		font-size: 1rem;
+		margin-top: 30px;
+		margin: 33px 0 8px;
+	}
 }
 .item-description-size {
 	font-family: "Montserrat";
 	font-size: 0.75rem;
 	line-height: 1.2;
 	margin-bottom: auto;
+
+	@include helpers.mobile() {
+		margin-bottom: 32px;
+	}
+
+	@include helpers.tablet() {
+		font-size: 0.875rem;
+		margin-bottom: 26px;
+	}
 }
 .item-description-price {
 	color: helpers.$color-pink;
