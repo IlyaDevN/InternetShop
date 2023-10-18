@@ -42,6 +42,14 @@ body {
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+}
+
+:root {
+	--width-of-scrollbar: 0;
+}
+
+body {
+	padding-right: var(--width-of-scrollbar);
 
 	&.stop-scroll {
 		overflow: hidden;
