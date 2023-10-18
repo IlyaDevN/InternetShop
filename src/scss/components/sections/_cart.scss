@@ -16,7 +16,7 @@
 
 	@include helpers.tablet() {
 		transform: translateX(0);
-		background-color: rgba(0, 0, 0, 0.77);
+		background-color: helpers.$color-cart-layout;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.5s,
