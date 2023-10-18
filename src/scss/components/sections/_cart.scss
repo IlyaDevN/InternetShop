@@ -10,20 +10,36 @@
 	min-width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.5s,
-		visibility 0.5s;
+	transform: translateX(100%);
+	transition: transform 0.5s;
 	@include helpers.zIndex(layer_top);
-	background-color: rgba(0, 0, 0, 0.77);
+
+	@include helpers.tablet() {
+		transform: translateX(0);
+		background-color: rgba(0, 0, 0, 0.77);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.5s,
+			visibility 0.5s;
+	}
 
 	&[open] {
-		opacity: 1;
-		visibility: visible;
+		transform: translateX(0);
+
+		@include helpers.tablet() {
+			opacity: 1;
+			visibility: visible;
+		}
 
 		.cart__content {
-			transform: translateX(0);
+			@include helpers.tablet() {
+				transform: translateX(0);
+			}
 		}
+	}
+
+	&::backdrop {
+		background: transparent;
 	}
 
 	&__content {
@@ -32,8 +48,6 @@
 		padding: 30px 15px 0;
 		min-height: 100%;
 		background-color: helpers.$color-white;
-		transform: translateX(100%);
-		transition: transform 0.5s;
 
 		@include helpers.mobile() {
 			padding: 48px 15px 0;
@@ -44,6 +58,8 @@
 			position: fixed;
 			right: 0;
 			padding: 20px 42px 0 25px;
+			transform: translateX(100%);
+			transition: transform 0.5s;
 		}
 	}
 
@@ -85,8 +101,11 @@
 		gap: 10px;
 		margin-bottom: 40px;
 		height: 250px;
-		overflow-y: auto;
+		overflow-y: scroll;
 		overflow-x: hidden;
+		-webkit-overflow-scrolling: auto;
+		scrollbar-width: thin;
+		scrollbar-color: helpers.$color-pink helpers.$color-light-pink;
 
 		@include helpers.mobile() {
 			height: 370px;
@@ -95,6 +114,18 @@
 
 		@include helpers.tablet() {
 			margin-bottom: 40px;
+		}
+
+		&::-webkit-scrollbar {
+			width: 1px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: helpers.$color-light-pink;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: helpers.$color-pink;
 		}
 	}
 
@@ -187,7 +218,7 @@
 		line-height: 1.2;
 		display: flex;
 		align-items: end;
-		
+
 		@include helpers.mobile() {
 			max-width: 350px;
 		}
@@ -211,7 +242,7 @@
 			height: 5px;
 			background-image: url(../../../img/pages/product/dot/dot.svg);
 			background-repeat: repeat-x;
-			
+
 			@include helpers.tablet() {
 				height: 8px;
 				background-image: url(../../../img/pages/product/dot/dots_black.svg);
@@ -277,6 +308,7 @@
 		margin: 33px 0 8px;
 	}
 }
+
 .item-description-size {
 	font-family: "Montserrat";
 	font-size: 0.75rem;
@@ -292,6 +324,7 @@
 		margin-bottom: 26px;
 	}
 }
+
 .item-description-price {
 	color: helpers.$color-pink;
 	font-family: "Montserrat";
