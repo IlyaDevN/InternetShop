@@ -1,35 +1,25 @@
-import { debounce } from 'throttle-debounce';
 import { mqlMin768 } from './mediaQueries.js';
 
 if(mqlMin768.matches) {
 	const modal = document.querySelector(".modal__menu");
-	const menuListContainerMain = modal.querySelector(".menu__list-container-main");
 	const menuListContainer = modal.querySelector(".menu__list-container");
 	const allMenuItems = Array.from(modal.querySelectorAll(".menu__item"));
 	const menuItemsEmpty = allMenuItems.filter(item => !item.dataset.hasOwnProperty("link"));
 	const menuItems = allMenuItems.filter(item => item.dataset.hasOwnProperty("link"));
 	const menuSubItems = modal.querySelectorAll(".menu__sub-item");
-	const closeDelay = 500;
 	const animationDelay = 700;
 	let activeSubMenuList = null;
 	let activeMenuItem = null;
 
-	const debouncedCloseMenu = debounce(closeDelay, closeMenu);
-	const cancelDebouncedCloseMenu = () => debouncedCloseMenu.cancel({ upcomingOnly: true });
-
 	menuItems.forEach(menuItem => openMenu(menuItem));
-	menuItemsEmpty.forEach(emptyMenuItem => emptyMenuItem.addEventListener("mouseover", closeMenu));
+	menuItemsEmpty.forEach(emptyMenuItem => emptyMenuItem.addEventListener("click", closeMenu));
 	menuSubItems.forEach(menuSubItem => menuSubItem.addEventListener("click", closeMenu));
-
-	menuListContainerMain.addEventListener("mouseover", cancelDebouncedCloseMenu);
-	menuListContainerMain.addEventListener("mouseout", debouncedCloseMenu);
-	menuListContainer.addEventListener("mouseover", cancelDebouncedCloseMenu);
-	menuListContainer.addEventListener("mouseout", debouncedCloseMenu);
 	
 	function openMenu(menuItem) {
-		menuItem.addEventListener("mouseover", () => {
+		menuItem.addEventListener("click", () => {
 
 			if (menuItem == activeMenuItem) {
+				closeMenu();
 				return;
 			}
 
@@ -39,7 +29,7 @@ if(mqlMin768.matches) {
 			menuItem.classList.add("active");
 			menuListContainer.classList.add("active");
 			subMenuList.classList.add("active");
-			animateMouseOver(subMenuList);
+			animateOpening(subMenuList);
 			activeSubMenuList = subMenuList;
 			activeMenuItem = menuItem;
 		})
@@ -48,7 +38,7 @@ if(mqlMin768.matches) {
 	function closeMenu() {
 
 		if (activeSubMenuList) {
-			animateMouseOut(activeSubMenuList).then(() => {
+			animateClosing(activeSubMenuList).then(() => {
 				menuListContainer.classList.remove("active");
 			})
 			activeSubMenuList.classList.remove("active");
@@ -67,12 +57,12 @@ if(mqlMin768.matches) {
 		}
 
 		if (activeSubMenuList) {
-			animateMouseOut(activeSubMenuList);
+			animateClosing(activeSubMenuList);
 			activeSubMenuList.classList.remove("active");
 		}
 	}
 
-	function animateMouseOver(elem) {
+	function animateOpening(elem) {
 		elem.animate([
 			{ transform: "translateX(-100vw)" },
 			{ transform: "translateX(0)" }
@@ -82,7 +72,7 @@ if(mqlMin768.matches) {
 		})
 	}
 
-	function animateMouseOut(elem) {
+	function animateClosing(elem) {
 		const animation = elem.animate([
 			{ transform: "translateX(0)" },
 			{ transform: "translateX(100vw)" }
