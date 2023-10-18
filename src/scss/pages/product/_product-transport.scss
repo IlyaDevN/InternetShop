@@ -124,6 +124,14 @@
 			span {
 				font-size: 0.375rem;
 				vertical-align: 4px;
+
+				@include helpers.tablet() {
+					vertical-align: 6px;
+				}
+
+				@include helpers.laptop() {
+					vertical-align: 7px;
+				}
 			}
 		}
 	}
