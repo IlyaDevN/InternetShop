@@ -66,6 +66,10 @@
 			width: 492px;
 			padding: 60px 54px 0 22px;
 		}
+
+		@include helpers.desktop() {
+			width: 518px;
+		}
 	}
 
 	&__close-button {
