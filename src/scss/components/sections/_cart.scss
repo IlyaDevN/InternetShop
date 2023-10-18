@@ -61,6 +61,11 @@
 			transform: translateX(100%);
 			transition: transform 0.5s;
 		}
+
+		@include helpers.laptop() {
+			width: 492px;
+			padding: 60px 54px 0 22px;
+		}
 	}
 
 	&__close-button {
@@ -78,6 +83,10 @@
 			width: 46px;
 			height: 46px;
 			margin: 0 0 0 auto;
+		}
+
+		@include helpers.laptop() {
+			margin: 0 0 7px auto;
 		}
 	}
 
@@ -226,6 +235,10 @@
 		@include helpers.tablet() {
 			margin: 0 auto 40px;
 			max-width: 362px;
+		}
+
+		@include helpers.laptop() {
+			margin: 0 auto 50px;
 		}
 
 		&-text {
