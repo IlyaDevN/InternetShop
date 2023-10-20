@@ -1,0 +1,92 @@
+{% set cart = [
+	{
+		"img_src": "img/pages/cart/photo_1.jpg",
+		"name": "Платье прозрачное в цветочек чееное",
+		"size": "S — M",
+		"price": "1 299 ₴"
+	},
+	{
+		"img_src": "img/pages/cart/photo_1.jpg",
+		"name": "Платье прозрачное в цветочек чееное",
+		"size": "S — M",
+		"price": "1 299 ₴"
+	},
+	{
+		"img_src": "img/pages/cart/photo_1.jpg",
+		"name": "Платье прозрачное в цветочек чееное",
+		"size": "S — M",
+		"price": "1 299 ₴"
+	},
+	{
+		"img_src": "img/pages/cart/photo_1.jpg",
+		"name": "Платье прозрачное в цветочек чееное",
+		"size": "S — M",
+		"price": "1 299 ₴"
+	},
+	{
+		"img_src": "img/pages/cart/photo_1.jpg",
+		"name": "Платье прозрачное в цветочек чееное",
+		"size": "S — M",
+		"price": "1 299 ₴"
+	},
+	{
+		"img_src": "img/pages/cart/photo_1.jpg",
+		"name": "Платье прозрачное в цветочек чееное",
+		"size": "S — M",
+		"price": "1 299 ₴"
+	}
+	] %}
+
+<section class="goods-in-the-cart">
+	<div class="goods-in-the-cart__container">
+		<div class="big__title">
+			<h1 class="big__title_name">В корзине</h1>
+			<div class="big__title_subname-container">
+				<h2 class="big__title_subname">товары в корзине</h2>
+				<div class="big__title_line-icon">
+					{% include "html/icons_svg/common/title-line-icon.html" %}
+				</div>
+			</div>
+		</div>
+		<details class="goods-in-the-cart__details">
+			<summary class="goods-in-the-cart__summery">
+				<img class="opened_cart_icon" src="img/pages/cart/opened_cart_icon.svg" alt="Иконка товара в корзине">
+				<img class="closed_cart_icon" src="img/pages/cart/closed_cart_icon.svg" alt="Иконка товара в корзине">
+			</summary>
+		</details>
+		<div class="goods-in-the-cart__items-container-wrapper">
+			<div class="goods-in-the-cart__items-container-wrapper-inner">
+				<div class="goods-in-the-cart__items-container">
+					{% for item in cart %}
+					<div class="goods-in-the-cart__item">
+						<div class="goods-in-the-cart__item-photo">
+							<img class="_img" src={{item.img_src}} alt="Фото товара">
+						</div>
+						<div class="goods-in-the-cart__item-description">
+							<div class="item-description-title">{{item.name}}</div>
+							<p class="item-description-size">{{item.size}}</p>
+							<div class="item-description-price">{{item.price}}</div>
+						</div>
+						<div class="goods-in-the-cart__item-delete-button-container">
+							<button class="goods-in-the-cart__item-delete-button">
+								<div class="goods-in-the-cart__item-delete-button-line-1 button-line"></div>
+								<div class="goods-in-the-cart__item-delete-button-line-2 button-line"></div>
+							</button>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="goods-in-the-cart__total-info">
+			<div class="goods-in-the-cart__total-info-text">Всего:</div>
+			<div class="goods-in-the-cart__total-info-dots"></div>
+			<div class="goods-in-the-cart__total-info-sum total-info-sum-goods">6 товаров</div>
+		</div>
+		<div class="goods-in-the-cart__total-info total-info-sum-of-money">
+			<div class="goods-in-the-cart__total-info-text">Cумма заказа:</div>
+			<div class="goods-in-the-cart__total-info-dots"></div>
+			<div class="goods-in-the-cart__total-info-sum">7794 ₴</div>
+		</div>
+	</div>
+</section>

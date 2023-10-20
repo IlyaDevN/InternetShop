@@ -1,0 +1,156 @@
+<section class="cart-form">
+	<div class="cart-form__container">
+		<form class="cart-form__form">
+			<div class="contact-data">
+				{% set title = {
+					"name": "1",
+					"subname": "Контактные 
+					данные"
+				} %}
+				{% include "html/components/elements/big-title.html" %}
+				<div class="contact-data__container">
+					<input class="contact-data__form-input" type="text" placeholder="Имя">
+					<input class="contact-data__form-input" type="text" placeholder="Фамилия">
+					<input class="contact-data__form-input" type="tel" placeholder="+38 (___) ___-__-__">
+					<input class="contact-data__form-input" type="email" placeholder="E-mail">
+				</div>
+			</div>
+			<div class="delivery">
+				{% set title = {
+					"name": "2",
+					"subname": "Способ 
+					доставки"
+				} %}
+				{% include "html/components/elements/big-title.html" %}
+				<ul class="delivery__method-list">
+					<li class="delivery__method-item">
+						<details class="delivery__method-details">
+							<summary class="delivery__method-summary">
+								<label class="delivery__method-button-label">
+									<input class="delivery__method-button" type="radio" name="delivery_method" id="">
+									{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+									<p>Доставка в отделение Новой почты</p>
+								</label>
+							</summary>
+						</details>
+						<div class="delivery__method-wrapper">
+							<div class="delivery__method-wrapper-inner">
+								<a class="delivery__method-button-link" href="#">— согласно тарифам НП</a>
+								<ul class="delivery__department">
+									<li><input class="delivery__department-item delivery__department-city" type="text" placeholder="Населенный пункт"></li>
+									<li><input class="delivery__department-item delivery__department-number" type="text" placeholder="Номер отделения"></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="delivery__method-item">
+						<details class="delivery__method-details">
+							<summary class="delivery__method-summary">
+								<label class="delivery__method-button-label">
+									<input class="delivery__method-button" type="radio" name="delivery_method" id="">
+									{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+									<p>Курьерская доставка Новой почты</p>
+								</label>
+							</summary>
+						</details>
+						<div class="delivery__method-wrapper">
+							<div class="delivery__method-wrapper-inner">
+								<a class="delivery__method-button-link" href="#">— согласно тарифам НП</a>
+								<textarea class="delivery__department-item" cols="30" rows="4" placeholder="Заполните адрес доставки"></textarea>
+							</div>
+						</div>
+					</li>
+					<li class="delivery__method-item">
+						<details class="delivery__method-details">
+							<summary class="delivery__method-summary">
+								<label class="delivery__method-button-label">
+									<input class="delivery__method-button" type="radio" name="delivery_method" id="">
+									{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+									<p>Международная доставка</p>
+								</label>
+							</summary>
+						</details>
+						<div class="delivery__method-wrapper">
+							<div class="delivery__method-wrapper-inner">
+								<a class="delivery__method-button-link" href="#">— согласно тарифам Укрпочта</a>
+								<textarea class="delivery__department-item" cols="30" rows="4" placeholder="Заполните адрес доставки"></textarea>
+							</div>
+						</div>
+					</li>
+					<li class="delivery__method-item">
+						<details class="delivery__method-details">
+							<summary class="delivery__method-summary">
+								<label class="delivery__method-button-label">
+									<input class="delivery__method-button" type="radio" name="delivery_method" id="">
+									{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+									<p>Самовывоз с нашего шоурума</p>
+								</label>
+							</summary>
+						</details>
+						<div class="delivery__method-wrapper">
+							<div class="delivery__method-wrapper-inner">
+								<p class="delivery__method-button-link">— бесплатно</p>
+							</div>
+						</div>
+						<address class="delivery__method-item-address">г.Киев, ул. Нижний вал, 37
+							Ежедневно с 11:00 до 21:00</address>
+					</li>
+				</ul>
+				<textarea class="delivery__department-item" cols="30" rows="4" placeholder="Комментарий к заказу"></textarea>
+			</div>
+			<div class="payment">
+				{% set title = {
+					"name": "3",
+					"subname": "Способ 
+					оплаты"
+				} %}
+				{% include "html/components/elements/big-title.html" %}
+				<ul class="payment__method-list">
+					<li class="payment__method-item">
+						<details class="payment__method-details">
+							<summary class="payment__method-summary">
+								<label class="payment__method-button-label">
+									<input class="payment__method-button" type="radio" name="payment_method">
+									{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+									<p>Каротой Visa / MasterCard</p>
+								</label>
+							</summary>
+						</details>
+						<div class="payment__method-wrapper">
+							<div class="payment__method-wrapper-inner">
+								<input class="payment__department-item" type="text" placeholder="Введите номер карты">
+							</div>
+						</div>
+					</li>
+					<li class="payment__method-item">
+						<details class="payment__method-details">
+							<summary class="payment__method-summary">
+								<label class="payment__method-button-label">
+									<input class="payment__method-button" type="radio" name="payment_method">
+									{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+									<p>Наличкой при получении</p>
+								</label>
+							</summary>
+						</details>
+						<div class="payment__method-wrapper">
+							<div class="payment__method-wrapper-inner">
+								<input class="payment__department-item" type="text" placeholder="Номер карты boorivasis">
+							</div>
+						</div>
+					</li>
+					<li>
+						<label class="payment__method-button-label">
+							<input class="payment__method-button_last" type="radio" name="payment_confirm">
+							{% include "html/icons_svg/pages/cart/radio-icon.html" %}
+							Я уверена в заказе, со мной можно не связываться
+						</label>
+					</li>
+				</ul>
+				<button class="order-confirm-button" href="#">
+					{% include "html/icons_svg/common/general-button-icon.html" %}
+					<p class="order-confirm-button-text">Подтвердить заказ</p>
+				</button>
+			</div>
+		</form>
+	</div>
+</section>

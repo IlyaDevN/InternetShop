@@ -1,0 +1,17 @@
+{% extends "html/layouts/default.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="css/cart.min.css">
+{% endblock %}
+
+{% set page_class = "page_cart" %}
+
+{% block content %}
+	{% include "html/pages/cart/goods-in-the-cart.html" %}
+	{% include "html/pages/cart/cart-form.html" %}
+{% endblock %}
+
+
+{% block js %}
+	<script type="module" src="js/cart.min.js"></script>
+{% endblock %}
