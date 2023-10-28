@@ -189,6 +189,7 @@
 	}
 
 	&__item-delete-button {
+		position: relative;
 		width: 12px;
 		height: 12px;
 		margin: 0 10px 0 0;
@@ -196,6 +197,15 @@
 		position: relative;
 		background-color: helpers.$color-pink;
 		vertical-align: top;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+		}
 
 		@include helpers.mobile() {
 			margin: 30px 20px 0 0;
