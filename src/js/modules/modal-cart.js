@@ -8,11 +8,13 @@ openCartButtons.forEach(openButton => openButton.onclick = openModal);
 closeCartButton.onclick = closeModal;
 
 function openModal() {
+	modalCart.classList.add("active");
 	modalCart.showModal();
 	disableScroll();
 }
 
 function closeModal() {
-	modalCart.close();
+	modalCart.addEventListener("transitionend", modalCart.close, {once: true});
+	modalCart.classList.remove("active");
 	enableScroll();
 }
