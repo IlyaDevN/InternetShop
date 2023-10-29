@@ -187,9 +187,10 @@
 	}
 
 	.payment {
+		margin-bottom: 10px;
 	
 		&__method-list {
-			margin: 20px auto 10px;
+			margin: 20px auto 0;
 		}
 	
 		&__method-item {
@@ -282,26 +283,26 @@
 				}
 			}
 		}
-	
-		.order-confirm-button {
-			display: block;
-			width: 195px;
-			height: 50px;
-			margin: 0 auto;
-			position: relative;
-	
-			&-text {
-				font-family: "Sunday Best [rus by aLiNcE]", arial;
-				font-size: 0.75rem;
-				font-weight: 400;
-				text-transform: uppercase;
-				color: #FFF;
-				position: absolute;
-				left: 0;
-				right: 0;
-				text-align: center;
-				top: 21%;
-			}
+	}
+
+	.order-confirm-button {
+		display: block;
+		width: 195px;
+		height: 50px;
+		margin: 0 auto;
+		position: relative;
+
+		&-text {
+			font-family: "Sunday Best [rus by aLiNcE]", arial;
+			font-size: 0.75rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: #FFF;
+			position: absolute;
+			left: 0;
+			right: 0;
+			text-align: center;
+			top: 21%;
 		}
 	}
 }
