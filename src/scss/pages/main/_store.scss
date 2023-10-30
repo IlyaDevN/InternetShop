@@ -239,6 +239,18 @@
 			left: 455px;
 		}
 
+		.route-svg-path {
+			transition: fill 0.3s;
+		}
+
+		&:hover {
+			@include helpers.laptop() {
+				.route-svg-path {
+					fill: helpers.$color-red;
+				}
+			}
+		}
+
 		&_text {
 			font-family: "Sunday Best [rus by aLiNcE]", arial;
 			font-size: 0.75rem;
