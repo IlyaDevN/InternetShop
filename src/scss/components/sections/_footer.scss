@@ -135,6 +135,16 @@
 			}
 		}
 	}
+
+	a.footer__text {
+		transition: color 0.3s;
+
+		&:hover {
+			@include helpers.tablet() {
+				color: helpers.$color-red;
+			}
+		}
+	}
 	
 	&__contacts {
 		grid-area: contacts;
