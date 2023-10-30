@@ -12,6 +12,18 @@
 		height: 50px;
 	}
 
+	.watch-everything-path {
+		transition: fill 0.3s;
+	}
+
+	&:hover {
+		@include helpers.laptop() {
+			.watch-everything-path {
+				fill: helpers.$color-red;
+			}
+		}
+	}
+
 	&-text {
 		font-family: "Sunday Best [rus by aLiNcE]", arial;
 		font-size: 0.75rem;
