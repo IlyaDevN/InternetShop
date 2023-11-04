@@ -615,7 +615,7 @@
 		width: 100%;
 		height: 2px;
 		margin: 20px auto;
-		background-image: url(../../../img/common/dot.svg);
+		background-image: url("../img/common/dot.svg");
 
 		@include helpers.tablet() {
 			margin: 8px auto;
