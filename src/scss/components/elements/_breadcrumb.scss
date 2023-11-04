@@ -37,7 +37,7 @@
 	&__list-item:not(:last-child)::after {
 		display: inline-block;
 		margin-left: 8px;
-		content: url("../../../img/common/nav-state-arrow.svg");
+		content: url("../img/common/breadcrumb-arrow.svg");
 		width: 5px;
 		height: 7px;
 	
