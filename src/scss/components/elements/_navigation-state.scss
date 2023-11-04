@@ -1,22 +1,14 @@
 @use "../../common/forwarded" as helpers;
 
 .navigation-state {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-
-	@include helpers.mobile() {
-		grid-row: 1/2;
-		grid-column: 1/2;
-		align-self: start;
-	}
-
-	&__link {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
 		font-family: "Montserrat", sans-serif;
 		font-size: 0.75rem;
 		font-weight: 500;
 		line-height: 1.2;
-		color: helpers.$color-black;
 
 		@include helpers.tablet() {
 			font-size: 0.875rem;
@@ -25,19 +17,35 @@
 		@include helpers.desktop() {
 			font-size: 1rem;
 		}
+	}
 
-		&_sub-category {
-			color: helpers.$color-pink;
+	&__link {
+		color: helpers.$color-black;
+		transition: color 0.3s;
+
+		&:hover {
+			@include helpers.laptop() {
+				color: helpers.$color-pink;
+			}
 		}
 	}
 
-	&__arrow-icon {	
-		width: 7px;
-		height: 5px;
+	&__last-item {
+		color: helpers.$color-pink;
+	}
 
+	&__list-item:not(:last-child)::after {
+		display: inline-block;
+		margin-left: 8px;
+		content: url("../../../img/common/nav-state-arrow.svg");
+		width: 5px;
+		height: 7px;
+	
 		@include helpers.tablet() {
-			width: 10px;
-			height: 8px;
+			width: 8px;
+			height: 10px;
 		}
 	}
 }
+
+

@@ -16,6 +16,23 @@
 }
 ] %}
 
+{% set navigation_state = [
+	{
+		"link": "#",
+		"link_name": "Главная"
+	},
+	{
+		"link": "#",
+		"link_name": "Верх"
+	},
+	{
+		"link": "#",
+		"link_name": "Топы"
+	}
+] %}
+
+{% set nav_state_last_link_name = "Товар" %}
+
 <section class="product-content">
 	<div class="navigation-state-wrapper">
 		{% include "html/components/elements/navigation-state.html" %}
