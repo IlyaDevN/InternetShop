@@ -3,9 +3,8 @@ import { disableScroll, enableScroll } from './helpers.js';
 const modal = document.querySelector(".modal-choose-size");
 const openModalButton = document.querySelector(".product-content__choose-size-button");
 const closeModalButton = modal.querySelector(".modal-choose-size__marker");
-const sizeListButtons = modal.querySelectorAll(".size-list__button");
+const sizeListButtons = modal.querySelectorAll(".size-list__button-input");
 const showedSize = document.querySelector(".product-content__chosen-size");
-let currentActiveSizeButton = null;
 
 openModalButton.addEventListener("click", openModal);
 closeModalButton.addEventListener("click", closeModal);
@@ -15,7 +14,6 @@ sizeListButtons.forEach(button => button.addEventListener("click", setChosenSize
 function openModal() {
 	modal.showModal();
 	disableScroll();
-	
 }
 
 function closeModal() {
@@ -31,14 +29,6 @@ function closeModalByOverlay(event) {
 }
 
 function setChosenSize(event) {
-	if(currentActiveSizeButton) {
-		currentActiveSizeButton.classList.remove("active");
-	}
-
-	const button = event.target.closest(".size-list__button");
-	const buttonText = button.querySelector(".size-list__name").innerHTML;
-	showedSize.innerHTML = buttonText;
-	button.classList.add("active");
-	currentActiveSizeButton = button;
+	showedSize.innerHTML = event.target.value;
 	closeModal();
 }
