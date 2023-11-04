@@ -3,7 +3,7 @@
 	"subname": "топы"
 } %}
 
-{% set navigation_state = [
+{% set breadcrumb = [
 	{
 		"link": "#",
 		"link_name": "Главная"
@@ -14,12 +14,12 @@
 	}
 ] %}
 
-{% set nav_state_last_link_name = "Топы" %}
+{% set breadcrumb_last_link_name = "Топы" %}
 
 <div class="top-content">
 	<div class="top-content__container">
-		<div class="navigation-state-wrapper">
-			{% include "html/components/elements/navigation-state.html" %}
+		<div class="breadcrumb-wrapper">
+			{% include "html/components/elements/breadcrumb.html" %}
 		</div>
 		<div class="top-content__poster">
 			<picture>

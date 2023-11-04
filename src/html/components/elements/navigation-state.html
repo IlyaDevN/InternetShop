@@ -1,8 +1,0 @@
-<nav aria-label="Breadcrumb" class="navigation-state">
-	<ul class="navigation-state__list">
-		{% for links in navigation_state %}
-			<li class="navigation-state__list-item"><a class="navigation-state__link" href="{{links.link}}">{{links.link_name}}</a></li>
-		{% endfor %}
-		<li class="navigation-state__list-item"><span class="navigation-state__last-item" aria-current="page">{{nav_state_last_link_name}}</span></li>
-	</ul>
-</nav>

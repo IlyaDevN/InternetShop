@@ -1,0 +1,8 @@
+<nav aria-label="breadcrumb" class="breadcrumb">
+	<ul class="breadcrumb__list">
+		{% for items in breadcrumb %}
+			<li class="breadcrumb__list-item"><a class="breadcrumb__link" href="{{items.link}}">{{items.link_name}}</a></li>
+		{% endfor %}
+		<li class="breadcrumb__list-item"><span class="breadcrumb__last-item" aria-current="page">{{breadcrumb_last_link_name}}</span></li>
+	</ul>
+</nav>

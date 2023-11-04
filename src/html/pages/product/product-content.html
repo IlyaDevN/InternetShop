@@ -16,7 +16,7 @@
 }
 ] %}
 
-{% set navigation_state = [
+{% set breadcrumb = [
 	{
 		"link": "#",
 		"link_name": "Главная"
@@ -31,11 +31,11 @@
 	}
 ] %}
 
-{% set nav_state_last_link_name = "Товар" %}
+{% set breadcrumb_last_link_name = "Товар" %}
 
 <section class="product-content">
-	<div class="navigation-state-wrapper">
-		{% include "html/components/elements/navigation-state.html" %}
+	<div class="breadcrumb-wrapper">
+		{% include "html/components/elements/breadcrumb.html" %}
 	</div>
 	<div class="product-content__container">
 		<div class="sliders-container">

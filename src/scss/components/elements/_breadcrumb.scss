@@ -1,6 +1,6 @@
 @use "../../common/forwarded" as helpers;
 
-.navigation-state {
+.breadcrumb  {
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
