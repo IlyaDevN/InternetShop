@@ -21,6 +21,7 @@ function openModal() {
 	modal.showModal();
 	disableScroll();
 	closeModalButton.addEventListener("click", closeModal, {once: true});
+	document.addEventListener("keydown", enableScrollByEsc, {once: true});
 }
 
 function closeModal() {
@@ -38,3 +39,8 @@ function openPersonParametrs() {
 	productParametrs.classList.remove("active");
 }
 
+function enableScrollByEsc(event) {
+	if(event.code === "Escape") {
+		enableScroll();
+	}
+}
